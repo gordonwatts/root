@@ -53,8 +53,6 @@
  * Full details can be found in our documentation by searching for "Security Enhancements in the CRT".
 */
 
-#include <sal.h>
-
 #undef _CRT_PACKING
 #define _CRT_PACKING 8
 
