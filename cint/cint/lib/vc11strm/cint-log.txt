@@ -1,0 +1,4 @@
+Warning: Unknown type SAL_name in function argument tmpfile(4)
+Error: Too many '}' tmpfile(5)
+!!!Removing vc11strm.cxx vc11strm.h !!!
+
