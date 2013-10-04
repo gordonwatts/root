@@ -82,7 +82,7 @@ extern "C" {
 
 #if !defined(_W64)
 #if !defined(__midl) && (defined(_X86_) || defined(_M_IX86))
-#define _W64 __w64
+#define _W64
 #else
 #define _W64
 #endif
@@ -425,7 +425,7 @@ _CRT_DEPRECATE_TEXT("Direct heap access is not safely possible from managed code
 #ifdef  _WIN64
 typedef unsigned __int64    size_t;
 #else
-typedef _W64 unsigned int   size_t;
+typedef unsigned int   size_t;
 #endif
 #define _SIZE_T_DEFINED
 #endif
@@ -441,7 +441,7 @@ typedef size_t rsize_t;
 #ifdef  _WIN64
 typedef __int64             intptr_t;
 #else
-typedef _W64 int            intptr_t;
+typedef int            intptr_t;
 #endif
 #define _INTPTR_T_DEFINED
 #endif
@@ -450,7 +450,7 @@ typedef _W64 int            intptr_t;
 #ifdef  _WIN64
 typedef unsigned __int64    uintptr_t;
 #else
-typedef _W64 unsigned int   uintptr_t;
+typedef unsigned int   uintptr_t;
 #endif
 #define _UINTPTR_T_DEFINED
 #endif
@@ -459,7 +459,7 @@ typedef _W64 unsigned int   uintptr_t;
 #ifdef  _WIN64
 typedef __int64             ptrdiff_t;
 #else
-typedef _W64 int            ptrdiff_t;
+typedef int            ptrdiff_t;
 #endif
 #define _PTRDIFF_T_DEFINED
 #endif
@@ -496,7 +496,7 @@ typedef int errno_t;
 #endif
 
 #ifndef _TIME32_T_DEFINED
-typedef _W64 long __time32_t;   /* 32-bit time value */
+typedef long __time32_t;   /* 32-bit time value */
 #define _TIME32_T_DEFINED
 #endif
 

@@ -1,3 +1,3 @@
-Error: class,struct,union or type _W64 not defined  vadefs.h(48)
+Error: class,struct,union or type __int64 not defined  crtdefs.h(504)
 !!!Removing vc11strm.cxx vc11strm.h !!!
 
