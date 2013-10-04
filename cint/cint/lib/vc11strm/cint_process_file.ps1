@@ -32,4 +32,4 @@ if (test-path $logfile) {
 }
 
 #& "$($cintbin)\cint.exe" -?
-& "$($cintbin)\cint.exe" -n vc11strm.cxx -NG__stream -D__MAKECINT__ -c-1 -I . ./iostr.h 2>&1 | add-content -path $logfile
+& "$($cintbin)\cint.exe" -n vc11strm.cxx -NG__stream -D__MAKECINT__ -D_WIN32 -c-1 -I . ./iostr.h 2>&1 | add-content -path $logfile
