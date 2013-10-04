@@ -1,3 +1,6 @@
-Error: class,struct,union or type __int64 not defined  crtdefs.h(504)
+Warning: Unknown type noreturn in function argument crtdefs.h(570)
+Warning: Unknown type "invalid argument" in function argument tmpfile(24)
+Warning: Unknown type "out of range" in function argument tmpfile(29)
+Error: cannot open file "use_ansi.h"  yvals.h(337)
 !!!Removing vc11strm.cxx vc11strm.h !!!
 
