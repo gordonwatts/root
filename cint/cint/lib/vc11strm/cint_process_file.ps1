@@ -37,3 +37,7 @@ $includes = "iostrm.h", "fstrm.h", "linkdef.h"
 
 #& "$($cintbin)\cint.exe" -?
 & "$($cintbin)\cint.exe" -Z0 -n vc11strm.cxx -NG__stream -D__MAKECINT__ -D_WIN32 -c-1 -I . -I ..\..\include $includes 2>&1 | add-content -path $logfile
+
+if (test-path vc11strm.cxx) {
+  cp vc11strm.* ..\..\src\dict
+}

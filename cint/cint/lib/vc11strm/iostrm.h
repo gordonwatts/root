@@ -258,6 +258,8 @@ class ios_base {
   protected:
     ios_base();
     ios_base& operator=(const ios_base& x);
+private:
+	ios_base(const ios_base&); // Not implemented
 };
 
 template<class charT, class traits>
@@ -338,7 +340,7 @@ class basic_streambuf {
 };
 
 // MSVC10 uses this to produce a "convertible-to-bool",
-struct _Bool_type { operator bool(); };
+//struct _Bool_type { operator bool(); };
 
 template<class charT, class traits>
 class basic_istream : virtual public basic_ios<charT, traits> {
@@ -358,7 +360,7 @@ class basic_istream : virtual public basic_ios<charT, traits> {
 	sentry& operator=(const sentry&);       // not defined
     public:
 	inline explicit sentry(basic_istream<charT,traits>& stream,bool noskipws = 0);
-	operator _Bool_type () { return ok_; }
+	//operator _Bool_type () { return ok_; }
     };
     //_Myt& operator>>(_Myt& (*pf)(_Myt&));
     //_Myt& operator>>(ios_base& (*pf)(ios_base&));
@@ -425,7 +427,7 @@ class basic_ostream : virtual public basic_ios<charT, traits> {
 #else
        ~sentry() ;
 #endif
-      operator _Bool_type () { return ok_; }
+      //operator _Bool_type () { return ok_; }
     private:
       sentry(const sentry&); //   not defined
       sentry& operator=(const sentry&); //   not defined

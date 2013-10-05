@@ -1,3 +1,5 @@
-Error: class,struct,union or type string not defined  sstrm.h(45)
+Error: class,struct,union or type char_type not defined  linkdef.h(13)
+Error: class,struct,union or type char_type not defined  linkdef.h(13)
+Warning: #pragma link, function assign(char_type*,size_t,const char_type) not found linkdef.h(13)
 !!!Removing vc11strm.cxx vc11strm.h !!!
 
