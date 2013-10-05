@@ -3,10 +3,6 @@
 #ifndef _XLOCNUM_
 #define _XLOCNUM_
 #ifndef RC_INVOKED
-#include <climits>
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
 #include <streambuf>
 
  #pragma pack(push,_CRT_PACKING)
