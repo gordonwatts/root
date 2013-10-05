@@ -5,7 +5,6 @@
 #ifndef RC_INVOKED
 
 #include <xkeycheck.h>
-#include <crtdefs.h>
 
 #pragma pack(push,_CRT_PACKING)
 #pragma push_macro("new")
@@ -240,8 +239,8 @@
  #define _SCL_SECURE_INVALID_PARAMETER(expr) _CRT_SECURE_INVALID_PARAMETER(expr)
 #endif
 
- #define _SCL_SECURE_INVALID_ARGUMENT_NO_ASSERT		_SCL_SECURE_INVALID_PARAMETER("invalid argument")
- #define _SCL_SECURE_OUT_OF_RANGE_NO_ASSERT			_SCL_SECURE_INVALID_PARAMETER("out of range")
+ #define _SCL_SECURE_INVALID_ARGUMENT_NO_ASSERT
+ #define _SCL_SECURE_OUT_OF_RANGE_NO_ASSERT
 
  #define _SCL_SECURE_ALWAYS_VALIDATE(cond)				\
 	{													\
