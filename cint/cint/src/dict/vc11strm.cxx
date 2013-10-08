@@ -18,6 +18,7 @@ extern "C" void G__set_cpp_environmentG__stream() {
   G__add_ipath("..\\..\\include");
   G__add_compiledheader("iostrm.h");
   G__add_compiledheader("fstrm.h");
+  G__add_compiledheader("sstrm.h");
   G__cpp_reset_tagtableG__stream();
 }
 #include <new>
@@ -1612,6 +1613,548 @@ static int G__G__stream_20_0_3(G__value* result7, G__CONST char* funcname, struc
 }
 
 
+/* basic_stringbuf<char,char_traits<char>,allocator<char> > */
+static int G__G__stream_23_0_1(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   basic_stringbuf<char,char_traits<char>,allocator<char> >* p = NULL;
+   char* gvp = (char*) G__getgvp();
+   switch (libp->paran) {
+   case 1:
+     //m: 1
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_stringbuf<char,char_traits<char>,allocator<char> >((ios_base::openmode) G__int(libp->para[0]));
+     } else {
+       p = new((void*) gvp) basic_stringbuf<char,char_traits<char>,allocator<char> >((ios_base::openmode) G__int(libp->para[0]));
+     }
+     break;
+   case 0:
+     int n = G__getaryconstruct();
+     if (n) {
+       if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+         p = new basic_stringbuf<char,char_traits<char>,allocator<char> >[n];
+       } else {
+         p = new((void*) gvp) basic_stringbuf<char,char_traits<char>,allocator<char> >[n];
+       }
+     } else {
+       if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+         p = new basic_stringbuf<char,char_traits<char>,allocator<char> >;
+       } else {
+         p = new((void*) gvp) basic_stringbuf<char,char_traits<char>,allocator<char> >;
+       }
+     }
+     break;
+   }
+   result7->obj.i = (long) p;
+   result7->ref = (long) p;
+   G__set_tagnum(result7,G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_23_0_2(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   basic_stringbuf<char,char_traits<char>,allocator<char> >* p = NULL;
+   char* gvp = (char*) G__getgvp();
+   switch (libp->paran) {
+   case 2:
+     //m: 2
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_stringbuf<char,char_traits<char>,allocator<char> >(*(basic_stringbuf<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref, (ios_base::openmode) G__int(libp->para[1]));
+     } else {
+       p = new((void*) gvp) basic_stringbuf<char,char_traits<char>,allocator<char> >(*(basic_stringbuf<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref, (ios_base::openmode) G__int(libp->para[1]));
+     }
+     break;
+   case 1:
+     //m: 1
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_stringbuf<char,char_traits<char>,allocator<char> >(*(basic_stringbuf<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref);
+     } else {
+       p = new((void*) gvp) basic_stringbuf<char,char_traits<char>,allocator<char> >(*(basic_stringbuf<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref);
+     }
+     break;
+   }
+   result7->obj.i = (long) p;
+   result7->ref = (long) p;
+   G__set_tagnum(result7,G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_23_0_3(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+      {
+         const basic_stringbuf<char,char_traits<char>,allocator<char> >::_Mystr* pobj;
+         const basic_stringbuf<char,char_traits<char>,allocator<char> >::_Mystr xobj = ((const basic_stringbuf<char,char_traits<char>,allocator<char> >*) G__getstructoffset())->str();
+         pobj = new basic_stringbuf<char,char_traits<char>,allocator<char> >::_Mystr(xobj);
+         result7->obj.i = (long) ((void*) pobj);
+         result7->ref = result7->obj.i;
+         G__store_tempobject(*result7);
+      }
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_23_0_4(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+      ((basic_stringbuf<char,char_traits<char>,allocator<char> >*) G__getstructoffset())->str(*(basic_stringbuf<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref);
+      G__setnull(result7);
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+// automatic destructor
+typedef basic_stringbuf<char,char_traits<char>,allocator<char> > G__Tbasic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR;
+static int G__G__stream_23_0_13(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   char* gvp = (char*) G__getgvp();
+   long soff = G__getstructoffset();
+   int n = G__getaryconstruct();
+   //
+   //has_a_delete: 0
+   //has_own_delete1arg: 0
+   //has_own_delete2arg: 0
+   //
+   if (!soff) {
+     return(1);
+   }
+   if (n) {
+     if (gvp == (char*)G__PVOID) {
+       delete[] (basic_stringbuf<char,char_traits<char>,allocator<char> >*) soff;
+     } else {
+       G__setgvp((long) G__PVOID);
+       for (int i = n - 1; i >= 0; --i) {
+         ((basic_stringbuf<char,char_traits<char>,allocator<char> >*) (soff+(sizeof(basic_stringbuf<char,char_traits<char>,allocator<char> >)*i)))->~G__Tbasic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR();
+       }
+       G__setgvp((long)gvp);
+     }
+   } else {
+     if (gvp == (char*)G__PVOID) {
+       delete (basic_stringbuf<char,char_traits<char>,allocator<char> >*) soff;
+     } else {
+       G__setgvp((long) G__PVOID);
+       ((basic_stringbuf<char,char_traits<char>,allocator<char> >*) (soff))->~G__Tbasic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR();
+       G__setgvp((long)gvp);
+     }
+   }
+   G__setnull(result7);
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+
+/* basic_istringstream<char,char_traits<char>,allocator<char> > */
+static int G__G__stream_25_0_1(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   basic_istringstream<char,char_traits<char>,allocator<char> >* p = NULL;
+   char* gvp = (char*) G__getgvp();
+   switch (libp->paran) {
+   case 1:
+     //m: 1
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_istringstream<char,char_traits<char>,allocator<char> >((ios_base::openmode) G__int(libp->para[0]));
+     } else {
+       p = new((void*) gvp) basic_istringstream<char,char_traits<char>,allocator<char> >((ios_base::openmode) G__int(libp->para[0]));
+     }
+     break;
+   case 0:
+     int n = G__getaryconstruct();
+     if (n) {
+       if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+         p = new basic_istringstream<char,char_traits<char>,allocator<char> >[n];
+       } else {
+         p = new((void*) gvp) basic_istringstream<char,char_traits<char>,allocator<char> >[n];
+       }
+     } else {
+       if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+         p = new basic_istringstream<char,char_traits<char>,allocator<char> >;
+       } else {
+         p = new((void*) gvp) basic_istringstream<char,char_traits<char>,allocator<char> >;
+       }
+     }
+     break;
+   }
+   result7->obj.i = (long) p;
+   result7->ref = (long) p;
+   G__set_tagnum(result7,G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_25_0_2(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   basic_istringstream<char,char_traits<char>,allocator<char> >* p = NULL;
+   char* gvp = (char*) G__getgvp();
+   switch (libp->paran) {
+   case 2:
+     //m: 2
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_istringstream<char,char_traits<char>,allocator<char> >(*(basic_istringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref, (ios_base::openmode) G__int(libp->para[1]));
+     } else {
+       p = new((void*) gvp) basic_istringstream<char,char_traits<char>,allocator<char> >(*(basic_istringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref, (ios_base::openmode) G__int(libp->para[1]));
+     }
+     break;
+   case 1:
+     //m: 1
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_istringstream<char,char_traits<char>,allocator<char> >(*(basic_istringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref);
+     } else {
+       p = new((void*) gvp) basic_istringstream<char,char_traits<char>,allocator<char> >(*(basic_istringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref);
+     }
+     break;
+   }
+   result7->obj.i = (long) p;
+   result7->ref = (long) p;
+   G__set_tagnum(result7,G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_25_0_3(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   basic_istringstream<char,char_traits<char>,allocator<char> >* p = NULL;
+   char* gvp = (char*) G__getgvp();
+   switch (libp->paran) {
+   case 2:
+     //m: 2
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_istringstream<char,char_traits<char>,allocator<char> >((const char*) G__int(libp->para[0]), (ios_base::openmode) G__int(libp->para[1]));
+     } else {
+       p = new((void*) gvp) basic_istringstream<char,char_traits<char>,allocator<char> >((const char*) G__int(libp->para[0]), (ios_base::openmode) G__int(libp->para[1]));
+     }
+     break;
+   case 1:
+     //m: 1
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_istringstream<char,char_traits<char>,allocator<char> >((const char*) G__int(libp->para[0]));
+     } else {
+       p = new((void*) gvp) basic_istringstream<char,char_traits<char>,allocator<char> >((const char*) G__int(libp->para[0]));
+     }
+     break;
+   }
+   result7->obj.i = (long) p;
+   result7->ref = (long) p;
+   G__set_tagnum(result7,G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_25_0_4(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+      G__letint(result7, 85, (long) ((const basic_istringstream<char,char_traits<char>,allocator<char> >*) G__getstructoffset())->rdbuf());
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_25_0_5(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+      {
+         const basic_istringstream<char,char_traits<char>,allocator<char> >::_Mystr* pobj;
+         const basic_istringstream<char,char_traits<char>,allocator<char> >::_Mystr xobj = ((const basic_istringstream<char,char_traits<char>,allocator<char> >*) G__getstructoffset())->str();
+         pobj = new basic_istringstream<char,char_traits<char>,allocator<char> >::_Mystr(xobj);
+         result7->obj.i = (long) ((void*) pobj);
+         result7->ref = result7->obj.i;
+         G__store_tempobject(*result7);
+      }
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_25_0_6(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+      ((basic_istringstream<char,char_traits<char>,allocator<char> >*) G__getstructoffset())->str(*(basic_istringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref);
+      G__setnull(result7);
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+// automatic destructor
+typedef basic_istringstream<char,char_traits<char>,allocator<char> > G__Tbasic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR;
+static int G__G__stream_25_0_7(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   char* gvp = (char*) G__getgvp();
+   long soff = G__getstructoffset();
+   int n = G__getaryconstruct();
+   //
+   //has_a_delete: 0
+   //has_own_delete1arg: 0
+   //has_own_delete2arg: 0
+   //
+   if (!soff) {
+     return(1);
+   }
+   if (n) {
+     if (gvp == (char*)G__PVOID) {
+       delete[] (basic_istringstream<char,char_traits<char>,allocator<char> >*) soff;
+     } else {
+       G__setgvp((long) G__PVOID);
+       for (int i = n - 1; i >= 0; --i) {
+         ((basic_istringstream<char,char_traits<char>,allocator<char> >*) (soff+(sizeof(basic_istringstream<char,char_traits<char>,allocator<char> >)*i)))->~G__Tbasic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR();
+       }
+       G__setgvp((long)gvp);
+     }
+   } else {
+     if (gvp == (char*)G__PVOID) {
+       delete (basic_istringstream<char,char_traits<char>,allocator<char> >*) soff;
+     } else {
+       G__setgvp((long) G__PVOID);
+       ((basic_istringstream<char,char_traits<char>,allocator<char> >*) (soff))->~G__Tbasic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR();
+       G__setgvp((long)gvp);
+     }
+   }
+   G__setnull(result7);
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+
+/* basic_ostringstream<char,char_traits<char>,allocator<char> > */
+static int G__G__stream_26_0_1(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   basic_ostringstream<char,char_traits<char>,allocator<char> >* p = NULL;
+   char* gvp = (char*) G__getgvp();
+   switch (libp->paran) {
+   case 1:
+     //m: 1
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_ostringstream<char,char_traits<char>,allocator<char> >((ios_base::openmode) G__int(libp->para[0]));
+     } else {
+       p = new((void*) gvp) basic_ostringstream<char,char_traits<char>,allocator<char> >((ios_base::openmode) G__int(libp->para[0]));
+     }
+     break;
+   case 0:
+     int n = G__getaryconstruct();
+     if (n) {
+       if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+         p = new basic_ostringstream<char,char_traits<char>,allocator<char> >[n];
+       } else {
+         p = new((void*) gvp) basic_ostringstream<char,char_traits<char>,allocator<char> >[n];
+       }
+     } else {
+       if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+         p = new basic_ostringstream<char,char_traits<char>,allocator<char> >;
+       } else {
+         p = new((void*) gvp) basic_ostringstream<char,char_traits<char>,allocator<char> >;
+       }
+     }
+     break;
+   }
+   result7->obj.i = (long) p;
+   result7->ref = (long) p;
+   G__set_tagnum(result7,G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_26_0_2(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   basic_ostringstream<char,char_traits<char>,allocator<char> >* p = NULL;
+   char* gvp = (char*) G__getgvp();
+   switch (libp->paran) {
+   case 2:
+     //m: 2
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_ostringstream<char,char_traits<char>,allocator<char> >(*(basic_ostringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref, (ios_base::openmode) G__int(libp->para[1]));
+     } else {
+       p = new((void*) gvp) basic_ostringstream<char,char_traits<char>,allocator<char> >(*(basic_ostringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref, (ios_base::openmode) G__int(libp->para[1]));
+     }
+     break;
+   case 1:
+     //m: 1
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_ostringstream<char,char_traits<char>,allocator<char> >(*(basic_ostringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref);
+     } else {
+       p = new((void*) gvp) basic_ostringstream<char,char_traits<char>,allocator<char> >(*(basic_ostringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref);
+     }
+     break;
+   }
+   result7->obj.i = (long) p;
+   result7->ref = (long) p;
+   G__set_tagnum(result7,G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_26_0_3(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+      G__letint(result7, 85, (long) ((const basic_ostringstream<char,char_traits<char>,allocator<char> >*) G__getstructoffset())->rdbuf());
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_26_0_4(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+      {
+         const basic_ostringstream<char,char_traits<char>,allocator<char> >::_Mystr* pobj;
+         const basic_ostringstream<char,char_traits<char>,allocator<char> >::_Mystr xobj = ((const basic_ostringstream<char,char_traits<char>,allocator<char> >*) G__getstructoffset())->str();
+         pobj = new basic_ostringstream<char,char_traits<char>,allocator<char> >::_Mystr(xobj);
+         result7->obj.i = (long) ((void*) pobj);
+         result7->ref = result7->obj.i;
+         G__store_tempobject(*result7);
+      }
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_26_0_5(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+      ((basic_ostringstream<char,char_traits<char>,allocator<char> >*) G__getstructoffset())->str(*(basic_ostringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref);
+      G__setnull(result7);
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+// automatic destructor
+typedef basic_ostringstream<char,char_traits<char>,allocator<char> > G__Tbasic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR;
+static int G__G__stream_26_0_6(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   char* gvp = (char*) G__getgvp();
+   long soff = G__getstructoffset();
+   int n = G__getaryconstruct();
+   //
+   //has_a_delete: 0
+   //has_own_delete1arg: 0
+   //has_own_delete2arg: 0
+   //
+   if (!soff) {
+     return(1);
+   }
+   if (n) {
+     if (gvp == (char*)G__PVOID) {
+       delete[] (basic_ostringstream<char,char_traits<char>,allocator<char> >*) soff;
+     } else {
+       G__setgvp((long) G__PVOID);
+       for (int i = n - 1; i >= 0; --i) {
+         ((basic_ostringstream<char,char_traits<char>,allocator<char> >*) (soff+(sizeof(basic_ostringstream<char,char_traits<char>,allocator<char> >)*i)))->~G__Tbasic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR();
+       }
+       G__setgvp((long)gvp);
+     }
+   } else {
+     if (gvp == (char*)G__PVOID) {
+       delete (basic_ostringstream<char,char_traits<char>,allocator<char> >*) soff;
+     } else {
+       G__setgvp((long) G__PVOID);
+       ((basic_ostringstream<char,char_traits<char>,allocator<char> >*) (soff))->~G__Tbasic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR();
+       G__setgvp((long)gvp);
+     }
+   }
+   G__setnull(result7);
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+
+/* basic_stringstream<char,char_traits<char>,allocator<char> > */
+static int G__G__stream_27_0_1(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   basic_stringstream<char,char_traits<char>,allocator<char> >* p = NULL;
+   char* gvp = (char*) G__getgvp();
+   switch (libp->paran) {
+   case 1:
+     //m: 1
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_stringstream<char,char_traits<char>,allocator<char> >((ios_base::openmode) G__int(libp->para[0]));
+     } else {
+       p = new((void*) gvp) basic_stringstream<char,char_traits<char>,allocator<char> >((ios_base::openmode) G__int(libp->para[0]));
+     }
+     break;
+   case 0:
+     int n = G__getaryconstruct();
+     if (n) {
+       if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+         p = new basic_stringstream<char,char_traits<char>,allocator<char> >[n];
+       } else {
+         p = new((void*) gvp) basic_stringstream<char,char_traits<char>,allocator<char> >[n];
+       }
+     } else {
+       if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+         p = new basic_stringstream<char,char_traits<char>,allocator<char> >;
+       } else {
+         p = new((void*) gvp) basic_stringstream<char,char_traits<char>,allocator<char> >;
+       }
+     }
+     break;
+   }
+   result7->obj.i = (long) p;
+   result7->ref = (long) p;
+   G__set_tagnum(result7,G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_27_0_2(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   basic_stringstream<char,char_traits<char>,allocator<char> >* p = NULL;
+   char* gvp = (char*) G__getgvp();
+   switch (libp->paran) {
+   case 2:
+     //m: 2
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_stringstream<char,char_traits<char>,allocator<char> >(*(basic_stringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref, (ios_base::openmode) G__int(libp->para[1]));
+     } else {
+       p = new((void*) gvp) basic_stringstream<char,char_traits<char>,allocator<char> >(*(basic_stringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref, (ios_base::openmode) G__int(libp->para[1]));
+     }
+     break;
+   case 1:
+     //m: 1
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_stringstream<char,char_traits<char>,allocator<char> >(*(basic_stringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref);
+     } else {
+       p = new((void*) gvp) basic_stringstream<char,char_traits<char>,allocator<char> >(*(basic_stringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref);
+     }
+     break;
+   }
+   result7->obj.i = (long) p;
+   result7->ref = (long) p;
+   G__set_tagnum(result7,G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_27_0_3(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+      G__letint(result7, 85, (long) ((const basic_stringstream<char,char_traits<char>,allocator<char> >*) G__getstructoffset())->rdbuf());
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_27_0_4(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+      {
+         const basic_stringstream<char,char_traits<char>,allocator<char> >::_Mystr* pobj;
+         const basic_stringstream<char,char_traits<char>,allocator<char> >::_Mystr xobj = ((const basic_stringstream<char,char_traits<char>,allocator<char> >*) G__getstructoffset())->str();
+         pobj = new basic_stringstream<char,char_traits<char>,allocator<char> >::_Mystr(xobj);
+         result7->obj.i = (long) ((void*) pobj);
+         result7->ref = result7->obj.i;
+         G__store_tempobject(*result7);
+      }
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+static int G__G__stream_27_0_5(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+      ((basic_stringstream<char,char_traits<char>,allocator<char> >*) G__getstructoffset())->str(*(basic_stringstream<char,char_traits<char>,allocator<char> >::_Mystr*) libp->para[0].ref);
+      G__setnull(result7);
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+// automatic destructor
+typedef basic_stringstream<char,char_traits<char>,allocator<char> > G__Tbasic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR;
+static int G__G__stream_27_0_6(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   char* gvp = (char*) G__getgvp();
+   long soff = G__getstructoffset();
+   int n = G__getaryconstruct();
+   //
+   //has_a_delete: 0
+   //has_own_delete1arg: 0
+   //has_own_delete2arg: 0
+   //
+   if (!soff) {
+     return(1);
+   }
+   if (n) {
+     if (gvp == (char*)G__PVOID) {
+       delete[] (basic_stringstream<char,char_traits<char>,allocator<char> >*) soff;
+     } else {
+       G__setgvp((long) G__PVOID);
+       for (int i = n - 1; i >= 0; --i) {
+         ((basic_stringstream<char,char_traits<char>,allocator<char> >*) (soff+(sizeof(basic_stringstream<char,char_traits<char>,allocator<char> >)*i)))->~G__Tbasic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR();
+       }
+       G__setgvp((long)gvp);
+     }
+   } else {
+     if (gvp == (char*)G__PVOID) {
+       delete (basic_stringstream<char,char_traits<char>,allocator<char> >*) soff;
+     } else {
+       G__setgvp((long) G__PVOID);
+       ((basic_stringstream<char,char_traits<char>,allocator<char> >*) (soff))->~G__Tbasic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR();
+       G__setgvp((long)gvp);
+     }
+   }
+   G__setnull(result7);
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+
 /* Setting up global function */
 static int G__G__stream__0_0(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
 {
@@ -2148,6 +2691,14 @@ static int G__G__stream__0_49(G__value* result7, G__CONST char* funcname, struct
 
 /* basic_iostream<char,char_traits<char> > */
 
+/* basic_stringbuf<char,char_traits<char>,allocator<char> > */
+
+/* basic_istringstream<char,char_traits<char>,allocator<char> > */
+
+/* basic_ostringstream<char,char_traits<char>,allocator<char> > */
+
+/* basic_stringstream<char,char_traits<char>,allocator<char> > */
+
 /*********************************************************
 * Global function Stub
 *********************************************************/
@@ -2272,6 +2823,54 @@ static long G__2vbo_basic_iostreamlEcharcOchar_traitslEchargRsPgR_ios_base_5(lon
   return((long)G__Lbase-(long)G__Lderived);
 }
 
+static long G__2vbo_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_basic_ioslEcharcOchar_traitslEchargRsPgR_1(long pobject) {
+  basic_istringstream<char,char_traits<char>,allocator<char> > *G__Lderived=(basic_istringstream<char,char_traits<char>,allocator<char> >*)pobject;
+  basic_ios<char,char_traits<char> > *G__Lbase=G__Lderived;
+  return((long)G__Lbase-(long)G__Lderived);
+}
+
+static long G__2vbo_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_ios_base_2(long pobject) {
+  basic_istringstream<char,char_traits<char>,allocator<char> > *G__Lderived=(basic_istringstream<char,char_traits<char>,allocator<char> >*)pobject;
+  ios_base *G__Lbase=G__Lderived;
+  return((long)G__Lbase-(long)G__Lderived);
+}
+
+static long G__2vbo_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_basic_ioslEcharcOchar_traitslEchargRsPgR_1(long pobject) {
+  basic_ostringstream<char,char_traits<char>,allocator<char> > *G__Lderived=(basic_ostringstream<char,char_traits<char>,allocator<char> >*)pobject;
+  basic_ios<char,char_traits<char> > *G__Lbase=G__Lderived;
+  return((long)G__Lbase-(long)G__Lderived);
+}
+
+static long G__2vbo_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_ios_base_2(long pobject) {
+  basic_ostringstream<char,char_traits<char>,allocator<char> > *G__Lderived=(basic_ostringstream<char,char_traits<char>,allocator<char> >*)pobject;
+  ios_base *G__Lbase=G__Lderived;
+  return((long)G__Lbase-(long)G__Lderived);
+}
+
+static long G__2vbo_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_basic_ioslEcharcOchar_traitslEchargRsPgR_2(long pobject) {
+  basic_stringstream<char,char_traits<char>,allocator<char> > *G__Lderived=(basic_stringstream<char,char_traits<char>,allocator<char> >*)pobject;
+  basic_ios<char,char_traits<char> > *G__Lbase=G__Lderived;
+  return((long)G__Lbase-(long)G__Lderived);
+}
+
+static long G__2vbo_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_ios_base_3(long pobject) {
+  basic_stringstream<char,char_traits<char>,allocator<char> > *G__Lderived=(basic_stringstream<char,char_traits<char>,allocator<char> >*)pobject;
+  ios_base *G__Lbase=G__Lderived;
+  return((long)G__Lbase-(long)G__Lderived);
+}
+
+static long G__2vbo_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_basic_ioslEcharcOchar_traitslEchargRsPgR_5(long pobject) {
+  basic_stringstream<char,char_traits<char>,allocator<char> > *G__Lderived=(basic_stringstream<char,char_traits<char>,allocator<char> >*)pobject;
+  basic_ios<char,char_traits<char> > *G__Lbase=G__Lderived;
+  return((long)G__Lbase-(long)G__Lderived);
+}
+
+static long G__2vbo_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_ios_base_6(long pobject) {
+  basic_stringstream<char,char_traits<char>,allocator<char> > *G__Lderived=(basic_stringstream<char,char_traits<char>,allocator<char> >*)pobject;
+  ios_base *G__Lbase=G__Lderived;
+  return((long)G__Lbase-(long)G__Lderived);
+}
+
 
 /*********************************************************
 * Inheritance information setup/
@@ -2391,6 +2990,70 @@ extern "C" void G__cpp_setup_inheritanceG__stream() {
        G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_iostreamlEcharcOchar_traitslEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_ios_base),(long)G__2vbo_basic_iostreamlEcharcOchar_traitslEchargRsPgR_ios_base_5,1,6);
      }
    }
+   if(0==G__getnumbaseclass(G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR))) {
+     basic_stringbuf<char,char_traits<char>,allocator<char> > *G__Lderived;
+     G__Lderived=(basic_stringbuf<char,char_traits<char>,allocator<char> >*)0x1000;
+     {
+       basic_streambuf<char,char_traits<char> > *G__Lpbase=(basic_streambuf<char,char_traits<char> >*)G__Lderived;
+       G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_basic_streambuflEcharcOchar_traitslEchargRsPgR),(long)G__Lpbase-(long)G__Lderived,1,1);
+     }
+   }
+   if(0==G__getnumbaseclass(G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR))) {
+     basic_istringstream<char,char_traits<char>,allocator<char> > *G__Lderived;
+     G__Lderived=(basic_istringstream<char,char_traits<char>,allocator<char> >*)0x1000;
+     {
+       basic_istream<char,char_traits<char> > *G__Lpbase=(basic_istream<char,char_traits<char> >*)G__Lderived;
+       G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgR),(long)G__Lpbase-(long)G__Lderived,1,1);
+     }
+     {
+       G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR),(long)G__2vbo_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_basic_ioslEcharcOchar_traitslEchargRsPgR_1,1,2);
+     }
+     {
+       G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_ios_base),(long)G__2vbo_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_ios_base_2,1,6);
+     }
+   }
+   if(0==G__getnumbaseclass(G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR))) {
+     basic_ostringstream<char,char_traits<char>,allocator<char> > *G__Lderived;
+     G__Lderived=(basic_ostringstream<char,char_traits<char>,allocator<char> >*)0x1000;
+     {
+       basic_ostream<char,char_traits<char> > *G__Lpbase=(basic_ostream<char,char_traits<char> >*)G__Lderived;
+       G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR),(long)G__Lpbase-(long)G__Lderived,1,1);
+     }
+     {
+       G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR),(long)G__2vbo_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_basic_ioslEcharcOchar_traitslEchargRsPgR_1,1,2);
+     }
+     {
+       G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_ios_base),(long)G__2vbo_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_ios_base_2,1,6);
+     }
+   }
+   if(0==G__getnumbaseclass(G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR))) {
+     basic_stringstream<char,char_traits<char>,allocator<char> > *G__Lderived;
+     G__Lderived=(basic_stringstream<char,char_traits<char>,allocator<char> >*)0x1000;
+     {
+       basic_iostream<char,char_traits<char> > *G__Lpbase=(basic_iostream<char,char_traits<char> >*)G__Lderived;
+       G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_basic_iostreamlEcharcOchar_traitslEchargRsPgR),(long)G__Lpbase-(long)G__Lderived,1,1);
+     }
+     {
+       basic_istream<char,char_traits<char> > *G__Lpbase=(basic_istream<char,char_traits<char> >*)G__Lderived;
+       G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgR),(long)G__Lpbase-(long)G__Lderived,1,0);
+     }
+     {
+       G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR),(long)G__2vbo_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_basic_ioslEcharcOchar_traitslEchargRsPgR_2,1,2);
+     }
+     {
+       G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_ios_base),(long)G__2vbo_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_ios_base_3,1,6);
+     }
+     {
+       basic_ostream<char,char_traits<char> > *G__Lpbase=(basic_ostream<char,char_traits<char> >*)G__Lderived;
+       G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR),(long)G__Lpbase-(long)G__Lderived,1,0);
+     }
+     {
+       G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR),(long)G__2vbo_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_basic_ioslEcharcOchar_traitslEchargRsPgR_5,1,2);
+     }
+     {
+       G__inheritance_setup(G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),G__get_linked_tagnum(&G__G__streamLN_ios_base),(long)G__2vbo_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR_ios_base_6,1,6);
+     }
+   }
 }
 
 /*********************************************************
@@ -2424,6 +3087,14 @@ extern "C" void G__cpp_setup_typetableG__stream() {
    G__search_typename2("ofstream",117,G__get_linked_tagnum(&G__G__streamLN_basic_ofstreamlEcharcOchar_traitslEchargRsPgR),0,-1);
    G__setnewtype(-1,NULL,0);
    G__search_typename2("fstream",117,G__get_linked_tagnum(&G__G__streamLN_basic_fstreamlEcharcOchar_traitslEchargRsPgR),0,-1);
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("stringbuf",117,G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,-1);
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("istringstream",117,G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,-1);
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("ostringstream",117,G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,-1);
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("stringstream",117,G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,-1);
    G__setnewtype(-1,NULL,0);
 }
 
@@ -2570,6 +3241,42 @@ static void G__setup_memvarbasic_fstreamlEcharcOchar_traitslEchargRsPgR(void) {
 static void G__setup_memvarbasic_iostreamlEcharcOchar_traitslEchargRsPgR(void) {
    G__tag_memvar_setup(G__get_linked_tagnum(&G__G__streamLN_basic_iostreamlEcharcOchar_traitslEchargRsPgR));
    { basic_iostream<char,char_traits<char> > *p; p=(basic_iostream<char,char_traits<char> >*)0x1000; if (p) { }
+   }
+   G__tag_memvar_reset();
+}
+
+
+   /* basic_stringbuf<char,char_traits<char>,allocator<char> > */
+static void G__setup_memvarbasic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR(void) {
+   G__tag_memvar_setup(G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   { basic_stringbuf<char,char_traits<char>,allocator<char> > *p; p=(basic_stringbuf<char,char_traits<char>,allocator<char> >*)0x1000; if (p) { }
+   }
+   G__tag_memvar_reset();
+}
+
+
+   /* basic_istringstream<char,char_traits<char>,allocator<char> > */
+static void G__setup_memvarbasic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR(void) {
+   G__tag_memvar_setup(G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   { basic_istringstream<char,char_traits<char>,allocator<char> > *p; p=(basic_istringstream<char,char_traits<char>,allocator<char> >*)0x1000; if (p) { }
+   }
+   G__tag_memvar_reset();
+}
+
+
+   /* basic_ostringstream<char,char_traits<char>,allocator<char> > */
+static void G__setup_memvarbasic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR(void) {
+   G__tag_memvar_setup(G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   { basic_ostringstream<char,char_traits<char>,allocator<char> > *p; p=(basic_ostringstream<char,char_traits<char>,allocator<char> >*)0x1000; if (p) { }
+   }
+   G__tag_memvar_reset();
+}
+
+
+   /* basic_stringstream<char,char_traits<char>,allocator<char> > */
+static void G__setup_memvarbasic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR(void) {
+   G__tag_memvar_setup(G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   { basic_stringstream<char,char_traits<char>,allocator<char> > *p; p=(basic_stringstream<char,char_traits<char>,allocator<char> >*)0x1000; if (p) { }
    }
    G__tag_memvar_reset();
 }
@@ -2865,6 +3572,64 @@ static void G__setup_memfuncbasic_iostreamlEcharcOchar_traitslEchargRsPgR(void) 
    G__tag_memfunc_reset();
 }
 
+static void G__setup_memfuncbasic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR(void) {
+   /* basic_stringbuf<char,char_traits<char>,allocator<char> > */
+   G__tag_memfunc_setup(G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__memfunc_setup("basic_stringbuf<char,char_traits<char>,allocator<char> >",5450,G__G__stream_23_0_1, 105, G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), -1, 0, 1, 5, 1, 0, "i - 'ios_base::openmode' 0 'ios_base::in|ios_base::out' which", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("basic_stringbuf<char,char_traits<char>,allocator<char> >",5450,G__G__stream_23_0_2, 105, G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), -1, 0, 2, 5, 1, 0, 
+"u 'basic_string<char,char_traits<char>,allocator<char> >' 'basic_stringbuf<char,char_traits<char>,allocator<char> >::_Mystr' 11 - str i - 'ios_base::openmode' 0 'ios_base::in|ios_base::out' which", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("str",345,G__G__stream_23_0_3, 117, G__get_linked_tagnum(&G__G__streamLN_basic_stringlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), G__defined_typename("basic_stringbuf<char,char_traits<char>,allocator<char> >::_Mystr"), 0, 0, 1, 1, 8, "", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("str",345,G__G__stream_23_0_4, 121, -1, -1, 0, 1, 1, 1, 0, "u 'basic_string<char,char_traits<char>,allocator<char> >' 'basic_stringbuf<char,char_traits<char>,allocator<char> >::_Mystr' 11 - str_arg", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("operator=",937,(G__InterfaceMethod) NULL, 117, G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), -1, 1, 1, 1, 4, 0, "u 'basic_stringbuf<char,char_traits<char>,allocator<char> >' - 11 - x", (char*)NULL, (void*) NULL, 0);
+   // automatic destructor
+   G__memfunc_setup("~basic_stringbuf<char,char_traits<char>,allocator<char> >", 5576, G__G__stream_23_0_13, (int) ('y'), -1, -1, 0, 0, 1, 1, 0, "", (char*) NULL, (void*) NULL, 1);
+   G__tag_memfunc_reset();
+}
+
+static void G__setup_memfuncbasic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR(void) {
+   /* basic_istringstream<char,char_traits<char>,allocator<char> > */
+   G__tag_memfunc_setup(G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__memfunc_setup("basic_istringstream<char,char_traits<char>,allocator<char> >",5890,G__G__stream_25_0_1, 105, G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), -1, 0, 1, 5, 1, 0, "i - 'ios_base::openmode' 0 'ios_base::in' which", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("basic_istringstream<char,char_traits<char>,allocator<char> >",5890,G__G__stream_25_0_2, 105, G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), -1, 0, 2, 5, 1, 0, 
+"u 'basic_string<char,char_traits<char>,allocator<char> >' 'basic_istringstream<char,char_traits<char>,allocator<char> >::_Mystr' 11 - str i - 'ios_base::openmode' 0 'ios_base::in' which", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("basic_istringstream<char,char_traits<char>,allocator<char> >",5890,G__G__stream_25_0_3, 105, G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), -1, 0, 2, 5, 1, 0, 
+"C - - 10 - str i - 'ios_base::openmode' 0 'ios_base::in' which", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("rdbuf",531,G__G__stream_25_0_4, 85, G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), -1, 0, 0, 1, 1, 8, "", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("str",345,G__G__stream_25_0_5, 117, G__get_linked_tagnum(&G__G__streamLN_basic_stringlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), G__defined_typename("basic_istringstream<char,char_traits<char>,allocator<char> >::_Mystr"), 0, 0, 1, 1, 8, "", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("str",345,G__G__stream_25_0_6, 121, -1, -1, 0, 1, 1, 1, 0, "u 'basic_string<char,char_traits<char>,allocator<char> >' 'basic_istringstream<char,char_traits<char>,allocator<char> >::_Mystr' 11 - str", (char*)NULL, (void*) NULL, 0);
+   // automatic destructor
+   G__memfunc_setup("~basic_istringstream<char,char_traits<char>,allocator<char> >", 6016, G__G__stream_25_0_7, (int) ('y'), -1, -1, 0, 0, 1, 1, 0, "", (char*) NULL, (void*) NULL, 1);
+   G__tag_memfunc_reset();
+}
+
+static void G__setup_memfuncbasic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR(void) {
+   /* basic_ostringstream<char,char_traits<char>,allocator<char> > */
+   G__tag_memfunc_setup(G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__memfunc_setup("basic_ostringstream<char,char_traits<char>,allocator<char> >",5896,G__G__stream_26_0_1, 105, G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), -1, 0, 1, 5, 1, 0, "i - 'ios_base::openmode' 0 'ios_base::out' which", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("basic_ostringstream<char,char_traits<char>,allocator<char> >",5896,G__G__stream_26_0_2, 105, G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), -1, 0, 2, 5, 1, 0, 
+"u 'basic_string<char,char_traits<char>,allocator<char> >' 'basic_ostringstream<char,char_traits<char>,allocator<char> >::_Mystr' 11 - str i - 'ios_base::openmode' 0 'ios_base::out' which", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("rdbuf",531,G__G__stream_26_0_3, 85, G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), -1, 0, 0, 1, 1, 8, "", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("str",345,G__G__stream_26_0_4, 117, G__get_linked_tagnum(&G__G__streamLN_basic_stringlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), G__defined_typename("basic_ostringstream<char,char_traits<char>,allocator<char> >::_Mystr"), 0, 0, 1, 1, 8, "", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("str",345,G__G__stream_26_0_5, 121, -1, -1, 0, 1, 1, 1, 0, "u 'basic_string<char,char_traits<char>,allocator<char> >' 'basic_ostringstream<char,char_traits<char>,allocator<char> >::_Mystr' 11 - str", (char*)NULL, (void*) NULL, 0);
+   // automatic destructor
+   G__memfunc_setup("~basic_ostringstream<char,char_traits<char>,allocator<char> >", 6022, G__G__stream_26_0_6, (int) ('y'), -1, -1, 0, 0, 1, 1, 0, "", (char*) NULL, (void*) NULL, 1);
+   G__tag_memfunc_reset();
+}
+
+static void G__setup_memfuncbasic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR(void) {
+   /* basic_stringstream<char,char_traits<char>,allocator<char> > */
+   G__tag_memfunc_setup(G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__memfunc_setup("basic_stringstream<char,char_traits<char>,allocator<char> >",5785,G__G__stream_27_0_1, 105, G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), -1, 0, 1, 5, 1, 0, "i - 'ios_base::openmode' 0 'ios_base::out|ios_base::in' which", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("basic_stringstream<char,char_traits<char>,allocator<char> >",5785,G__G__stream_27_0_2, 105, G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), -1, 0, 2, 5, 1, 0, 
+"u 'basic_string<char,char_traits<char>,allocator<char> >' 'basic_stringstream<char,char_traits<char>,allocator<char> >::_Mystr' 11 - str i - 'ios_base::openmode' 0 'ios_base::out|ios_base::in' which", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("rdbuf",531,G__G__stream_27_0_3, 85, G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), -1, 0, 0, 1, 1, 8, "", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("str",345,G__G__stream_27_0_4, 117, G__get_linked_tagnum(&G__G__streamLN_basic_stringlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR), G__defined_typename("basic_stringstream<char,char_traits<char>,allocator<char> >::_Mystr"), 0, 0, 1, 1, 8, "", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("str",345,G__G__stream_27_0_5, 121, -1, -1, 0, 1, 1, 1, 0, "u 'basic_string<char,char_traits<char>,allocator<char> >' 'basic_stringstream<char,char_traits<char>,allocator<char> >::_Mystr' 11 - str", (char*)NULL, (void*) NULL, 0);
+   // automatic destructor
+   G__memfunc_setup("~basic_stringstream<char,char_traits<char>,allocator<char> >", 5911, G__G__stream_27_0_6, (int) ('y'), -1, -1, 0, 0, 1, 1, 0, "", (char*) NULL, (void*) NULL, 1);
+   G__tag_memfunc_reset();
+}
+
 
 /*********************************************************
 * Member function information setup
@@ -2902,6 +3667,8 @@ static void G__cpp_setup_global0() {
    G__memvar_setup((void*)(&cerr),117,0,0,G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR),G__defined_typename("ostream"),-1,1,"cerr=",0,(char*)NULL);
    G__memvar_setup((void*)(&clog),117,0,0,G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR),G__defined_typename("ostream"),-1,1,"clog=",0,(char*)NULL);
    G__memvar_setup((void*)G__PVOID,112,0,0,-1,-1,-1,1,"G__FSTREAM_H=0",1,(char*)NULL);
+   G__memvar_setup((void*)G__PVOID,112,0,0,-1,-1,-1,1,"G__SSTREAM_H=0",1,(char*)NULL);
+   G__memvar_setup((void*)G__PVOID,112,0,0,-1,-1,-1,1,"G__STRING_H=0",1,(char*)NULL);
 
    G__resetglobalenv();
 }
@@ -3073,6 +3840,11 @@ G__linked_taginfo G__G__streamLN_basic_ifstreamlEcharcOchar_traitslEchargRsPgR =
 G__linked_taginfo G__G__streamLN_basic_ofstreamlEcharcOchar_traitslEchargRsPgR = { "basic_ofstream<char,char_traits<char> >" , 99 , -1 };
 G__linked_taginfo G__G__streamLN_basic_fstreamlEcharcOchar_traitslEchargRsPgR = { "basic_fstream<char,char_traits<char> >" , 99 , -1 };
 G__linked_taginfo G__G__streamLN_basic_iostreamlEcharcOchar_traitslEchargRsPgR = { "basic_iostream<char,char_traits<char> >" , 99 , -1 };
+G__linked_taginfo G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR = { "basic_stringbuf<char,char_traits<char>,allocator<char> >" , 99 , -1 };
+G__linked_taginfo G__G__streamLN_basic_stringlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR = { "basic_string<char,char_traits<char>,allocator<char> >" , 99 , -1 };
+G__linked_taginfo G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR = { "basic_istringstream<char,char_traits<char>,allocator<char> >" , 99 , -1 };
+G__linked_taginfo G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR = { "basic_ostringstream<char,char_traits<char>,allocator<char> >" , 99 , -1 };
+G__linked_taginfo G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR = { "basic_stringstream<char,char_traits<char>,allocator<char> >" , 99 , -1 };
 
 /* Reset class/struct taginfo */
 extern "C" void G__cpp_reset_tagtableG__stream() {
@@ -3096,6 +3868,11 @@ extern "C" void G__cpp_reset_tagtableG__stream() {
   G__G__streamLN_basic_ofstreamlEcharcOchar_traitslEchargRsPgR.tagnum = -1 ;
   G__G__streamLN_basic_fstreamlEcharcOchar_traitslEchargRsPgR.tagnum = -1 ;
   G__G__streamLN_basic_iostreamlEcharcOchar_traitslEchargRsPgR.tagnum = -1 ;
+  G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR.tagnum = -1 ;
+  G__G__streamLN_basic_stringlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR.tagnum = -1 ;
+  G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR.tagnum = -1 ;
+  G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR.tagnum = -1 ;
+  G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR.tagnum = -1 ;
 }
 
 
@@ -3122,6 +3899,11 @@ extern "C" void G__cpp_setup_tagtableG__stream() {
    G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_ofstreamlEcharcOchar_traitslEchargRsPgR),sizeof(basic_ofstream<char,char_traits<char> >),-1,34048,(char*)NULL,G__setup_memvarbasic_ofstreamlEcharcOchar_traitslEchargRsPgR,G__setup_memfuncbasic_ofstreamlEcharcOchar_traitslEchargRsPgR);
    G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_fstreamlEcharcOchar_traitslEchargRsPgR),sizeof(basic_fstream<char,char_traits<char> >),-1,33024,(char*)NULL,G__setup_memvarbasic_fstreamlEcharcOchar_traitslEchargRsPgR,G__setup_memfuncbasic_fstreamlEcharcOchar_traitslEchargRsPgR);
    G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_iostreamlEcharcOchar_traitslEchargRsPgR),sizeof(basic_iostream<char,char_traits<char> >),-1,34048,(char*)NULL,G__setup_memvarbasic_iostreamlEcharcOchar_traitslEchargRsPgR,G__setup_memfuncbasic_iostreamlEcharcOchar_traitslEchargRsPgR);
+   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),sizeof(basic_stringbuf<char,char_traits<char>,allocator<char> >),-1,36096,(char*)NULL,G__setup_memvarbasic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR,G__setup_memfuncbasic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR);
+   G__get_linked_tagnum_fwd(&G__G__streamLN_basic_stringlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR);
+   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),sizeof(basic_istringstream<char,char_traits<char>,allocator<char> >),-1,34048,(char*)NULL,G__setup_memvarbasic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR,G__setup_memfuncbasic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR);
+   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),sizeof(basic_ostringstream<char,char_traits<char>,allocator<char> >),-1,34048,(char*)NULL,G__setup_memvarbasic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR,G__setup_memfuncbasic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR);
+   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),sizeof(basic_stringstream<char,char_traits<char>,allocator<char> >),-1,34048,(char*)NULL,G__setup_memvarbasic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR,G__setup_memfuncbasic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR);
 }
 extern "C" void G__cpp_setupG__stream(void) {
   G__check_setup_version(30051515,"G__cpp_setupG__stream()");
@@ -3141,13 +3923,10 @@ extern "C" void G__cpp_setupG__stream(void) {
    if(0==G__getsizep2memfunc()) G__get_sizep2memfuncG__stream();
   return;
 }
-
-#if 0
 class G__cpp_setup_initG__stream {
   public:
     G__cpp_setup_initG__stream() { G__add_setup_func("G__stream",(G__incsetup)(&G__cpp_setupG__stream)); G__call_setup_funcs(); }
    ~G__cpp_setup_initG__stream() { G__remove_setup_func("G__stream"); }
 };
 G__cpp_setup_initG__stream G__cpp_setup_initializerG__stream;
-#endif
 

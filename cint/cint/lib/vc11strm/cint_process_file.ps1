@@ -32,8 +32,6 @@ if (test-path $logfile) {
 }
 
 $includes = "iostrm.h", "fstrm.h", "sstrm.h", "linkdef.h"
-# Drop the string io stuff b.c. std::string is not defined in CINT's string header.
-$includes = "iostrm.h", "fstrm.h", "linkdef.h"
 
 #& "$($cintbin)\cint.exe" -?
 & "$($cintbin)\cint.exe" -Z0 -n vc11strm.cxx -NG__stream -D__MAKECINT__ -D_WIN32 -c-1 -I . -I ..\..\include $includes 2>&1 | add-content -path $logfile
