@@ -33,7 +33,6 @@ extern G__DLLEXPORT void G__cpp_setupG__stream();
 
 #include "iostrm.h"
 #include "fstrm.h"
-#include "sstrm.h"
 
 #ifndef G__MEMFUNCBODY
 #endif
@@ -58,11 +57,6 @@ extern G__linked_taginfo G__G__streamLN_basic_ifstreamlEcharcOchar_traitslEcharg
 extern G__linked_taginfo G__G__streamLN_basic_ofstreamlEcharcOchar_traitslEchargRsPgR;
 extern G__linked_taginfo G__G__streamLN_basic_fstreamlEcharcOchar_traitslEchargRsPgR;
 extern G__linked_taginfo G__G__streamLN_basic_iostreamlEcharcOchar_traitslEchargRsPgR;
-extern G__linked_taginfo G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR;
-extern G__linked_taginfo G__G__streamLN_basic_stringlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR;
-extern G__linked_taginfo G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR;
-extern G__linked_taginfo G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR;
-extern G__linked_taginfo G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR;
 
 /* STUB derived class for protected member access */
 typedef char_traits<char> G__char_traitslEchargR;
@@ -77,7 +71,3 @@ typedef basic_ifstream<char,char_traits<char> > G__basic_ifstreamlEcharcOchar_tr
 typedef basic_ofstream<char,char_traits<char> > G__basic_ofstreamlEcharcOchar_traitslEchargRsPgR;
 typedef basic_fstream<char,char_traits<char> > G__basic_fstreamlEcharcOchar_traitslEchargRsPgR;
 typedef basic_iostream<char,char_traits<char> > G__basic_iostreamlEcharcOchar_traitslEchargRsPgR;
-typedef basic_stringbuf<char,char_traits<char>,allocator<char> > G__basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR;
-typedef basic_istringstream<char,char_traits<char>,allocator<char> > G__basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR;
-typedef basic_ostringstream<char,char_traits<char>,allocator<char> > G__basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR;
-typedef basic_stringstream<char,char_traits<char>,allocator<char> > G__basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR;
