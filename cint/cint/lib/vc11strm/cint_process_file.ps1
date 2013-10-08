@@ -7,9 +7,9 @@
 #       http://root.cern.ch/gitweb?p=root.git;a=blob;f=cint/cint/lib/stream/README;h=d4be99ae32ff4d9e7859470a0f6a837549743590;hb=292cc26d3ef32452f60e3db36a7860ba6b64632c
 #
 
-# Where CINT was built with fakestrm
+# Where CINT was built with fakestrm - note this in DebugFake!! So make sure to make a copy.
 
-$cintbin = "C:\Users\Gordon\Documents\Code\root\vc11\bin\Debug"
+$cintbin = "C:\Users\Gordon\Documents\Code\root\vc11\bin\DebugFake"
 
 #
 # We want includes and other things to come from the same directory as where we are sitting. So figure out
@@ -33,7 +33,7 @@ if (test-path $logfile) {
 
 $includes = "iostrm.h", "fstrm.h", "sstrm.h", "linkdef.h"
 # Drop the string io stuff b.c. std::string is not defined in CINT's string header.
-#$includes = "iostrm.h", "fstrm.h", "linkdef.h"
+$includes = "iostrm.h", "fstrm.h", "linkdef.h"
 
 #& "$($cintbin)\cint.exe" -?
 & "$($cintbin)\cint.exe" -Z0 -n vc11strm.cxx -NG__stream -D__MAKECINT__ -D_WIN32 -c-1 -I . -I ..\..\include $includes 2>&1 | add-content -path $logfile
