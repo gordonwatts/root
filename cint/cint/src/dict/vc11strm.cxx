@@ -258,6 +258,52 @@ static int G__G__stream_2_0_18(G__value* result7, G__CONST char* funcname, struc
 }
 
 
+/* ios_base::Init */
+static int G__G__stream_8_0_1(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   ios_base::Init* p = NULL;
+   char* gvp = (char*) G__getgvp();
+   int n = G__getaryconstruct();
+   if (n) {
+     p = 0;
+     G__genericerror("Error: Array construction with private/protected destructor is illegal");
+   } else {
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new ios_base::Init;
+     } else {
+       p = new((void*) gvp) ios_base::Init;
+     }
+   }
+   result7->obj.i = (long) p;
+   result7->ref = (long) p;
+   G__set_tagnum(result7,G__get_linked_tagnum(&G__G__streamLN_ios_basecLcLInit));
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+// automatic copy constructor
+static int G__G__stream_8_0_2(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+
+{
+   ios_base::Init* p;
+   void* tmp = (void*) G__int(libp->para[0]);
+   p = new ios_base::Init(*(ios_base::Init*) tmp);
+   result7->obj.i = (long) p;
+   result7->ref = (long) p;
+   G__set_tagnum(result7,G__get_linked_tagnum(&G__G__streamLN_ios_basecLcLInit));
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+// automatic assignment operator
+static int G__G__stream_8_0_3(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   ios_base::Init* dest = (ios_base::Init*) G__getstructoffset();
+   const ios_base::Init& obj = *dest;
+   result7->ref = (long) (&obj);
+   result7->obj.i = (long) (&obj);
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+
 /* char_traits<char> */
 static int G__G__stream_9_0_1(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
 {
@@ -1109,6 +1155,92 @@ static int G__G__stream_13_0_9(G__value* result7, G__CONST char* funcname, struc
      } else {
        G__setgvp((long) G__PVOID);
        ((basic_ostream<char,char_traits<char> >*) (soff))->~G__Tbasic_ostreamlEcharcOchar_traitslEchargRsPgR();
+       G__setgvp((long)gvp);
+     }
+   }
+   G__setnull(result7);
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+
+/* basic_ostream<char,char_traits<char> >::sentry */
+static int G__G__stream_14_0_1(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   basic_ostream<char,char_traits<char> >::sentry* p = NULL;
+   char* gvp = (char*) G__getgvp();
+   //m: 1
+   if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+     p = new basic_ostream<char,char_traits<char> >::sentry(*(basic_ostream<char,char_traits<char> >*) libp->para[0].ref);
+   } else {
+     p = new((void*) gvp) basic_ostream<char,char_traits<char> >::sentry(*(basic_ostream<char,char_traits<char> >*) libp->para[0].ref);
+   }
+   result7->obj.i = (long) p;
+   result7->ref = (long) p;
+   G__set_tagnum(result7,G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgRcLcLsentry));
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+
+/* basic_istream<char,char_traits<char> >::sentry */
+static int G__G__stream_15_0_3(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   basic_istream<char,char_traits<char> >::sentry* p = NULL;
+   char* gvp = (char*) G__getgvp();
+   switch (libp->paran) {
+   case 2:
+     //m: 2
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_istream<char,char_traits<char> >::sentry(*(basic_istream<char,char_traits<char> >*) libp->para[0].ref, (bool) G__int(libp->para[1]));
+     } else {
+       p = new((void*) gvp) basic_istream<char,char_traits<char> >::sentry(*(basic_istream<char,char_traits<char> >*) libp->para[0].ref, (bool) G__int(libp->para[1]));
+     }
+     break;
+   case 1:
+     //m: 1
+     if ((gvp == (char*)G__PVOID) || (gvp == 0)) {
+       p = new basic_istream<char,char_traits<char> >::sentry(*(basic_istream<char,char_traits<char> >*) libp->para[0].ref);
+     } else {
+       p = new((void*) gvp) basic_istream<char,char_traits<char> >::sentry(*(basic_istream<char,char_traits<char> >*) libp->para[0].ref);
+     }
+     break;
+   }
+   result7->obj.i = (long) p;
+   result7->ref = (long) p;
+   G__set_tagnum(result7,G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry));
+   return(1 || funcname || hash || result7 || libp) ;
+}
+
+// automatic destructor
+typedef basic_istream<char,char_traits<char> >::sentry G__Tbasic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry;
+static int G__G__stream_15_0_4(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
+{
+   char* gvp = (char*) G__getgvp();
+   long soff = G__getstructoffset();
+   int n = G__getaryconstruct();
+   //
+   //has_a_delete: 0
+   //has_own_delete1arg: 0
+   //has_own_delete2arg: 0
+   //
+   if (!soff) {
+     return(1);
+   }
+   if (n) {
+     if (gvp == (char*)G__PVOID) {
+       delete[] (basic_istream<char,char_traits<char> >::sentry*) soff;
+     } else {
+       G__setgvp((long) G__PVOID);
+       for (int i = n - 1; i >= 0; --i) {
+         ((basic_istream<char,char_traits<char> >::sentry*) (soff+(sizeof(basic_istream<char,char_traits<char> >::sentry)*i)))->~G__Tbasic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry();
+       }
+       G__setgvp((long)gvp);
+     }
+   } else {
+     if (gvp == (char*)G__PVOID) {
+       delete (basic_istream<char,char_traits<char> >::sentry*) soff;
+     } else {
+       G__setgvp((long) G__PVOID);
+       ((basic_istream<char,char_traits<char> >::sentry*) (soff))->~G__Tbasic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry();
        G__setgvp((long)gvp);
      }
    }
@@ -3074,25 +3206,195 @@ extern "C" void G__cpp_setup_typetableG__stream() {
    G__setnewtype(-1,NULL,0);
    G__search_typename2("streamsize",108,-1,0,-1);
    G__setnewtype(-1,NULL,0);
+   G__search_typename2("iostate",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_ios_base));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("openmode",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_ios_base));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("seekdir",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_ios_base));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("fmtflags",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_ios_base));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("event_callback",89,-1,0,G__get_linked_tagnum(&G__G__streamLN_ios_base));
+   G__setnewtype(-1,"void (*event_callback) (event, ios_base&, int index);",0);
    G__search_typename2("INT_T",105,-1,0,-1);
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("char_type",99,-1,0,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("int_type",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("off_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("pos_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("state_type",117,G__get_linked_tagnum(&G__G__streamLN_mbstate_t),0,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("char_type",99,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("traits_type",117,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR),0,G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("int_type",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("off_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("pos_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("char_type",99,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_streambuflEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("traits_type",117,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR),0,G__get_linked_tagnum(&G__G__streamLN_basic_streambuflEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("int_type",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_streambuflEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("pos_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_streambuflEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("off_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_streambuflEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("basic_streambuf<char_type,char_traits<char> >",117,G__get_linked_tagnum(&G__G__streamLN_basic_streambuflEcharcOchar_traitslEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_streambuflEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("_Myt",117,G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("_Myios",117,G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("traits_type",117,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR),0,G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("char_type",99,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("int_type",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("pos_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("off_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("_Myt",117,G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("_Myios",117,G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("_Mysb",117,G__get_linked_tagnum(&G__G__streamLN_basic_streambuflEcharcOchar_traitslEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("traits_type",117,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR),0,G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("char_type",99,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("int_type",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("pos_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("off_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgR));
    G__setnewtype(-1,NULL,0);
    G__search_typename2("istream",117,G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgR),0,-1);
    G__setnewtype(-1,NULL,0);
    G__search_typename2("ostream",117,G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR),0,-1);
    G__setnewtype(-1,NULL,0);
+   G__search_typename2("ios_type",117,G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_filebuflEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("traits_type",117,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR),0,G__get_linked_tagnum(&G__G__streamLN_basic_filebuflEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("char_type",99,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_filebuflEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("int_type",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_filebuflEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("pos_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_filebuflEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("off_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_filebuflEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
    G__search_typename2("filebuf",117,G__get_linked_tagnum(&G__G__streamLN_basic_filebuflEcharcOchar_traitslEchargRsPgR),0,-1);
    G__setnewtype(-1,NULL,0);
+   G__search_typename2("ios_type",117,G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_ifstreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("traits_type",117,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR),0,G__get_linked_tagnum(&G__G__streamLN_basic_ifstreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("char_type",99,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ifstreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("int_type",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ifstreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("pos_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ifstreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("off_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ifstreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
    G__search_typename2("ifstream",117,G__get_linked_tagnum(&G__G__streamLN_basic_ifstreamlEcharcOchar_traitslEchargRsPgR),0,-1);
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("ios_type",117,G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_ofstreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("traits_type",117,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR),0,G__get_linked_tagnum(&G__G__streamLN_basic_ofstreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("char_type",99,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ofstreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("int_type",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ofstreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("pos_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ofstreamlEcharcOchar_traitslEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("off_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ofstreamlEcharcOchar_traitslEchargRsPgR));
    G__setnewtype(-1,NULL,0);
    G__search_typename2("ofstream",117,G__get_linked_tagnum(&G__G__streamLN_basic_ofstreamlEcharcOchar_traitslEchargRsPgR),0,-1);
    G__setnewtype(-1,NULL,0);
    G__search_typename2("fstream",117,G__get_linked_tagnum(&G__G__streamLN_basic_fstreamlEcharcOchar_traitslEchargRsPgR),0,-1);
    G__setnewtype(-1,NULL,0);
+   G__search_typename2("char_type",99,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("int_type",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("pos_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("off_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("traits_type",117,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR),0,G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("ios_type",117,G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("_Mystr",117,G__get_linked_tagnum(&G__G__streamLN_basic_stringlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
    G__search_typename2("stringbuf",117,G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,-1);
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("char_type",99,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("int_type",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("pos_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("off_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("traits_type",117,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR),0,G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("sb_type",117,G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("ios_type",117,G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("_Mystr",117,G__get_linked_tagnum(&G__G__streamLN_basic_stringlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
    G__setnewtype(-1,NULL,0);
    G__search_typename2("istringstream",117,G__get_linked_tagnum(&G__G__streamLN_basic_istringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,-1);
    G__setnewtype(-1,NULL,0);
+   G__search_typename2("char_type",99,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("int_type",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("pos_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("off_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("traits_type",117,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR),0,G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("sb_type",117,G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("ios_type",117,G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("_Mystr",117,G__get_linked_tagnum(&G__G__streamLN_basic_stringlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
    G__search_typename2("ostringstream",117,G__get_linked_tagnum(&G__G__streamLN_basic_ostringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,-1);
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("char_type",99,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("int_type",105,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("pos_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("off_type",108,-1,0,G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("traits_type",117,G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR),0,G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("sb_type",117,G__get_linked_tagnum(&G__G__streamLN_basic_stringbuflEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("ios_type",117,G__get_linked_tagnum(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
+   G__setnewtype(-1,NULL,0);
+   G__search_typename2("_Mystr",117,G__get_linked_tagnum(&G__G__streamLN_basic_stringlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR));
    G__setnewtype(-1,NULL,0);
    G__search_typename2("stringstream",117,G__get_linked_tagnum(&G__G__streamLN_basic_stringstreamlEcharcOchar_traitslEchargRcOallocatorlEchargRsPgR),0,-1);
    G__setnewtype(-1,NULL,0);
@@ -3156,6 +3458,15 @@ static void G__setup_memvarios_base(void) {
 }
 
 
+   /* ios_base::Init */
+static void G__setup_memvarios_basecLcLInit(void) {
+   G__tag_memvar_setup(G__get_linked_tagnum(&G__G__streamLN_ios_basecLcLInit));
+   { ios_base::Init *p; p=(ios_base::Init*)0x1000; if (p) { }
+   }
+   G__tag_memvar_reset();
+}
+
+
    /* char_traits<char> */
 static void G__setup_memvarchar_traitslEchargR(void) {
    G__tag_memvar_setup(G__get_linked_tagnum(&G__G__streamLN_char_traitslEchargR));
@@ -3196,6 +3507,24 @@ static void G__setup_memvarbasic_streambuflEcharcOchar_traitslEchargRsPgR(void) 
 static void G__setup_memvarbasic_ostreamlEcharcOchar_traitslEchargRsPgR(void) {
    G__tag_memvar_setup(G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR));
    { basic_ostream<char,char_traits<char> > *p; p=(basic_ostream<char,char_traits<char> >*)0x1000; if (p) { }
+   }
+   G__tag_memvar_reset();
+}
+
+
+   /* basic_ostream<char,char_traits<char> >::sentry */
+static void G__setup_memvarbasic_ostreamlEcharcOchar_traitslEchargRsPgRcLcLsentry(void) {
+   G__tag_memvar_setup(G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgRcLcLsentry));
+   { basic_ostream<char,char_traits<char> >::sentry *p; p=(basic_ostream<char,char_traits<char> >::sentry*)0x1000; if (p) { }
+   }
+   G__tag_memvar_reset();
+}
+
+
+   /* basic_istream<char,char_traits<char> >::sentry */
+static void G__setup_memvarbasic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry(void) {
+   G__tag_memvar_setup(G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry));
+   { basic_istream<char,char_traits<char> >::sentry *p; p=(basic_istream<char,char_traits<char> >::sentry*)0x1000; if (p) { }
    }
    G__tag_memvar_reset();
 }
@@ -3333,6 +3662,17 @@ static void G__setup_memfuncios_base(void) {
    G__memfunc_setup("ios_base",837,(G__InterfaceMethod) NULL, 105, G__get_linked_tagnum(&G__G__streamLN_ios_base), -1, 0, 1, 1, 4, 0, "u 'ios_base' - 11 - -", (char*)NULL, (void*) NULL, 0);
    // automatic destructor
    G__memfunc_setup("~ios_base", 963, G__G__stream_2_0_18, (int) ('y'), -1, -1, 0, 0, 1, 1, 0, "", (char*) NULL, (void*) NULL, 1);
+   G__tag_memfunc_reset();
+}
+
+static void G__setup_memfuncios_basecLcLInit(void) {
+   /* ios_base::Init */
+   G__tag_memfunc_setup(G__get_linked_tagnum(&G__G__streamLN_ios_basecLcLInit));
+   G__memfunc_setup("Init",404,G__G__stream_8_0_1, 105, G__get_linked_tagnum(&G__G__streamLN_ios_basecLcLInit), -1, 0, 0, 1, 1, 0, "", (char*)NULL, (void*) NULL, 0);
+   // automatic copy constructor
+   G__memfunc_setup("Init", 404, G__G__stream_8_0_2, (int) ('i'), G__get_linked_tagnum(&G__G__streamLN_ios_basecLcLInit), -1, 0, 1, 1, 1, 0, "u 'ios_base::Init' - 11 - -", (char*) NULL, (void*) NULL, 0);
+   // automatic assignment operator
+   G__memfunc_setup("operator=", 937, G__G__stream_8_0_3, (int) ('u'), G__get_linked_tagnum(&G__G__streamLN_ios_basecLcLInit), -1, 1, 1, 1, 1, 0, "u 'ios_base::Init' - 11 - -", (char*) NULL, (void*) NULL, 0);
    G__tag_memfunc_reset();
 }
 
@@ -3497,6 +3837,27 @@ static void G__setup_memfuncbasic_ostreamlEcharcOchar_traitslEchargRsPgR(void) {
    G__memfunc_setup("basic_ostream<char,char_traits<char> >",3692,(G__InterfaceMethod) NULL, 105, G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR), -1, 0, 0, 1, 2, 0, "", (char*)NULL, (void*) NULL, 0);
    // automatic destructor
    G__memfunc_setup("~basic_ostream<char,char_traits<char> >", 3818, G__G__stream_13_0_9, (int) ('y'), -1, -1, 0, 0, 1, 1, 0, "", (char*) NULL, (void*) NULL, 1);
+   G__tag_memfunc_reset();
+}
+
+static void G__setup_memfuncbasic_ostreamlEcharcOchar_traitslEchargRsPgRcLcLsentry(void) {
+   /* basic_ostream<char,char_traits<char> >::sentry */
+   G__tag_memfunc_setup(G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgRcLcLsentry));
+   G__memfunc_setup("sentry",677,G__G__stream_14_0_1, 105, G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgRcLcLsentry), -1, 0, 1, 5, 1, 0, "u 'basic_ostream<char,char_traits<char> >' - 1 - stream", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("sentry",677,(G__InterfaceMethod) NULL, 105, G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgRcLcLsentry), -1, 0, 1, 1, 4, 0, "u 'basic_ostream<char,char_traits<char> >::sentry' - 11 - -", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("operator=",937,(G__InterfaceMethod) NULL, 117, G__get_linked_tagnum(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgRcLcLsentry), -1, 1, 1, 1, 4, 0, "u 'basic_ostream<char,char_traits<char> >::sentry' - 11 - -", (char*)NULL, (void*) NULL, 0);
+   G__tag_memfunc_reset();
+}
+
+static void G__setup_memfuncbasic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry(void) {
+   /* basic_istream<char,char_traits<char> >::sentry */
+   G__tag_memfunc_setup(G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry));
+   G__memfunc_setup("sentry",677,(G__InterfaceMethod) NULL, 105, G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry), -1, 0, 1, 1, 4, 0, "u 'basic_istream<char,char_traits<char> >::sentry' - 11 - -", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("operator=",937,(G__InterfaceMethod) NULL, 117, G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry), -1, 1, 1, 1, 4, 0, "u 'basic_istream<char,char_traits<char> >::sentry' - 11 - -", (char*)NULL, (void*) NULL, 0);
+   G__memfunc_setup("sentry",677,G__G__stream_15_0_3, 105, G__get_linked_tagnum(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry), -1, 0, 2, 5, 1, 0, 
+"u 'basic_istream<char,char_traits<char> >' - 1 - stream g - - 0 '0' noskipws", (char*)NULL, (void*) NULL, 0);
+   // automatic destructor
+   G__memfunc_setup("~sentry", 803, G__G__stream_15_0_4, (int) ('y'), -1, -1, 0, 0, 1, 1, 0, "", (char*) NULL, (void*) NULL, 0);
    G__tag_memfunc_reset();
 }
 
@@ -3881,19 +4242,19 @@ extern "C" void G__cpp_setup_tagtableG__stream() {
    /* Setting up class,struct,union tag entry */
    G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_mbstate_t),sizeof(mbstate_t),-1,0,(char*)NULL,G__setup_memvarmbstate_t,G__setup_memfuncmbstate_t);
    G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_ios_base),sizeof(ios_base),-1,3840,(char*)NULL,G__setup_memvarios_base,G__setup_memfuncios_base);
-   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_ios_basecLcLio_state),0,-1,0,(char*)NULL,NULL,NULL);
-   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_ios_basecLcLopen_mode),0,-1,0,(char*)NULL,NULL,NULL);
-   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_ios_basecLcLseek_dir),0,-1,0,(char*)NULL,NULL,NULL);
-   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_ios_basecLcLfmt_flags),0,-1,0,(char*)NULL,NULL,NULL);
-   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_ios_basecLcLevent),0,-1,0,(char*)NULL,NULL,NULL);
-   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_ios_basecLcLInit),0,-1,1280,(char*)NULL,NULL,NULL);
+   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_ios_basecLcLio_state),sizeof(int),-1,0,(char*)NULL,NULL,NULL);
+   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_ios_basecLcLopen_mode),sizeof(int),-1,0,(char*)NULL,NULL,NULL);
+   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_ios_basecLcLseek_dir),sizeof(int),-1,0,(char*)NULL,NULL,NULL);
+   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_ios_basecLcLfmt_flags),sizeof(int),-1,0,(char*)NULL,NULL,NULL);
+   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_ios_basecLcLevent),sizeof(int),-1,0,(char*)NULL,NULL,NULL);
+   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_ios_basecLcLInit),sizeof(ios_base::Init),-1,1280,(char*)NULL,G__setup_memvarios_basecLcLInit,G__setup_memfuncios_basecLcLInit);
    G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_char_traitslEchargR),sizeof(char_traits<char>),-1,0,(char*)NULL,G__setup_memvarchar_traitslEchargR,G__setup_memfuncchar_traitslEchargR);
    G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgR),sizeof(basic_istream<char,char_traits<char> >),-1,34048,(char*)NULL,G__setup_memvarbasic_istreamlEcharcOchar_traitslEchargRsPgR,G__setup_memfuncbasic_istreamlEcharcOchar_traitslEchargRsPgR);
    G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_ioslEcharcOchar_traitslEchargRsPgR),sizeof(basic_ios<char,char_traits<char> >),-1,36608,(char*)NULL,G__setup_memvarbasic_ioslEcharcOchar_traitslEchargRsPgR,G__setup_memfuncbasic_ioslEcharcOchar_traitslEchargRsPgR);
    G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_streambuflEcharcOchar_traitslEchargRsPgR),sizeof(basic_streambuf<char,char_traits<char> >),-1,3840,(char*)NULL,G__setup_memvarbasic_streambuflEcharcOchar_traitslEchargRsPgR,G__setup_memfuncbasic_streambuflEcharcOchar_traitslEchargRsPgR);
    G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgR),sizeof(basic_ostream<char,char_traits<char> >),-1,34048,(char*)NULL,G__setup_memvarbasic_ostreamlEcharcOchar_traitslEchargRsPgR,G__setup_memfuncbasic_ostreamlEcharcOchar_traitslEchargRsPgR);
-   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgRcLcLsentry),0,-1,36352,(char*)NULL,NULL,NULL);
-   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry),0,-1,35328,(char*)NULL,NULL,NULL);
+   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_ostreamlEcharcOchar_traitslEchargRsPgRcLcLsentry),sizeof(basic_ostream<char,char_traits<char> >::sentry),-1,36352,(char*)NULL,G__setup_memvarbasic_ostreamlEcharcOchar_traitslEchargRsPgRcLcLsentry,G__setup_memfuncbasic_ostreamlEcharcOchar_traitslEchargRsPgRcLcLsentry);
+   G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry),sizeof(basic_istream<char,char_traits<char> >::sentry),-1,35328,(char*)NULL,G__setup_memvarbasic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry,G__setup_memfuncbasic_istreamlEcharcOchar_traitslEchargRsPgRcLcLsentry);
    G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_filebuflEcharcOchar_traitslEchargRsPgR),sizeof(basic_filebuf<char,char_traits<char> >),-1,3328,(char*)NULL,G__setup_memvarbasic_filebuflEcharcOchar_traitslEchargRsPgR,G__setup_memfuncbasic_filebuflEcharcOchar_traitslEchargRsPgR);
    G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_ifstreamlEcharcOchar_traitslEchargRsPgR),sizeof(basic_ifstream<char,char_traits<char> >),-1,34048,(char*)NULL,G__setup_memvarbasic_ifstreamlEcharcOchar_traitslEchargRsPgR,G__setup_memfuncbasic_ifstreamlEcharcOchar_traitslEchargRsPgR);
    G__tagtable_setup(G__get_linked_tagnum_fwd(&G__G__streamLN_basic_ofstreamlEcharcOchar_traitslEchargRsPgR),sizeof(basic_ofstream<char,char_traits<char> >),-1,34048,(char*)NULL,G__setup_memvarbasic_ofstreamlEcharcOchar_traitslEchargRsPgR,G__setup_memfuncbasic_ofstreamlEcharcOchar_traitslEchargRsPgR);
