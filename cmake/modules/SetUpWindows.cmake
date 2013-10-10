@@ -29,7 +29,7 @@ else()
 endif()
 
 if(CMAKE_PROJECT_NAME STREQUAL ROOT)
-  set(CMAKE_CXX_FLAGS "-nologo -I${CMAKE_SOURCE_DIR}/build/win -FIw32pragma.h -FIsehmap.h ${BLDCXXFLAGS} -EHsc- -W3 -wd4244 -D_WIN32")
+  set(CMAKE_CXX_FLAGS "-nologo -I${CMAKE_SOURCE_DIR}/build/win -FIw32pragma.h -FIsehmap.h ${BLDCXXFLAGS} -EHsc- -W3 -wd4244 -wd4436 -D_WIN32")
   set(CMAKE_C_FLAGS   "-nologo -I${CMAKE_SOURCE_DIR}/build/win -FIw32pragma.h -FIsehmap.h ${BLDCFLAGS} -EHsc- -W3 -D_WIN32")
   install(FILES ${CMAKE_SOURCE_DIR}/build/win/w32pragma.h  DESTINATION include COMPONENT headers)
   install(FILES ${CMAKE_SOURCE_DIR}/build/win/sehmap.h  DESTINATION include COMPONENT headers)  
