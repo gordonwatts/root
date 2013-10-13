@@ -41,7 +41,7 @@ GLIB = ..\glib
 
 # Check if nmake version is 8.xx or 9.xx
 !if ([nmake /? 2>&1 | findstr /c:"Version 8\." > nul ] == 0) || \
-    ([nmake /? 2>&1 | findstr /c:"Version 9\." > nul ] == 0)
+	([nmake /? 2>&1 | findstr /c:"Version 9\." > nul ] == 0)
 MT_DLL   = mt -nologo -manifest $@.manifest -outputresource:$@;2
 CLEAN_MT = -@erase /q $@.manifest >nul 2>&1
 !else

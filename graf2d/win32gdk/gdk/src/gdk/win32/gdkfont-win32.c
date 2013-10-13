@@ -229,7 +229,7 @@ static gchar *logfont_to_xlfd(const LOGFONT * lfp,
    /* Convert the facename Windows fives us from the locale-dependent
     * codepage to UTF-8.
     */
-   utf8_facename = g_filename_to_utf8(lfp->lfFaceName, NULL);
+   utf8_facename = g_filename_to_utf8(lfp->lfFaceName, -1, NULL, NULL, NULL);
 
    /* Replace characters illegal in an XLFD with hex escapes. */
    p = facename;
@@ -1103,7 +1103,7 @@ GdkWin32SingleFont *gdk_font_load_internal(const gchar * font_name)
       fdwClipPrecision = CLIP_DEFAULT_PRECIS;
       fdwQuality = PROOF_QUALITY;
       fdwPitchAndFamily = DEFAULT_PITCH;
-      lpszFace = g_filename_from_utf8(font_name, NULL);
+      lpszFace = g_filename_from_utf8(font_name, -1, NULL, NULL, NULL);
    } else if (numfields != 5) {
       g_warning("gdk_font_load: font name %s illegal", font_name);
       return NULL;
@@ -1287,7 +1287,7 @@ GdkWin32SingleFont *gdk_font_load_internal(const gchar * font_name)
          fdwPitchAndFamily = VARIABLE_PITCH;
       else
          fdwPitchAndFamily = DEFAULT_PITCH;
-      lpszFace = g_filename_from_utf8(family, NULL);
+      lpszFace = g_filename_from_utf8(family, -1, NULL, NULL, NULL);
    }
 
    for (tries = 0;; tries++) {
