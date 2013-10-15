@@ -53,7 +53,7 @@ CFLAGS = -I. -DBUILDING_LIBICONV -DBUILDING_LIBCHARSET
 ######################
 
 all :				\
-	libiconv-$(GLIB_VER).dll
+	iconv-$(GLIB_VER).dll
 
 iconv_OBJECTS =			\
 	relocatable.obj		\
@@ -62,8 +62,8 @@ iconv_OBJECTS =			\
 
 ################ glib
 
-libiconv-$(GLIB_VER).dll : $(iconv_OBJECTS)
-	$(CC) $(CFLAGS) -LD -Felibiconv-$(ICONV_VER).dll $(iconv_OBJECTS) $(LIBICONV_LIBS) $(INTL_LIBS) user32.lib advapi32.lib wsock32.lib $(LDFLAGS)
+iconv-$(GLIB_VER).dll : $(iconv_OBJECTS)
+	$(CC) $(CFLAGS) -LD -Feiconv-$(ICONV_VER).dll $(iconv_OBJECTS) $(LIBICONV_LIBS) $(INTL_LIBS) user32.lib advapi32.lib wsock32.lib $(LDFLAGS)
 	$(MT_DLL)
 	$(CLEAN_MT)
 
