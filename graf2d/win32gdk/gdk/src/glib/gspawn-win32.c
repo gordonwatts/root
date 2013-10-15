@@ -676,7 +676,7 @@ do_exec (gboolean              dont_wait,
          GSpawnChildSetupFunc  child_setup,
          gpointer              user_data)
 {
-  gchar **new_argv;
+  const gchar **new_argv;
   gchar args[ARG_COUNT][10];
   gint i;
   int argc = 0;
@@ -798,7 +798,7 @@ do_exec (gboolean              dont_wait,
   if (stderr_fd >= 0)
     close (stderr_fd);
 
-  g_free (new_argv);
+  g_free ((void*)new_argv);
 
   return 0;
 }
@@ -873,7 +873,7 @@ fork_exec_with_pipes (gboolean              dont_wait,
   gint stderr_pipe[2] = { -1, -1 };
   gint child_err_report_pipe[2] = { -1, -1 };
   gint status;
-  gint bytes;
+  //gint bytes;
   gint buf[2];
   gint n_ints = 0;
   

@@ -948,7 +948,9 @@ g_io_win32_sock_read (GIOChannel *channel,
   if (win32_channel->debug)
     g_print ("g_io_win32_sock_read: sockfd:%d count:%d\n",
 	     win32_channel->fd, count);
+#ifdef WE_NEED_TO_HANDLE_WSAEINTR /* not anymore with wsock2 ? */
 repeat: 
+#endif
   result = recv (win32_channel->fd, buf, count, 0);
 
   if (win32_channel->debug)
@@ -1000,7 +1002,9 @@ g_io_win32_sock_write (GIOChannel  *channel,
   if (win32_channel->debug)
     g_print ("g_io_win32_sock_write: sockfd:%d count:%d\n",
 	     win32_channel->fd, count);
+#ifdef WE_NEED_TO_HANDLE_WSAEINTR /* not anymore with wsock2 ? */
 repeat:
+#endif
   result = send (win32_channel->fd, buf, count, 0);
   
   if (win32_channel->debug)
