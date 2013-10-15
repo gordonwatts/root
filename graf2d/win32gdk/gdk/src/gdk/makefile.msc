@@ -49,7 +49,7 @@ MT_DLL   =
 CLEAN_MT = 
 !endif
 
-CFLAGS = -I. -I.. -I..\.. -I$(GLIB) -DG_ENABLE_DEBUG -DHAVE_CONFIG_H -DGDK_VERSION=\"$(GTK_VER)\"
+CFLAGS = -I. -I.. -I..\.. -I$(GLIB) -DG_ENABLE_DEBUG -DHAVE_CONFIG_H -DGDK_VERSION=\"$(GTK_VER)\" -wd4101
 
 all:    gdk-$(GTK_VER).dll
 
