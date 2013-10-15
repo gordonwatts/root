@@ -46,7 +46,8 @@ MT_DLL   =
 CLEAN_MT = 
 !endif
 
-CFLAGS = -I. -I.. -I..\iconv -I..\.. -DG_ENABLE_DEBUG -DHAVE_CONFIG_H -DUSE_LIBICONV -DGLIB_VERSION=\"$(LIB_VER)\"
+CFLAGS = -I. -I.. -I..\iconv -I..\.. -DG_LOG_DOMAIN=g_log_domain_glib -DG_ENABLE_DEBUG -DGLIB_COMPILATION -DHAVE_CONFIG_H -DUSE_LIBICONV
+# You could add this if you wanted... -DG_ENABLE_DEBUG
 ######################
 
 all :				\
