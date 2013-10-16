@@ -111,7 +111,7 @@ config.h: config.h.win32
 
 glib-$(GLIB_VER).dll : $(glib_OBJECTS) glib.def
 	cd
-	$(CC) $(CFLAGS) -LD -Feglib-$(GLIB_VER).dll $(glib_OBJECTS) $(LIBICONV_LIBS) $(INTL_LIBS) user32.lib advapi32.lib wsock32.lib $(LDFLAGS) ..\iconv\libiconv-1.3.lib /def:glib.def
+	$(CC) $(CFLAGS) -LD -Feglib-$(GLIB_VER).dll $(glib_OBJECTS) $(LIBICONV_LIBS) $(INTL_LIBS) user32.lib advapi32.lib wsock32.lib $(LDFLAGS) ..\iconv\iconv-1.3.lib /def:glib.def
 	$(MT_DLL)
 	$(CLEAN_MT)
 
