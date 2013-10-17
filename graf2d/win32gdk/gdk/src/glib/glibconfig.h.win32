@@ -78,6 +78,7 @@ typedef guint32 gsize;
 #else
 # define g_ATEXIT(proc)	(atexit (proc))
 #endif
+#define G_NATIVE_ATEXIT
 
 #define g_memmove(d,s,n) G_STMT_START { memmove ((d), (s), (n)); } G_STMT_END
 
