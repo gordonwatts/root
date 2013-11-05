@@ -105,7 +105,7 @@ endif()
 					
 install(FILES  ${gdkdlla}
 			   ${glibdlla}
-			   gdk/dll/iconv-1.3.dll
+			   ${iconvdlla}
 			   DESTINATION bin)
 
 ROOT_INSTALL_HEADERS()
