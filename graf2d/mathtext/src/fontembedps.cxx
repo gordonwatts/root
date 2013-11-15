@@ -38,6 +38,8 @@
 #endif // LITTLE_ENDIAN
 #endif // R__BYTESWAP
 
+#include <algorithm>
+
 // References:
 //
 // Adobe Systems, Inc., PostScript language Document Structuring
