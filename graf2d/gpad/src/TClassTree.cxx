@@ -29,6 +29,8 @@
 #include "TObjString.h"
 #include "Riostream.h"
 
+#include <algorithm>
+
 const Int_t kIsClassTree = BIT(7);
 const Int_t kUsedByData  = BIT(11);
 const Int_t kUsedByFunc  = BIT(12);
