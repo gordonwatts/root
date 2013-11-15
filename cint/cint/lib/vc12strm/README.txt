@@ -1,3 +1,28 @@
+Here is what I needed to do to update vc12:
+
+1) Use CMake to generate a vc12 project
+2) Open it up, and edit the CMakeLists.txt associated with Cint_static
+3) Add a VC_MAJOR EQUAL 18 line, set it to fakstrm.cxx
+4) Build cint.exe
+5) Copy the vc12\bin\Debug directory into vc12\bin\DebugFake
+  This is a special version of cint that, basically, does not use iostream linkages.
+6) in powershell, cd into this directory
+7) Run the powershell script.
+  I had to modify sstrm.h to remove the #Include <string> line...
+8) Once it runs, then go back into the CMakeLists.txt, and replace fakstrm with vc12strm
+9) To get it to build I had to remove a reference to the void* operator in basic_ios.
+10) Once that builds, in the vc12strm.cxx class, remove the following lines (at the very end):
+
+class G__cpp_setup_initG__stream {
+  public:
+    G__cpp_setup_initG__stream() { G__add_setup_func("G__stream",(G__incsetup)(&G__cpp_setupG__stream)); G__call_setup_funcs(); }
+   ~G__cpp_setup_initG__stream() { G__remove_setup_func("G__stream"); }
+};
+G__cpp_setup_initG__stream G__cpp_setup_initializerG__stream;
+
+**** Old instructions and information.
+
+
 lib/iccstrm/README
 
 lib/iccstrm directory exists for creating iostream library linkage file
