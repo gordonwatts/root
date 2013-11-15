@@ -279,7 +279,6 @@ class basic_ios : public ios_base {
     inline void clear(iostate state = goodbit);
     inline void setstate(iostate state);
     inline iostate rdstate() const;
-    inline operator void*() const;
     inline bool operator! () const;
     inline bool good() const;
     inline bool eof()  const;
