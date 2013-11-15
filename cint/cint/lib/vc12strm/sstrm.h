@@ -23,7 +23,7 @@ using namespace std;
 
 #else // __CINT__
 
-#include <string>
+//#include <string>
 //#include <memory>
 class allocator<char>;
 class allocator<wchar_t>;
