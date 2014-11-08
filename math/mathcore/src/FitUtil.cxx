@@ -28,6 +28,7 @@
 
 #include <limits>
 #include <cmath>
+#include <algorithm>
 #include <cassert> 
 //#include <memory>
 
