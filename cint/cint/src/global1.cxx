@@ -58,12 +58,12 @@ int G__asm_wholefunc_default_cp;
 
 #ifdef G__ASM_IFUNC
 
-long *G__asm_inst; /* p-code instruction buffer */
+size_t *G__asm_inst; /* p-code instruction buffer */
 int G__asm_instsize;
 G__value *G__asm_stack; /* data stack and constant buffer */
 char *G__asm_name;
 
-long G__asm_inst_g[G__MAXINST]; /* p-code instruction buffer */
+size_t G__asm_inst_g[G__MAXINST]; /* p-code instruction buffer */
 G__value G__asm_stack_g[G__MAXSTACK]; /* data stack */
 char G__asm_name_g[G__ASM_FUNCNAMEBUF]; /* buffer to store function names 
                                          * which is called within the 

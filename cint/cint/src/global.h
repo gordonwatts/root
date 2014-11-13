@@ -64,7 +64,7 @@ extern int G__asm_wholefunction;
 extern int G__asm_wholefunc_default_cp;
 
 #ifdef G__ASM_IFUNC
-extern long *G__asm_inst; /* p-code instruction buffer */
+extern size_t *G__asm_inst; /* p-code instruction buffer */
 extern int G__asm_instsize;
 extern G__value *G__asm_stack; /* data stack */
 extern char *G__asm_name;

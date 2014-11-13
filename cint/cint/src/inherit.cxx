@@ -962,7 +962,7 @@ long G__find_virtualoffset(long virtualtag
 /**************************************************************************
 * G__getvirtualbaseoffset()
 **************************************************************************/
-long G__getvirtualbaseoffset(long pobject,int tagnum
+long G__getvirtualbaseoffset(size_t pobject,int tagnum
                              ,G__inheritance *baseclass,int basen)
 {
   long (*f) G__P((long));

@@ -196,7 +196,7 @@ int G__basedestructrc(struct G__var_array *mem);
 #ifdef G__VIRTUALBASE
 long G__publicinheritance(G__value *val1,G__value *val2);
 long G__ispublicbase(int basetagnum,int derivedtagnum,long pobject);
-long G__getvirtualbaseoffset(long pobject,int tagnum,struct G__inheritance *baseclass,int basen);
+long G__getvirtualbaseoffset(size_t pobject,int tagnum,struct G__inheritance *baseclass,int basen);
 #else
 long G__ispublicbase(int basetagnum,int derivedtagnum);
 long G__isanybase(int basetagnum,int derivedtagnum);
@@ -360,7 +360,7 @@ int G__set_sizep2memfunc(FILE *fp);
 void G__bstore(int operatorin,G__value expressionin,G__value *defined);
 void G__doubleassignbyref(G__value *defined,double val);
 void G__intassignbyref(G__value *defined,G__int64 val);
-int G__scopeoperator(char *name,int *phash,long *pstruct_offset,int *ptagnum);
+int G__scopeoperator(char *name,int *phash,size_t *pstruct_offset,int *ptagnum);
 int G__cmp(G__value buf1,G__value buf2);
 int G__getunaryop(const char unaryop,const char *expression,char *buf,G__value *preg);
 int G__overloadopr(int operatorin,G__value expressionin,G__value *defined);

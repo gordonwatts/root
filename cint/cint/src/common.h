@@ -1205,7 +1205,7 @@ struct G__inheritance {
 **************************************************************************/
 struct G__var_array {
   /* union for variable pointer */
-  long p[G__MEMDEPTH]; /* used to be int */
+  size_t p[G__MEMDEPTH]; /* used to be int */
   int allvar;
   char *varnamebuf[G__MEMDEPTH]; /* variable name */
   int hash[G__MEMDEPTH];                    /* hash table of varname */

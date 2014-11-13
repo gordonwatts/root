@@ -2035,7 +2035,7 @@ void G__bstore(int operatortag, G__value expressionin, G__value* defined)
 }
 
 //______________________________________________________________________________
-int G__scopeoperator(char * name, int* phash, long* pstruct_offset, int* ptagnum)
+int G__scopeoperator(char * name, int* phash, size_t* pstruct_offset, int* ptagnum)
 {
    // -- FIXME: Describe this function!
    // May need to modify this function to support multiple usage of
