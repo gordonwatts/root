@@ -43,15 +43,15 @@ class G__Vtabledata {
   int m_ifn;
 
   // object offset
-  int m_offset;
+  size_t m_offset;
   
  public:
-  G__Vtabledata(struct G__ifunc_table* ifunc,int ifn,int offset)
+  G__Vtabledata(struct G__ifunc_table* ifunc,int ifn,size_t offset)
   : m_ifunc(ifunc) , m_ifn(ifn), m_offset(offset) { }
 
   struct G__ifunc_table* GetIfunc() const { return(m_ifunc); }
   int GetIfn() const { return(m_ifn); }
-  int GetOffset() const { return(m_offset); }
+  size_t GetOffset() const { return(m_offset); }
   void SetIfunc(struct G__ifunc_table *ifunc) { m_ifunc=ifunc; }
   void SetIfn(int ifn) { m_ifn=ifn; }
   void SetOffset(int offset) { m_offset=offset; }
@@ -77,10 +77,10 @@ class G__Vtable {
  public:
   vector<G__Vtabledata> m_vtbl;
   vector<G__Vtbloffset> m_vtbloffset; 
-  void addvfunc(G__ifunc_table* ifunc,int ifn,int offset) {
+  void addvfunc(G__ifunc_table* ifunc,int ifn,size_t offset) {
     m_vtbl.push_back(G__Vtabledata(ifunc,ifn,offset));
   }
-  int addbase(int basetagnum,int vtbloffset) ;
+  int addbase(int basetagnum,size_t vtbloffset) ;
   G__Vtabledata* resolve(int index,int basetagnum) ;
 
   void disp(FILE* fp) ;

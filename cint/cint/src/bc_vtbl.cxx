@@ -47,14 +47,14 @@ void G__Vtbloffset::disp(FILE *fp) {
 /***********************************************************************
 * G__Vtable
 ***********************************************************************/
-int G__Vtable::addbase(int basetagnum,int vtbloffset) {
+int G__Vtable::addbase(int basetagnum,size_t vtbloffset) {
   for(vector<G__Vtbloffset>::iterator i=m_vtbloffset.begin();
       i!=m_vtbloffset.end();++i) {
     if((*i).m_basetagnum==basetagnum) return(0);
   }
   G__Vtbloffset x;
   x.m_basetagnum = basetagnum;
-  x.m_vtbloffset = vtbloffset;
+  x.m_vtbloffset = (short) vtbloffset;
   m_vtbloffset.push_back(x);
   return(1);
 }
@@ -137,7 +137,7 @@ void G__bc_make_vtbl(int tagnum) {
       int basetagnum = bas.Tagnum();
       G__Vtable *pbasevtbl = (G__Vtable*)G__struct.vtable[basetagnum];
       // copy vtbloffset table with basetagnum
-      int pbasesize=pbasevtbl->m_vtbloffset.size();
+      size_t pbasesize=pbasevtbl->m_vtbloffset.size();
       for(int i=0;i<pbasesize;++i) {
         pvtbl->addbase(pbasevtbl->m_vtbloffset[i].m_basetagnum
                       ,pbasevtbl->m_vtbloffset[i].m_vtbloffset
@@ -152,7 +152,7 @@ void G__bc_make_vtbl(int tagnum) {
       }
     }
   }
-  int isbase=pvtbl->m_vtbl.size();
+  size_t isbase=pvtbl->m_vtbl.size();
 
   if(!isbase) pvtbl->addbase(tagnum,0);
 

@@ -1702,7 +1702,7 @@ int G__fputc G__P((int character,FILE *fp));
 int G__putchar G__P((int character));
 int G__fputs G__P((char *string,FILE *fp));
 int G__puts G__P((char *string));
-char *G__fgets G__P((char *string,int n,FILE *fp));
+char *G__fgets G__P((char *string,size_t n,FILE *fp));
 char *G__gets G__P((char *buffer));
 int G__system G__P((char *com));
 FILE *G__tmpfile(void);

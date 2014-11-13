@@ -33,7 +33,7 @@ static int G__splitmessage(char* item);
 // External functions.
 void G__nosupport(const char* name);
 void G__malloc_error(const char* varname);
-void G__arrayindexerror(int varid, struct G__var_array* var, const char* name, int index);
+void G__arrayindexerror(int varid, struct G__var_array* var, const char* name, size_t index);
 #ifdef G__ASM
 int G__asm_execerr(const char* message, int num);
 #endif // G__ASM
@@ -187,7 +187,7 @@ void G__malloc_error(const char* varname)
 }
 
 //______________________________________________________________________________
-void G__arrayindexerror(int varid, struct G__var_array* var, const char* name, int index)
+void G__arrayindexerror(int varid, struct G__var_array* var, const char* name, size_t index)
 {
    G__fprinterr(G__serr, "Error: Array index out of range %s -> [%d] ", name, index);
    G__fprinterr(G__serr, " valid upto %s", var->varnamebuf[varid]);

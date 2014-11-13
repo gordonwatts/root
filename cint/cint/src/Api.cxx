@@ -434,8 +434,8 @@ int Cint::G__ExceptionWrapper(G__InterfaceMethod funcp
 #define G__SETEXCPBUF_INT(TYPE, CTYPE)          \
   catch(TYPE x) { \
     TYPE* exc_x = new TYPE(x); \
-    G__letint(&G__exceptionbuffer,CTYPE,(long)x);     \
-    G__exceptionbuffer.ref = (long)(exc_x); \
+    G__letint(&G__exceptionbuffer,CTYPE,(size_t)x);     \
+    G__exceptionbuffer.ref = (size_t)(exc_x); \
     G__return = G__RETURN_TRY; \
     G__no_exec = 1; \
   }
@@ -448,7 +448,7 @@ int Cint::G__ExceptionWrapper(G__InterfaceMethod funcp
   catch(TYPE x) { \
     TYPE* exc_x = new TYPE(x); \
     G__letdouble(&G__exceptionbuffer,CTYPE,x);     \
-    G__exceptionbuffer.ref = (long)(exc_x); \
+    G__exceptionbuffer.ref = (size_t)(exc_x); \
     G__return = G__RETURN_TRY; \
     G__no_exec = 1; \
   }

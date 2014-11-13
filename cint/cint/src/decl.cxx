@@ -520,7 +520,7 @@ static void G__removespacetemplate(G__FastAllocString& name, size_t offset /* = 
    memcpy(buf, name, len);
    int c = 0;
    size_t i = offset;
-   long j = len;
+   size_t j = len;
    while ((c = name[i])) {
       if (isspace(c) && i > offset) {
          switch (name[i-1]) {

@@ -99,7 +99,7 @@ G__MethodInfo {
 
   int LoadDLLDirect(const char* filename,const char* funcname);
 
-  void SetVtblIndex(int vtblindex);
+  void SetVtblIndex(size_t vtblindex);
   void SetIsVirtual(int isvirtual);
   void SetVtblBasetagnum(int basetagnum);
 

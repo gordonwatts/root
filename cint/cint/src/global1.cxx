@@ -68,14 +68,14 @@ G__value G__asm_stack_g[G__MAXSTACK]; /* data stack */
 char G__asm_name_g[G__ASM_FUNCNAMEBUF]; /* buffer to store function names 
                                          * which is called within the 
                                          * compiled loop */
-int G__asm_name_p=0; /* pointer to the function name buffer */
+size_t G__asm_name_p=0; /* pointer to the function name buffer */
 
 #else /* G__ASM_IFUNC */
 long G__asm_inst[G__MAXINST]; /* p-code instruction buffer */
 G__value G__asm_stack[G__MAXSTACK]; /* data stack */
 char G__asm_name[G__LONGLINE*2]; /* buffer to store function names which 
                                 * is called within the compiled loop */
-int G__asm_name_p=0; /* pointer to the function name buffer */
+size_t G__asm_name_p=0; /* pointer to the function name buffer */
 #endif /* G__ASM_IFUNC */
 
 /* Compile time program counter and constant data stack pointer */

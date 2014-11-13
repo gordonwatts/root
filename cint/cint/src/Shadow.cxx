@@ -211,7 +211,7 @@ void Cint::G__ShadowMaker::GetFullyQualifiedName(const char *originalName, std::
    std::string name = originalName;
    G__ClassInfo arg;
 
-   int len = name.length();
+   size_t len = name.length();
    if (!len) {
       fullyQualifiedName = "";
       return;
@@ -766,7 +766,7 @@ void Cint::G__ShadowMaker::WriteShadowClass(G__ClassInfo &cl, int level /*=0*/)
                      const unsigned int ulonglong_len = 18;
                      const unsigned int longlong_len  = 9;
 
-                     int pos = 0;
+                     size_t pos = 0;
                      while ((pos = type_name.find(ulonglong_s, pos)) >= 0) {
                         type_name.replace(pos, ulonglong_len, "G__uint64");
                      }

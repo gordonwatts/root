@@ -57,7 +57,7 @@ void G__letbool(G__value *buf,int type,long value)
 * G__letint(G__value buf,char type,int value)
 *   macro in G__ci.h
 ****************************************************************/
-void G__letint(G__value *buf,int type,long value)
+void G__letint(G__value *buf,int type,size_t value)
 {
       buf->type=type;
 

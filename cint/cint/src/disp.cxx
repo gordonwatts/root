@@ -663,7 +663,7 @@ int G__display_newtypes(FILE *fout,const char *fname)
 int G__display_string(FILE *fout)
 {
   size_t len;
-  unsigned long totalsize=0;
+  size_t totalsize=0;
   struct G__ConstStringList *pconststring;
   G__FastAllocString msg(G__ONELINE);
 
@@ -2368,7 +2368,7 @@ int G__puts(char *string)
 /**************************************************************************
 * G__fgets()
 **************************************************************************/
-char *G__fgets(char *string,int n,FILE *fp)
+char *G__fgets(char *string,size_t n,FILE *fp)
 {
   char *result;
   G__lockstdio=1;

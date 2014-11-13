@@ -166,7 +166,7 @@ void G__bc_inst::LD(G__value *pval) {
 /**************************************************************************
 * LD
 **************************************************************************/
-void G__bc_inst::LD(int a) {
+void G__bc_inst::LD(size_t a) {
   G__value val = G__null;
   val.obj.d = 0.0;
   G__letint(&val,'i',(long)a);
@@ -1354,7 +1354,7 @@ void G__bc_inst::MEMSETINT(int mode,map<long,long>& x) {
   if(G__asm_dbg) G__fprinterr(G__serr,"%3x: MEMSETINT\n",G__asm_cp);
   G__asm_inst[G__asm_cp]=G__MEMSETINT;
   G__asm_inst[G__asm_cp+1]=mode; //0:0, 1:G__store_struct_offset, 2:localmem
-  G__asm_inst[G__asm_cp+2]=x.size();
+  G__asm_inst[G__asm_cp+2]=(long) x.size();
   inc_cp_asm(3,0);
   for(map<long,long>::iterator i=x.begin();i!=x.end();++i) {
     G__asm_inst[G__asm_cp]   = (*i).first;

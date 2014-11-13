@@ -291,7 +291,7 @@ int G__storeobject(G__value *buf1, G__value *buf2)
       for (i = 0; i < var1->allvar; ++i) {
          void* p1 = (void*) (buf1->obj.i + var1->p[i]);
          void* p2 = (void*) (buf2->obj.i + var2->p[i]);
-         int num_of_elements = var1->varlabel[i][1];
+         size_t num_of_elements = var1->varlabel[i][1];
          if (!num_of_elements) {
             num_of_elements = 1;
          }

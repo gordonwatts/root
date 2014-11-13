@@ -152,7 +152,7 @@ static G__value G__exec_tempfile_core(const char* file, FILE* fp)
    long *store_asm_inst;
    G__value *store_asm_stack;
    char *store_asm_name;
-   int store_asm_name_p;
+   size_t store_asm_name_p;
    struct G__param *store_asm_param;
    /* int store_asm_exec; */
    int store_asm_noverflow;

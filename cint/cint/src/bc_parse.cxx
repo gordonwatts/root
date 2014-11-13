@@ -1146,7 +1146,7 @@ int G__blockscope::compile_throw(string& token,int c) {
     c = m_preader->fgetstream(token,";");
 
     // evaluate and instantiate exception object
-    m_bc_inst.LD(0);
+    m_bc_inst.LD((size_t) 0);
 
     // Set flag to generate ALLOCEXCEPTION instead of 
     // ALLOCTEMP/SETTEMP,STORETEMP ...  POPTEMP 
@@ -1607,7 +1607,7 @@ int G__blockscope::init_w_defaultctor(G__TypeReader& type
   para->paran = 0;
   para->para[0] = G__null;
 
-  int num = var->varlabel[ig15][1]; // get array size
+  size_t num = var->varlabel[ig15][1]; // get array size
   if (num > 0) {
     m_bc_inst.LD(num);
     m_bc_inst.SETARYINDEX(1);
@@ -1646,7 +1646,7 @@ int G__blockscope::init_w_expr(G__TypeReader& type
  * G__blockscope::call_ctor
  ***********************************************************************/
 int G__blockscope::call_ctor(G__TypeReader& type,struct G__param *libp
-				,struct G__var_array* var,int ig15,int num) {
+				,struct G__var_array* var,int ig15,size_t num) {
 
   // GetMethod finds a function with type conversion, however,
   // bytecode for type conversion is not generated. There must be similar
@@ -1813,7 +1813,7 @@ int G__blockscope::initstruct(G__TypeReader& type, struct G__var_array* var, int
   }
   int number_of_dimensions = var->paran[varid];
   size_t& num_of_elements = var->varlabel[varid][1];
-  const int& stride = var->varlabel[varid][0];
+  const size_t& stride = var->varlabel[varid][0];
   // Check for an unspecified length array.
   int isauto = 0;
   if (num_of_elements == INT_MAX /* unspecified length flag */) {
@@ -1825,7 +1825,7 @@ int G__blockscope::initstruct(G__TypeReader& type, struct G__var_array* var, int
   }
   // Load first address of array as pointer.
   for (int i = 0; i < number_of_dimensions; ++i) {
-    m_bc_inst.LD(0);
+    m_bc_inst.LD((size_t) 0);
   }
   m_bc_inst.LD_LVAR(var, varid, number_of_dimensions, 'P');
   // Initialize buf.
@@ -1955,7 +1955,7 @@ int G__blockscope::initscalarary(G__TypeReader& /*type*/, struct G__var_array* v
   //               ^
   G__FastAllocString expr(G__ONELINE);
   size_t& num_of_elements = var->varlabel[ig15][1];
-  const int& stride = var->varlabel[ig15][0];
+  const size_t& stride = var->varlabel[ig15][0];
   // Check for an unspecified length array declaration.
   int isauto = 0;
   if (num_of_elements == INT_MAX /* unspecified length flag */) {
@@ -1966,7 +1966,7 @@ int G__blockscope::initscalarary(G__TypeReader& /*type*/, struct G__var_array* v
   // Load the address of the first element of the array as a pointer.
   const short num_of_dimensions = var->paran[ig15];
   for (int j = 0; j < num_of_dimensions; ++j) {
-    m_bc_inst.LD(0);
+    m_bc_inst.LD((size_t)0);
   }
   m_bc_inst.LD_LVAR(var, ig15, num_of_dimensions, 'P');
   // initialize buf
@@ -1977,7 +1977,7 @@ int G__blockscope::initscalarary(G__TypeReader& /*type*/, struct G__var_array* v
   buf.ref = 0;
   buf.obj.reftype.reftype = var->reftype[ig15];
   // Get the size of an element of the array.
-  int size = 0;
+  size_t size = 0;
   int typedefary = 0; 
   if (islower(var->type[ig15])) {
     if ((buf.typenum != -1) && G__newtype.nindex[buf.typenum]) {
@@ -2010,7 +2010,7 @@ int G__blockscope::initscalarary(G__TypeReader& /*type*/, struct G__var_array* v
       G__fprinterr(G__serr, "Error: %s: %d: illegal initialization of '%s'", __FILE__, __LINE__, var->varnamebuf[ig15]);
       G__genericerror(0);
     }
-    m_bc_inst.LD(0);
+    m_bc_inst.LD((size_t) 0);
     m_bc_inst.LD_LVAR(var, ig15, 1, 'p');
     G__value reg = G__getexpr(expr);
     conversion(reg, var, ig15, 'p', 0);
@@ -2024,10 +2024,10 @@ int G__blockscope::initscalarary(G__TypeReader& /*type*/, struct G__var_array* v
     G__genericerror("Error: syntax error, array initialization");
   }
   int mparen = 1;
-  int inc = 0;
+  size_t inc = 0;
   int pi = num_of_dimensions;
   size_t linear_index = 0;
-  int prev = 0;
+  size_t prev = 0;
   int stringflag = 0;
    while (mparen) {
       // -- Get next initializer expression.
@@ -2116,12 +2116,12 @@ int G__blockscope::initscalarary(G__TypeReader& /*type*/, struct G__var_array* v
   }
   // Default initialize the remaining elements.
   if (!stringflag) {
-    int initnum = num_of_elements;
+    size_t initnum = num_of_elements;
     if ((buf.typenum != -1) && G__newtype.nindex[buf.typenum]) {
       // -- We are a typedef.
       initnum /= size;
     }
-    for (int i = linear_index + 1; i < initnum; ++i) {
+    for (size_t i = linear_index + 1; i < initnum; ++i) {
       m_bc_inst.LD(&G__null);
       m_bc_inst.LETNEWVAL();
       m_bc_inst.OP1(G__OPR_PREFIXINC);
@@ -2261,7 +2261,7 @@ struct G__var_array* G__blockscope::allocatevariable(G__TypeReader& type
     // this part corresponds to G__compiler::Init(),
     // the bytecode compiler uses legacy G__malloc() and it uses the last
     // entry of class/struct table as size/offset calculation buffer.
-    int num = var->varlabel[ig15][1] /* number of elements */;
+    size_t num = var->varlabel[ig15][1] /* number of elements */;
     if (num == INT_MAX) {
       num = 0;
     } else if (!num) {
@@ -2473,7 +2473,7 @@ void G__blockscope::setarraysize(G__TypeReader& type, struct G__var_array* var, 
     flag = 1;
   }
 
-  var->paran[ig15] = arysize.size();
+  var->paran[ig15] = (short) arysize.size();
  
   if (!asize.size()) {
     // type a;
@@ -2517,7 +2517,7 @@ void G__blockscope::setarraysize(G__TypeReader& type, struct G__var_array* var, 
     //  var->varlabel[var_identity][9]=z;
     //  var->varlabel[var_identity][10]=1;
     //  var->varlabel[var_identity][11]=0;
-    int a6 = asize.size() + 2;
+    size_t a6 = asize.size() + 2;
     int a = 1;
     unsigned int i;
     for (i = 0; i <arysize.size(); ++i) {
@@ -2801,9 +2801,9 @@ G__value G__blockscope::compile_newopr(const string& expression) {
   m_bc_inst.SETMEMFUNCENV();
   G__param* para = new G__param();
   long dmy=0;
-  int isarena = arena.size();
-  int isaryindex = aryindex.size();
-  int isargs = args.size();
+  size_t isarena = arena.size();
+  size_t isaryindex = aryindex.size();
+  size_t isargs = args.size();
 
   /////////////////////////////////////////////////////////////////
   // Compiled class 
@@ -2950,7 +2950,7 @@ G__value G__blockscope::compile_newopr(const string& expression) {
     else {
       para->paran=0;
       para->para[0]=G__null;
-      m_bc_inst.LD(0);
+      m_bc_inst.LD((size_t)0);
     }
 
     m_bc_inst.LETNEWVAL();

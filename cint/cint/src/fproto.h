@@ -114,7 +114,7 @@ int G__call_atexit(void);
 int G__interpretexit(void);
 void G__nosupport(const char* name);
 void G__malloc_error(const char* varname);
-void G__arrayindexerror(int varid, struct G__var_array* var, const char* name, int index);
+void G__arrayindexerror(int varid, struct G__var_array* var, const char* name, size_t index);
 #ifdef G__ASM
 int G__asm_execerr(const char* message, int num);
 #endif // G__ASM
@@ -281,7 +281,7 @@ int G__execfuncmacro_noexec(const char* macroname);
 int G__maybe_finish_macro(void);
 int G__freedeffuncmacro(struct G__Deffuncmacro *deffuncmacro);
 int G__freecharlist(struct G__Charlist *charlist);
-long G__malloc(int n,int bsize,const char *item);
+long G__malloc(size_t n,size_t bsize,const char *item);
 void *G__TEST_Malloc(size_t size);
 void *G__TEST_Calloc(size_t n,size_t bsize);
 void G__TEST_Free(void *p);
@@ -512,12 +512,12 @@ G__value G__letVvalue(G__value *p,G__value result);
 G__value G__letPvalue(G__value *p,G__value result);
 G__value G__letvalue(G__value *p,G__value result);
 G__value G__getvariable(char *item,int *known2,struct G__var_array *varglobal,struct G__var_array *varlocal);
-void G__letstruct(G__value *result,int p_inc,struct G__var_array *var,int ig15,const char *item,int paran,long G__struct_offset);
-void G__letstructp(G__value result,long G__struct_offset,int ig15,int p_inc,struct G__var_array *var,int paran,const char *item,G__value *para,int pp_inc);
+void G__letstruct(G__value *result,size_t p_inc,struct G__var_array *var,size_t ig15,const char *item,int paran,size_t G__struct_offset);
+void G__letstructp(G__value result,size_t G__struct_offset,int ig15,size_t p_inc,struct G__var_array *var,int paran,const char *item,G__value *para,size_t pp_inc);
 void G__returnvartype(G__value* presult,struct G__var_array *var,int ig15,int paran);
 struct G__var_array *G__getvarentry(const char *varname,int varhash,int *pi,struct G__var_array *varglobal,struct G__var_array *varlocal);
 int G__getthis(G__value *result7,const char *varname,const char *item);
-void G__letpointer2memfunc(struct G__var_array *var,int paran,int ig15,const char *item,int p_inc,G__value *presult,long G__struct_offset);
+void G__letpointer2memfunc(struct G__var_array *var,int paran,int ig15,const char *item,size_t p_inc,G__value *presult,size_t G__struct_offset);
 void G__letautomatic(struct G__var_array *var,int ig15,long G__struct_offset,int p_inc,G__value result);
 void G__display_classkeyword(FILE *fout,const char *classnamein,const char *keyword,int base);
 #ifdef G__FRIEND
@@ -648,7 +648,7 @@ int G__display_replacesymbol(FILE *fout,const char* name);
 
 void G__asm_storebytecodefunc(struct G__ifunc_table_internal *ifunc,int ifn,struct G__var_array *var,G__value *pstack,int sp,long *pinst,int instsize);
 
-void G__push_autoobjectstack(void *p,int tagnum,int num
+void G__push_autoobjectstack(void *p,int tagnum,size_t num
 			           ,int scopelevel,int isheap);
 void G__delete_autoobjectstack(int scopelevel);
 
@@ -749,7 +749,7 @@ void *G__UnregisterLibrary (void (*func) ());
 G__value G__getstructmem(int store_var_type,G__FastAllocString& varname,char *membername,int memnamesize,char *tagname,int *known2,struct G__var_array *varglobal,int objptr);
 G__value G__letvariable(G__FastAllocString &item,G__value expression,struct G__var_array *varglobal,struct G__var_array *varlocal);
 G__value G__letvariable(G__FastAllocString &item,G__value expression,struct G__var_array *varglobal,struct G__var_array *varlocal,Cint::G__DataMemberHandle &member);
-G__value G__letstructmem(int store_var_type,G__FastAllocString& varname,int membernameoffset,
+G__value G__letstructmem(int store_var_type,G__FastAllocString& varname,size_t membernameoffset,
                          G__FastAllocString& result7,char* tagname,
                          struct G__var_array *varglobal,G__value expression,int objptr,
                          Cint::G__DataMemberHandle &member);

@@ -43,11 +43,11 @@ extern "C" int G__bc_exec_virtualbase_bytecode(G__value *result7
           //  G__store_struct_offset -= (Evtbl.offset-Cvtbl.offset)
   G__Vtable *vtblptr = (G__Vtable*)G__struct.vtable[vtagnum];
   G__Vtabledata *vtbldataptr = vtblptr->resolve(vtblindex,vbasetagnum);
-  int offsetptr = vtbldataptr->GetOffset();
+  size_t offsetptr = vtbldataptr->GetOffset();
 
   G__Vtable *vtbl = (G__Vtable*)G__struct.vtable[tagnum];
   G__Vtabledata *vtbldata = vtbl->resolve(vtblindex,vbasetagnum);
-  int offset = vtbldata->GetOffset();
+  size_t offset = vtbldata->GetOffset();
 
   struct G__ifunc_table_internal *ifunc = G__get_ifunc_internal(vtbldata->GetIfunc());
   int ifn = vtbldata->GetIfn();
@@ -108,11 +108,11 @@ extern "C" int G__bc_exec_virtual_bytecode(G__value *result7
           //  G__store_struct_offset -= (Evtbl.offset-Cvtbl.offset)
   G__Vtable *vtblptr = (G__Vtable*)G__struct.vtable[vtagnum];
   G__Vtabledata *vtbldataptr = vtblptr->resolve(vtblindex,vbasetagnum);
-  int offsetptr = vtbldataptr->GetOffset();
+  size_t offsetptr = vtbldataptr->GetOffset();
 
   G__Vtable *vtbl = (G__Vtable*)G__struct.vtable[tagnum];
   G__Vtabledata *vtbldata = vtbl->resolve(vtblindex,vbasetagnum);
-  int offset = vtbldata->GetOffset();
+  size_t offset = vtbldata->GetOffset();
 
   struct G__ifunc_table_internal *ifunc = G__get_ifunc_internal(vtbldata->GetIfunc());
   int ifn = vtbldata->GetIfn();
@@ -372,7 +372,7 @@ extern "C" int G__exec_bytecode(G__value *result7,G__CONST char *funcname,struct
   long *store_asm_inst;
   G__value *store_asm_stack;
   char *store_asm_name;
-  int store_asm_name_p;
+  size_t store_asm_name_p;
   struct G__param *store_asm_param;
   int store_asm_exec;
   int store_asm_noverflow;

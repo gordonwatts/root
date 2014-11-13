@@ -108,7 +108,7 @@ class G__functionscope : public G__blockscope {
   int store_asm_instsize;
   G__value *store_asm_stack;
   char *store_asm_name;
-  int store_asm_name_p;
+  size_t store_asm_name_p;
   struct G__param *store_asm_param;
   int store_asm_cp;
   int store_asm_dt;

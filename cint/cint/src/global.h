@@ -72,13 +72,13 @@ extern long G__asm_inst_g[G__MAXINST]; /* p-code instruction buffer */
 extern G__value G__asm_stack_g[G__MAXSTACK]; /* data stack */
 extern char G__asm_name_g[]; /* buffer to store function names which 
 				* is called within the compiled loop */
-extern int G__asm_name_p; /* pointer to the function name buffer */
+extern size_t G__asm_name_p; /* pointer to the function name buffer */
 #else // G__ASM_IFUNC
 extern long G__asm_inst[G__MAXINST]; /* p-code instruction buffer */
 extern G__value G__asm_stack[G__MAXSTACK]; /* data stack */
 extern char G__asm_name[]; /* buffer to store function names which 
 				* is called within the compiled loop */
-extern int G__asm_name_p; /* pointer to the function name buffer */
+extern size_t G__asm_name_p; /* pointer to the function name buffer */
 #endif // G__ASM_IFUNC
 
 extern struct G__param *G__asm_param; /* pointer of parameter buffer to 
@@ -331,7 +331,7 @@ extern short G__enumdef;
 // Can tell if we are writing the temp. dicts or the real one
 extern G__dictgenmode G__dicttype;
 extern char G__tagname[G__MAXNAME];
-extern long G__store_struct_offset; /* used to be int */
+extern size_t G__store_struct_offset; /* used to be int */
 extern FILE *G__header,*G__temp1,*G__temp3,*G__temp5,*G__temp7,*G__temp8;
 extern FILE *G__header2;
 extern int G__decl;
@@ -372,7 +372,7 @@ extern short G__bitfield;
 
 extern char *G__atexit ;
 
-extern int G__cpp_aryconstruct;
+extern size_t G__cpp_aryconstruct;
 extern int G__cppconstruct;
 
 extern int G__access;

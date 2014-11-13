@@ -172,14 +172,14 @@ static long G__getstaticobject()
 }
 
 //______________________________________________________________________________
-long G__malloc(int n, int bsize, const char* item)
+long G__malloc(size_t n, size_t bsize, const char* item)
 {
    // -- Allocate memory.
 #ifdef G__MEMTEST
    fprintf(G__memhist, "G__malloc(%d,%d,%s)\n", n, bsize, item);
 #endif // G__MEMTEST
    // Calculate total malloc size.
-   int size = n * bsize;
+   size_t size = n * bsize;
    // Experimental reference type in bytecode.
    if ((G__globalvarpointer != G__PVOID) && (G__asm_wholefunction == G__ASM_FUNC_COMPILE)) {
       G__globalvarpointer = G__PVOID;
@@ -228,7 +228,7 @@ long G__malloc(int n, int bsize, const char* item)
                }
                return allocmem;
             }
-            long allocmem = 0;
+            size_t allocmem = 0;
             // Get padding size.
 #if defined(G__64BIT)
             if (bsize > ((int) G__DOUBLEALLOC)) {

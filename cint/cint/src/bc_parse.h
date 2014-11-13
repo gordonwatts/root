@@ -247,7 +247,7 @@ class G__blockscope {
 		 ,string& token,int c);
 
   int call_ctor(G__TypeReader& type,struct G__param *libp
-		 ,struct G__var_array* var,int ig15,int num);
+		 ,struct G__var_array* var,int ig15,size_t num);
 
 
   //protected:

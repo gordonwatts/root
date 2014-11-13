@@ -827,7 +827,7 @@ int Cint::G__ForceBytecodecompilation(char *funcname,char *param)
 ///////////////////////////////////////////////////////////////////////////
 // SetVtblIndex
 ///////////////////////////////////////////////////////////////////////////
-void Cint::G__MethodInfo::SetVtblIndex(int vtblindex) {
+void Cint::G__MethodInfo::SetVtblIndex(size_t vtblindex) {
   if(!IsValid()) return;
   struct G__ifunc_table_internal* ifunc2 = G__get_ifunc_internal((struct G__ifunc_table*)handle);
   ifunc2->vtblindex[index] = (short)vtblindex;

@@ -87,7 +87,7 @@ class G__bc_store_bytecode_env {
   long *m_asm_inst;
   G__value *m_asm_stack;
   char *m_asm_name;
-  int m_asm_name_p;
+  size_t m_asm_name_p;
   struct G__param *m_asm_param;
   int m_asm_exec;
   int m_asm_noverflow;

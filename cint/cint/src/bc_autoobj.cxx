@@ -33,7 +33,7 @@ G__autoobject::~G__autoobject() {
   int sizex = G__struct.size[m_tagnum];
   //a. In case of array, call each dtor, not using delete[], -> later review this
   //b. In case of array in heap, free only the youngest pointer address at the end
-  for(int i=m_num-1;i>=0;--i) {
+  for(size_t i=m_num-1;i>=0;--i) {
     G__calldtor((void*)((long)m_p+sizex*i),m_tagnum,i?0:m_isheap);
   }
 }
@@ -72,7 +72,7 @@ extern "C" void* G__push_heapobjectstack(int tagnum,int num,int scopelevel) {
 /*************************************************************************
  * G__push_autoobjectstack
  *************************************************************************/
-extern "C" void G__push_autoobjectstack(void *p,int tagnum,int num
+extern "C" void G__push_autoobjectstack(void *p,int tagnum,size_t num
 					,int scopelevel,int isheap) {
   G__get_autoobjectstack().push(p,tagnum,num,scopelevel,isheap);
 }

@@ -41,7 +41,7 @@ using namespace std;
  *************************************************************************/
 class G__autoobject {
  public:
-  G__autoobject(void *p,int tagnum,int num,int scopelevel,int isheap) 
+  G__autoobject(void *p,int tagnum,size_t num,int scopelevel,int isheap) 
     : m_p(p) , m_tagnum(tagnum) , m_num(num), m_scopelevel(scopelevel) 
     , m_isheap(isheap) {}
   int Scopelevel() const { return(m_scopelevel); }
@@ -50,7 +50,7 @@ class G__autoobject {
  private:
   void *m_p;
   int m_tagnum;
-  int m_num;
+  size_t m_num;
   int m_scopelevel;
   int m_isheap;
 };
@@ -82,7 +82,7 @@ class G__autoobjectstack {
       push(p,tagnum,num,scopelevel,1);
       return(p);
   }
-  void push(void *p,int tagnum,int num,int scopelevel,int isheap) {
+  void push(void *p,int tagnum,size_t num,int scopelevel,int isheap) {
       m_ctnr.push_back(new G__autoobject(p,tagnum,num,scopelevel,isheap));
   }
   void Autodelete(int scopelevel) {
@@ -114,7 +114,7 @@ extern "C" void* G__push_heapobjectstack(int tagnum,int num,int scopelevel) ;
 /*************************************************************************
  * G__push_autoobjectstack
  *************************************************************************/
-extern "C" void G__push_autoobjectstack(void *p,int tagnum,int num
+extern "C" void G__push_autoobjectstack(void *p,int tagnum,size_t num
 					,int scopelevel,int isheap) ;
 
 

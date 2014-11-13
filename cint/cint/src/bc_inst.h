@@ -94,7 +94,7 @@ public:
 
   // instruction
   void LD(G__value* pval);
-  void LD(int a);
+  void LD(size_t a);
   void CL(void);
   void OP2(int opr);
   int CNDJMP(int addr=0);
