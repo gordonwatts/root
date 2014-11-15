@@ -195,7 +195,7 @@ int G__basedestructor(void);
 int G__basedestructrc(struct G__var_array *mem);
 #ifdef G__VIRTUALBASE
 long G__publicinheritance(G__value *val1,G__value *val2);
-long G__ispublicbase(int basetagnum,int derivedtagnum,long pobject);
+long G__ispublicbase(int basetagnum,int derivedtagnum,size_t pobject);
 long G__getvirtualbaseoffset(size_t pobject,int tagnum,struct G__inheritance *baseclass,int basen);
 #else
 long G__ispublicbase(int basetagnum,int derivedtagnum);
@@ -440,7 +440,7 @@ const char* G__find_last_scope_operator(const char* name);
 int G__checkset_charlist(char *tname,struct G__Charlist *pcall_para,int narg,int ftype);
 int G__class_autoloading(int* tagnum);
 void G__define_struct(char type);
-G__value G__classassign(long pdest,int tagnum,G__value result);
+G__value G__classassign(size_t pdest,int tagnum,G__value result);
 char *G__catparam(struct G__param *libp,int catn,const char *connect);
 #ifdef __cplusplus
 } // extern "C"
@@ -518,7 +518,7 @@ void G__returnvartype(G__value* presult,struct G__var_array *var,int ig15,int pa
 struct G__var_array *G__getvarentry(const char *varname,int varhash,int *pi,struct G__var_array *varglobal,struct G__var_array *varlocal);
 int G__getthis(G__value *result7,const char *varname,const char *item);
 void G__letpointer2memfunc(struct G__var_array *var,int paran,int ig15,const char *item,size_t p_inc,G__value *presult,size_t G__struct_offset);
-void G__letautomatic(struct G__var_array *var,int ig15,long G__struct_offset,int p_inc,G__value result);
+void G__letautomatic(struct G__var_array *var,int ig15,size_t G__struct_offset,size_t p_inc,G__value result);
 void G__display_classkeyword(FILE *fout,const char *classnamein,const char *keyword,int base);
 #ifdef G__FRIEND
 int G__isfriend(int tagnum);
@@ -746,7 +746,7 @@ void *G__UnregisterLibrary (void (*func) ());
 #ifdef __cplusplus
 } // extern "C"
 
-G__value G__getstructmem(int store_var_type,G__FastAllocString& varname,char *membername,int memnamesize,char *tagname,int *known2,struct G__var_array *varglobal,int objptr);
+G__value G__getstructmem(int store_var_type,G__FastAllocString& varname,char *membername,size_t memnamesize,char *tagname,int *known2,struct G__var_array *varglobal,int objptr);
 G__value G__letvariable(G__FastAllocString &item,G__value expression,struct G__var_array *varglobal,struct G__var_array *varlocal);
 G__value G__letvariable(G__FastAllocString &item,G__value expression,struct G__var_array *varglobal,struct G__var_array *varlocal,Cint::G__DataMemberHandle &member);
 G__value G__letstructmem(int store_var_type,G__FastAllocString& varname,size_t membernameoffset,

@@ -42,7 +42,7 @@ int G__eof_count;        /* end of file error flag */
 int G__ismain;           /* is there a main function */
 int G__globalcomp;       /* make compiled func's global table */
 int G__store_globalcomp;
-long G__globalvarpointer = G__PVOID; /* make compiled func's global table */
+size_t G__globalvarpointer = G__PVOID; /* make compiled func's global table */
 
 // 10-07-07
 // indicate if we have a bundle file in rootcint 

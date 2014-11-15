@@ -836,9 +836,9 @@ int G__basedestructrc(G__var_array *mem)
 * else return -1
 * Used in standard pointer conversion
 **************************************************************************/
-long G__ispublicbase(int basetagnum,int derivedtagnum
+size_t G__ispublicbase(int basetagnum,int derivedtagnum
 #ifdef G__VIRTUALBASE
-                    ,long pobject
+                    ,size_t pobject
 #endif
                     )
 {

@@ -92,7 +92,7 @@ static void G__class_2nd_decl(G__var_array* var, int ig15)
    G__tagnum = tagnum;
    size_t store_struct_offset = G__store_struct_offset;
    G__store_struct_offset = var->p[ig15];
-   long store_globalvarpointer = G__globalvarpointer;
+   size_t store_globalvarpointer = G__globalvarpointer;
    G__globalvarpointer = G__PVOID;
    size_t store_cpp_aryconstruct = G__cpp_aryconstruct;
    if (var->varlabel[ig15][1] /* number of elements */ || var->paran[ig15]) {
@@ -168,7 +168,7 @@ static void G__class_2nd_decl_i(G__var_array* var, int ig15)
    int store_tagnum = G__tagnum;
    G__tagnum = var->p_tagtable[ig15];
    size_t store_struct_offset = G__store_struct_offset;
-   long store_globalvarpointer = G__globalvarpointer;
+   size_t store_globalvarpointer = G__globalvarpointer;
    G__globalvarpointer = G__PVOID;
 #ifdef G__ASM_DBG
    if (G__asm_dbg) {
@@ -237,7 +237,7 @@ static void G__class_2nd_decl_i(G__var_array* var, int ig15)
 static void G__class_2nd_decl_c(G__var_array* var, int ig15)
 {
    // -- FIXME: Describe me!
-   long store_globalvarpointer = G__globalvarpointer;
+   size_t store_globalvarpointer = G__globalvarpointer;
    G__globalvarpointer = G__PVOID;
    int store_no_exec_compile = G__no_exec_compile;
    G__no_exec_compile = 1;
@@ -1729,7 +1729,7 @@ void G__letpointer2memfunc(G__var_array* var, int paran, int ig15, const char* i
             if (presult->obj.i) {
 #ifdef G__PTR2MEMFUNC
                if (presult->type == 'C') {
-                  *(long*)(G__struct_offset + var->p[ig15] + (linear_index * G__P2MFALLOC)) = presult->obj.i;
+                  *(size_t*)(G__struct_offset + var->p[ig15] + (linear_index * G__P2MFALLOC)) = presult->obj.i;
                }
                else {
                   memcpy((void*)(G__struct_offset + var->p[ig15] + (linear_index * G__P2MFALLOC)), (void*)presult->obj.i, G__P2MFALLOC);
@@ -1788,7 +1788,7 @@ G__value G__letstructmem(int store_var_type, G__FastAllocString& varname,
 
    }
    int store_tagnum = G__tagnum;
-   long store_struct_offset = G__store_struct_offset;
+   size_t store_struct_offset = G__store_struct_offset;
 #ifndef G__OLDIMPLEMENTATION1259
    store_isconst = G__isconst;
 #endif // G__OLDIMPLEMENTATION1259
@@ -1915,7 +1915,7 @@ G__value G__letstructmem(int store_var_type, G__FastAllocString& varname,
       char buf[30] = "operator->()";
       int flag = 0;
       int store_tagnum = G__tagnum;
-      long store_struct_offset = G__store_struct_offset;
+      size_t store_struct_offset = G__store_struct_offset;
       G__tagnum = result.tagnum;
       G__store_struct_offset = result.obj.i;
       result = G__getfunction(buf, &flag, G__TRYMEMFUNC);
@@ -2009,15 +2009,15 @@ void G__letstruct(G__value* result, size_t linear_index, G__var_array* var, size
    G__FastAllocString tmp(G__ONELINE);
    G__FastAllocString result7(G__ONELINE);
    int ig2 = 0;
-   long store_struct_offset = 0;
+   size_t store_struct_offset = 0;
    int largestep = 0;
    int store_tagnum = -1;
    G__value para = *result;
    int store_prerun = 0;
    int store_debug = 0;
    int store_step = 0;
-   long store_asm_inst = 0L;
-   long addr = 0L;
+   size_t store_asm_inst = 0L;
+   size_t addr = 0L;
    if (G__asm_exec) {
       void* p1 = (void*)
          (G__struct_offset + var->p[ig15] + linear_index * G__struct.size[var->p_tagtable[ig15]]);
@@ -2194,7 +2194,7 @@ void G__letstruct(G__value* result, size_t linear_index, G__var_array* var, size
                   result7.Format("%s(%s)", G__struct.name[G__tagnum], tmp());
                   if (G__struct.iscpplink[G__tagnum] == G__CPPLINK) {
                      G__abortbytecode();
-                     long store_globalvarpointer = G__globalvarpointer;
+                     size_t store_globalvarpointer = G__globalvarpointer;
                      G__globalvarpointer = G__store_struct_offset;
                      G__getfunction(result7, &ig2 , G__TRYCONSTRUCTOR);
                      G__globalvarpointer = store_globalvarpointer;
@@ -2270,7 +2270,7 @@ void G__letstruct(G__value* result, size_t linear_index, G__var_array* var, size
                   int tagnum = var->p_tagtable[ig15];
                   int done = G__class_conversion_operator(tagnum, result, tmp);
                   if (done) {
-                     long pdest = G__struct_offset + var->p[ig15] + (linear_index * G__struct.size[tagnum]);
+                     size_t pdest = G__struct_offset + var->p[ig15] + (linear_index * G__struct.size[tagnum]);
                      G__classassign(pdest, tagnum, *result);
                      return;
                   }
@@ -2300,7 +2300,7 @@ void G__letstruct(G__value* result, size_t linear_index, G__var_array* var, size
                }
                else if (-1 != (addr = G__ispublicbase(var->p_tagtable[ig15], result->tagnum, 0))) {
                   int tagnum = var->p_tagtable[ig15];
-                  long pdest = G__struct_offset + var->p[ig15] + (linear_index * G__struct.size[tagnum]);
+                  size_t pdest = G__struct_offset + var->p[ig15] + (linear_index * G__struct.size[tagnum]);
                   std::memcpy((void*) pdest, (void*) (G__int(*result) + addr), (size_t) G__struct.size[tagnum]);
                   if (G__struct.virtual_offset[tagnum] != -1) {
                      *((long*)(pdest + G__struct.virtual_offset[tagnum])) = tagnum;
@@ -2331,7 +2331,7 @@ void G__letstruct(G__value* result, size_t linear_index, G__var_array* var, size
          }
          if (G__var_type == 'v') { // return by value, we will have to call operator*() to get it.
             G__FastAllocString refopr(G__MAXNAME);
-            long store_struct_offsetX = G__store_struct_offset;
+            size_t store_struct_offsetX = G__store_struct_offset;
             int store_tagnumX = G__tagnum;
             int done = 0;
             int store_var_type = G__var_type;
@@ -2437,7 +2437,7 @@ void G__letstructp(G__value result, size_t G__struct_offset, int ig15, size_t li
                      G__classassign(G__PVOID, var->p_tagtable[ig15], result);
                   }
                   else {
-                     long address = G__struct_offset + var->p[ig15] + (linear_index * G__LONGALLOC);
+                     size_t address = G__struct_offset + var->p[ig15] + (linear_index * G__LONGALLOC);
                      G__classassign(*(((long*) (*((long*) address))) + secondary_linear_index), var->p_tagtable[ig15], result);
                   }
                }
@@ -2453,13 +2453,13 @@ void G__letstructp(G__value result, size_t G__struct_offset, int ig15, size_t li
          // var = result;  Assign to a pointer variable.
          if (paran >= var->paran[ig15]) {
             if (var->paran[ig15] < paran) {
-               long address = G__struct_offset + var->p[ig15] + (linear_index * G__LONGALLOC);
+               size_t address = G__struct_offset + var->p[ig15] + (linear_index * G__LONGALLOC);
                if (var->reftype[ig15] == G__PARANORMAL) {
                   if (G__no_exec_compile) {
                      address = G__PVOID;
                   }
                   else {
-                     address = (*(long*)address) + (secondary_linear_index * G__struct.size[var->p_tagtable[ig15]]);
+                     address = (*(size_t*)address) + (secondary_linear_index * G__struct.size[var->p_tagtable[ig15]]);
                   }
                   G__classassign(address, var->p_tagtable[ig15], result);
                }
@@ -2558,18 +2558,18 @@ void G__letstructp(G__value result, size_t G__struct_offset, int ig15, size_t li
 }
 
 //______________________________________________________________________________
-G__value G__classassign(long pdest, int tagnum, G__value result)
+G__value G__classassign(size_t pdest, int tagnum, G__value result)
 {
    // -- FIXME: Describe me!
    G__FastAllocString ttt(G__ONELINE);
    G__FastAllocString result7(G__ONELINE);
-   long store_struct_offset = 0;
+   size_t store_struct_offset = 0;
    int store_tagnum = -1;
    int ig2 = 0;
    G__value para;
-   long store_asm_inst = 0;
+   size_t store_asm_inst = 0;
    int letvvalflag = 0;
-   long addstros_value = 0;
+   size_t addstros_value = 0;
    if (G__asm_exec) {
       memcpy((void*) pdest, (void*) G__int(result), (size_t) G__struct.size[tagnum]);
       return result;
@@ -2658,7 +2658,7 @@ G__value G__classassign(long pdest, int tagnum, G__value result)
       //
       // copy constructor
       //
-      long store_globalvarpointer = 0L;
+      size_t store_globalvarpointer = 0L;
       result7.Format("%s(%s)", G__struct.name[tagnum], ttt());
       if (G__struct.iscpplink[tagnum] == G__CPPLINK) {
          G__abortbytecode();
@@ -2804,7 +2804,7 @@ int G__class_conversion_operator(int tagnum, G__value* presult, char* /*ttt*/)
    int conv_constvar = G__constvar;
    int conv_reftype = G__reftype;
    int conv_var_type = G__var_type;
-   long conv_store_struct_offset = G__store_struct_offset;
+   size_t conv_store_struct_offset = G__store_struct_offset;
    switch (G__struct.type[presult->tagnum]) {
       case 'c':
       case 's':
@@ -2859,7 +2859,7 @@ int G__fundamental_conversion_operator(int type, int tagnum, int typenum, int re
    int conv_constvar = G__constvar;
    int conv_reftype = G__reftype;
    int conv_var_type = G__var_type;
-   long conv_store_struct_offset = G__store_struct_offset;
+   size_t conv_store_struct_offset = G__store_struct_offset;
    switch (G__struct.type[presult->tagnum]) {
       case 'c':
       case 's':
@@ -3337,7 +3337,7 @@ static G__value G__allocvariable(G__value result, G__value para[], G__var_array*
    int autoobjectflag = 0;
    int store_tagnum = 0;
    int store_typenum = 0;
-   int store_globalvarpointer = 0;
+   size_t store_globalvarpointer = 0;
    int store_var_type = 0;
    if (
       G__automaticvar &&
@@ -3422,7 +3422,7 @@ static G__value G__allocvariable(G__value result, G__value para[], G__var_array*
    //
    //  Perform special actions for a bitfield variable.
    //
-   int bitlocation = 0;
+   size_t bitlocation = 0;
    if (G__bitfield) {
       int idx = var->allvar;
       if (!idx || !var->bitfield[idx-1]) {
@@ -3439,7 +3439,7 @@ static G__value G__allocvariable(G__value result, G__value para[], G__var_array*
          // unsigned int a : 4;
          // unsigned int   : 0; <- in case of this, new allocation unit for b
          // unsigned int b : 3;
-         G__bitfield = (8 * G__INTALLOC) - bitlocation;
+         G__bitfield = (short)( (8 * G__INTALLOC) - bitlocation);
       }
    }
    //
@@ -3692,7 +3692,7 @@ static G__value G__allocvariable(G__value result, G__value para[], G__var_array*
       var->varlabel[ig15][0] = stride;
    }
    var->paran[ig15] = paran;
-   int num_elements = 0;
+   size_t num_elements = 0;
    if (!paran) {
       // -- We are *not* of array type.
       var->varlabel[ig15][1] = 0;
@@ -4490,7 +4490,7 @@ static G__value G__allocvariable(G__value result, G__value para[], G__var_array*
                      // FIXME: Can this happen?
                      G__alloc_var_ref<char>(G__CHARALLOC, G__int, item, var, ig15, result);
                      strcpy((char*) var->p[ig15], (char*) result.obj.i); // Okay we allocated enough memory
-                     int num_omitted = var->varlabel[ig15][1] /* number of elements */ - len;
+                     size_t num_omitted = var->varlabel[ig15][1] /* number of elements */ - len;
                      memset(((char*) var->p[ig15]) + len, 0, num_omitted);
                   }
                }
@@ -4698,7 +4698,7 @@ static G__value G__allocvariable(G__value result, G__value para[], G__var_array*
             if (result.obj.i) {
 #ifdef G__PTR2MEMFUNC
                if (result.type == 'C') {
-                  *((long*) var->p[ig15]) = result.obj.i;
+                  *((size_t*) var->p[ig15]) = result.obj.i;
                }
                else {
                   std::memcpy((void*) var->p[ig15], (void*) result.obj.i, G__P2MFALLOC);
@@ -4754,7 +4754,7 @@ static G__value G__allocvariable(G__value result, G__value para[], G__var_array*
             var->varlabel[ig15][i+1] = G__int(para[i]) + 1;
          }
          {
-            int tmp = 1;
+            size_t tmp = 1;
             for (int i = 2; i < paran + 1; ++i) {
                tmp *= var->varlabel[ig15][i++];
             }
@@ -5251,7 +5251,7 @@ G__value G__getvariable(char* item, int* known, G__var_array* varglobal, G__var_
    int store_vartype = 0;
    size_t store_struct_offset = 0;
    int store_tagnum = 0;
-   int posbracket = 0;
+   size_t posbracket = 0;
    size_t posparenthesis = 0;
    G__value result = G__null;
    G__FastAllocString varname(2*G__MAXNAME);
@@ -5952,7 +5952,7 @@ G__value G__getvariable(char* item, int* known, G__var_array* varglobal, G__var_
       G__CHECK(G__SECURE_POINTER_REFERENCE, ((isupper(var->type[ig15]) && (var->type[ig15] != 'E')) || (var->paran[ig15] > paran)), return(G__null));
       // Get bit-field value.
       if (var->bitfield[ig15] && (G__var_type == 'p')) {
-         long address = G__struct_offset + var->p[ig15];
+         size_t address = G__struct_offset + var->p[ig15];
          int original = *((int*) address);
          int mask = (1 << var->bitfield[ig15]) - 1;
          int finalval = (original >> var->varlabel[ig15][G__MAXVARDIM-1]) & mask;
@@ -6451,7 +6451,7 @@ G__value G__getvariable(char* item, int* known, G__var_array* varglobal, G__var_
 
 //______________________________________________________________________________
 G__value G__getstructmem(int store_var_type, G__FastAllocString& varname,
-                         char* membername, int memnamesize, char* tagname,
+                         char* membername, size_t memnamesize, char* tagname,
                          int* known2, G__var_array* varglobal,
                          int objptr /* 1 : object , 2 : pointer */)
 {

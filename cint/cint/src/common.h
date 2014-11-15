@@ -1325,7 +1325,7 @@ struct G__tagtable {
   struct G__var_array *memvar[G__MAXSTRUCT];
   struct G__ifunc_table_internal *memfunc[G__MAXSTRUCT];
   struct G__inheritance *baseclass[G__MAXSTRUCT];
-  int virtual_offset[G__MAXSTRUCT];
+  size_t virtual_offset[G__MAXSTRUCT];
   G__SIGNEDCHAR_T globalcomp[G__MAXSTRUCT];
   G__SIGNEDCHAR_T iscpplink[G__MAXSTRUCT];
   char isabstract[G__MAXSTRUCT];
