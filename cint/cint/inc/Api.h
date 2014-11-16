@@ -150,7 +150,7 @@ void G__InitGetSpecialObject(G__pMethodSpecialObject pmethod);
 * $xxx object resolution function, Generic
 *********************************************************************/
 typedef void (*G__pMethodSpecialValue)(char *item,G__TypeInfo *typeinfo
-                                       ,long *pl,double *pd,void** pptr
+	, cintword_t *pl, double *pd, void** pptr
                                        ,void** ppdict);
 #ifndef __CINT__
 G__EXPORT

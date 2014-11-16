@@ -40,7 +40,7 @@ G__BaseClassInfo : public G__ClassInfo {
   G__BaseClassInfo(G__ClassInfo &a);
   void Init(G__ClassInfo &a);
 
-  long Offset() ;
+  cintword_t Offset();
   long Property();
   int IsValid();
   int Next();
@@ -49,7 +49,7 @@ G__BaseClassInfo : public G__ClassInfo {
   int Prev(int onlydirect);
 
  private:
-  long basep;
+	 cintword_t basep;
   long derivedtagnum;
 };
 } // namespace Cint

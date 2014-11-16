@@ -891,12 +891,26 @@ typedef int (*G__IgnoreInclude)();
 #define G__ULONGLONG   2
 #define G__LONGDOUBLE  3
 
+/*********************************************
+* cintword_t - the size of the instruction pointer
+* on this platform.
+* Nominally, we should use size_t, according to
+* the standard, however CINT needs its instruction
+* pointers to be signed (!?).
+* On Linux and Mac (at least) long is 64 bits.
+*/
+#ifdef _WIN64
+typedef long long cintword_t;
+#else
+typedef long cintword_t;
+#endif
+
 /**************************************************************************
 * store environment for stub function casll
 *
 **************************************************************************/
 struct G__StoreEnv {
-  long store_struct_offset;
+  cintword_t store_struct_offset;
   int store_tagnum;
   int store_memberfunc_tagnum;
   int store_exec_memberfunc;
@@ -915,7 +929,7 @@ struct G__StoreEnv {
 *                                                            to pointer
 **************************************************************************/
 struct G__p2p {
-  long i;
+  cintword_t i;
   int reftype;
 };
 
@@ -935,7 +949,7 @@ typedef struct {
 #endif
   union {
     double d;
-    long    i; /* used to be int */
+	cintword_t    i; /* used to be int - but needs to hold adress width (??) */
 #if defined(G__PRIVATE_GVALUE) && !defined(_WIN32)
 #if defined(private) && defined(ROOT_RVersion)
 #define G__alt_private private
@@ -960,7 +974,7 @@ public:
     long double ld;
   } obj;
 #ifdef G__REFERENCETYPE2
-  long ref;
+  cintword_t ref;
 #endif
 #if defined(G__PRIVATE_GVALUE) && !defined(_WIN32)
    /*private:*/
@@ -1374,7 +1388,7 @@ extern void (*G__aterror)();
 * Bug fix for struct allocation
 *
 **************************************************************************/
-#define G__PVOID ((long)(-1))
+#define G__PVOID ((cintword_t)(-1))
 #define G__PINVALID 0
 
 /**********************************************************************

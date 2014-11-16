@@ -120,15 +120,15 @@ G__ClassInfo {
   enum MatchMode { ExactMatch=0, ConversionMatch=1, ConversionMatchBytecode=2};
   enum InheritanceMode { InThisScope=0, WithInheritance=1 };
   G__InterfaceMethod GetInterfaceMethod(const char *fname,const char *arg
-					,long* poffset
+					,cintword_t* poffset
 					,MatchMode mode=ConversionMatch
                                         ,InheritanceMode imode=WithInheritance
 					);
-  G__MethodInfo GetMethod(const char *fname,const char *arg,long* poffset
+  G__MethodInfo GetMethod(const char *fname, const char *arg, cintword_t* poffset
 			  ,MatchMode mode=ConversionMatch
                           ,InheritanceMode imode=WithInheritance
                           );
-  G__MethodInfo GetMethod(const char *fname,struct G__param* libp,long* poffset
+  G__MethodInfo GetMethod(const char *fname, struct G__param* libp, cintword_t* poffset
 			  ,MatchMode mode=ConversionMatch
                           ,InheritanceMode imode=WithInheritance
                           );
@@ -138,7 +138,7 @@ G__ClassInfo {
   G__MethodInfo GetAssignOperator();
   G__MethodInfo AddMethod(const char* typenam,const char* fname,const char *arg
                           ,int isstatic=0,int isvirtual=0,void *methodAddress=0);
-  G__DataMemberInfo GetDataMember(const char *name,long* poffset);
+  G__DataMemberInfo GetDataMember(const char *name, cintword_t* poffset);
   int HasMethod(const char *fname);
   int HasDataMember(const char *name);
   int HasDefaultConstructor();

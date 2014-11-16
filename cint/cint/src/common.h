@@ -323,7 +323,6 @@ G__value G__default_parameter;
 *********************************************/
 #define G__ASM_IFUNC
 
-
 /*********************************************
 * loop compile debug mode
 *  Not defined usually. Needed only when

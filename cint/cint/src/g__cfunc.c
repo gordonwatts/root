@@ -846,7 +846,7 @@ G__COMPLETIONLIST G__completionlist[] = {
 *
 ******************************************************/
 
-extern long G__int();
+extern cintword_t G__int();
 extern double G__double();
 extern char  *G__string();
 extern struct G__input_file G__ifile;

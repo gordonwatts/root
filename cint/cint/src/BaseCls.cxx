@@ -39,7 +39,7 @@ void Cint::G__BaseClassInfo::Init(G__ClassInfo& a)
 }
 
 ///////////////////////////////////////////////////////////////////////////
-long Cint::G__BaseClassInfo::Offset()
+cintword_t Cint::G__BaseClassInfo::Offset()
 {
   if (IsValid()) {
     return (long) G__struct.baseclass[derivedtagnum]->herit[basep]->baseoffset;

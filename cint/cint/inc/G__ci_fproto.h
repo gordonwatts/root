@@ -41,20 +41,20 @@ G__DECL_API(11, int, G__del_refcount, (void* allocedmem,void** storedmem))
 G__DECL_API(12, int, G__disp_garbagecollection, (FILE* fout))
 G__DECL_API(13, struct G__ifunc_table*, G__get_methodhandle, (const char *funcname,const char *argtype
                                            ,struct G__ifunc_table *p_ifunc
-                                           ,long *pifn,long *poffset
+                                           ,long *pifn,cintword_t *poffset
                                            ,int withConversion
                                            ,int withInheritance))
 G__DECL_API(14, struct G__ifunc_table*, G__get_methodhandle2, (char *funcname
                                            ,struct G__param* libp
                                            ,struct G__ifunc_table *p_ifunc
-                                           ,long *pifn,long *poffset
+                                           ,long *pifn,cintword_t *poffset
                                            ,int withConversion
                                            ,int withInheritance))
 G__DECL_API(15, struct G__var_array*, G__searchvariable, (char *varname,int varhash
                                        ,struct G__var_array *varlocal
                                        ,struct G__var_array *varglobal
-                                       ,long *pG__struct_offset
-                                       ,long *pstore_struct_offset
+                                       ,cintword_t *pG__struct_offset
+                                       ,cintword_t *pstore_struct_offset
                                        ,int *pig15
                                        ,int isdecl))
 
@@ -173,14 +173,14 @@ G__DECL_API(74, int, G__getnumbaseclass, (int tagnum))
 G__DECL_API(75, void, G__setnewtype, (char globalcomp,G__CONST char* comment,int nindex))
 G__DECL_API(76, void, G__setnewtypeindex, (int j,int type_index))
 G__DECL_API(77, void, G__resetplocal, (void))
-G__DECL_API(78, long, G__getgvp, (void))
+G__DECL_API(78, cintword_t, G__getgvp, (void))
 G__DECL_API(79, void, G__resetglobalenv, (void))
 G__DECL_API(80, void, G__lastifuncposition, (void))
 G__DECL_API(81, void, G__resetifuncposition, (void))
 G__DECL_API(82, void, G__setnull, (G__value* result))
-G__DECL_API(83, long, G__getstructoffset, (void))
+G__DECL_API(83, cintword_t, G__getstructoffset, (void))
 G__DECL_API(84, int, G__getaryconstruct, (void))
-G__DECL_API(85, long, G__gettempbufpointer, (void))
+G__DECL_API(85, cintword_t, G__gettempbufpointer, (void))
 G__DECL_API(86, void, G__setsizep2memfunc, (int sizep2memfunc))
 G__DECL_API(87, int, G__getsizep2memfunc, (void))
 G__DECL_API(88, int, G__get_linked_tagnum, (G__linked_taginfo *p))
@@ -206,18 +206,18 @@ G__DECL_API(99, int, G__memfunc_next, (void))
 G__DECL_API(101, int, G__tag_memfunc_reset, (void))
 G__DECL_API(100, int, G__value_get_type, (G__value* buf))
 G__DECL_API(262, int, G__value_get_tagnum, (G__value* buf))
-G__DECL_API(102, void, G__letint, (G__value *buf,int type,long value))
+G__DECL_API(102, void, G__letint, (G__value *buf, int type, cintword_t value))
 G__DECL_API(103, void, G__letdouble, (G__value *buf,int type,double value))
 G__DECL_API(104, void, G__store_tempobject, (G__value reg))
-G__DECL_API(105, int, G__inheritance_setup, (int tagnum,int basetagnum,long baseoffset,int baseaccess,int property))
+G__DECL_API(105, int, G__inheritance_setup, (int tagnum, int basetagnum, cintword_t baseoffset, int baseaccess, int property))
 G__DECL_API(106, void, G__add_compiledheader, (G__CONST char *headerfile))
 G__DECL_API(107, void, G__add_ipath, (G__CONST char *ipath))
 G__DECL_API(108, int, G__delete_ipath, (G__CONST char *ipath))
 G__DECL_API(109, struct G__includepath*, G__getipathentry, ())
 G__DECL_API(110, void, G__add_macro, (G__CONST char *macro))
 G__DECL_API(111, void, G__check_setup_version, (int version,G__CONST char *func))
-G__DECL_API(112, long, G__int, (G__value buf))
-G__DECL_API(113, long, G__int_cast, (G__value buf))
+G__DECL_API(112, cintword_t, G__int, (G__value buf))
+G__DECL_API(113, cintword_t, G__int_cast, (G__value buf))
 G__DECL_API(114, double, G__double, (G__value buf))
 G__DECL_API(115, G__value, G__calc, (G__CONST char *expr))
 G__DECL_API(116, int , G__loadfile, (G__CONST char* filename))
@@ -226,7 +226,7 @@ G__DECL_API(258, int , G__setfilecontext, (G__CONST char* filename, struct G__in
 G__DECL_API(118, int, G__init_cint, (G__CONST char* command))
 G__DECL_API(119, void, G__scratch_all, (void))
 G__DECL_API(120, void, G__setdouble, (G__value *pbuf,double d,void* pd,int type,int tagnum,int typenum,int reftype))
-G__DECL_API(121, void, G__setint, (G__value *pbuf,long d,void* pd,int type,int tagnum,int typenum,int reftype))
+G__DECL_API(121, void, G__setint, (G__value *pbuf, cintword_t d, void* pd, int type, int tagnum, int typenum, int reftype))
 G__DECL_API(122, void, G__stubstoreenv, (struct G__StoreEnv *env,void* p,int tagnum))
 G__DECL_API(123, void, G__stubrestoreenv, (struct G__StoreEnv *env))
 G__DECL_API(124, int, G__getstream, (const char *source,int *isrc,char *string,const char *endmark))
@@ -270,7 +270,7 @@ G__DECL_API(157, int, G__getIfileLineNumber, (void))
 G__DECL_API(158, void, G__addpragma, (char* comname, void (* /*p2f*/) (char*)) )
 G__DECL_API(159, void, G__add_setup_func, (G__CONST char *libname, G__incsetup func))
 G__DECL_API(160, void, G__remove_setup_func, (G__CONST char *libname))
-G__DECL_API(161, void, G__setgvp, (long gvp))
+G__DECL_API(161, void, G__setgvp, (cintword_t gvp))
 G__DECL_API(162, void, G__set_stdio_handle, (FILE* s_out,FILE* s_err,FILE* s_in))
 G__DECL_API(163, void, G__setautoconsole, (int autoconsole))
 G__DECL_API(164, int, G__AllocConsole, (void))
@@ -369,7 +369,7 @@ G__DECL_API(232, int, G__usermemfunc_setup, (char *funcname,int hash,int (*funcp
 #endif
 G__DECL_API(233, char, *G__fulltagname, (int tagnum,int mask_dollar))
 G__DECL_API(234, void, G__loadlonglong, (int* ptag,int* ptype,int which))
-G__DECL_API(235, long, G__isanybase, (int basetagnum,int derivedtagnum,long pobject))
+G__DECL_API(235, long, G__isanybase, (int basetagnum, int derivedtagnum, cintword_t pobject))
 G__DECL_API(236, int, G__pop_tempobject, (void))
 G__DECL_API(263, int, G__pop_tempobject_nodel, (void))
 G__DECL_API(237, const char*, G__stripfilename, (const char* filename))

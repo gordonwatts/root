@@ -69,8 +69,8 @@ G__CallFunc {
 
   enum MatchMode { ExactMatch=0, ConversionMatch=1 };
   void SetFunc(G__ClassInfo* cls,const char* fname,const char* args
-	       ,long* poffset,MatchMode mode=ConversionMatch);
-  void SetFuncProto(G__ClassInfo* cls,const char* fname,const char* argtype,long* poffset);
+	  , cintword_t* poffset, MatchMode mode = ConversionMatch);
+  void SetFuncProto(G__ClassInfo* cls, const char* fname, const char* argtype, cintword_t* poffset);
   // begin old interface
   void SetFunc(G__InterfaceMethod f);
   void SetFunc(G__MethodInfo m);
@@ -78,9 +78,9 @@ G__CallFunc {
   void SetBytecode(struct G__bytecodefunc* bc);
 #endif
   int IsValid() { /* return(pfunc?1:0l; */ return(method.IsValid());}
-  void SetArgArray(long *p,int narg= -1);
+  void SetArgArray(cintword_t *p, int narg = -1);
   void ResetArg() { para.paran=0; }
-  void SetArg(long l) ;
+  void SetArg(cintword_t l);
   void SetArg(unsigned long ul) ;
   void SetArg(double d) ;
   void SetArgRef(long& l) ;
@@ -98,7 +98,7 @@ G__CallFunc {
 
   G__value Execute(void *pobject );
   void Exec(void *pobject) { Execute(pobject); }
-  long ExecInt(void *pobject) { return G__int(Execute(pobject)); }
+  cintword_t ExecInt(void *pobject) { return G__int(Execute(pobject)); }
   double ExecDouble(void *pobject) { return G__double(Execute(pobject)); }
 #ifdef G__NATIVELONGLONG
   G__int64 ExecInt64(void *pobject) { return G__Longlong(Execute(pobject)); }

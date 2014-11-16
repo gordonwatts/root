@@ -42,15 +42,15 @@ G__DataMemberInfo {
 
   void Init();
   void Init(class G__ClassInfo &a);
-  void Init(long handlinin,long indexin,G__ClassInfo *belongingclassin);
+  void Init(cintword_t handlinin, long indexin, G__ClassInfo *belongingclassin);
 
-  long Handle() { return(handle); }
+  cintword_t Handle() { return(handle); }
   int Index() { return ((int)index); }
   const char *Name();
   const char *Title();
   G__TypeInfo* Type();
   long Property();
-  long Offset() ;
+  cintword_t Offset();
   int Bitfield();
   int ArrayDim() ;
   long MaxIndex(int dim) ;
@@ -70,7 +70,7 @@ G__DataMemberInfo {
   static int SerialNumber();
 
  private:
-  long handle;
+	 cintword_t handle;
   long index;
   G__ClassInfo *belongingclass;
   G__TypeInfo type;

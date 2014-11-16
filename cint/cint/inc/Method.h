@@ -54,7 +54,7 @@ G__MethodInfo {
 
   void Init();
   void Init(G__ClassInfo &a);
-  void Init(long handlein,long indexin,G__ClassInfo *belongingclassin);
+  void Init(cintword_t handlein, long indexin, G__ClassInfo *belongingclassin);
   void Init(G__ClassInfo *belongingclassin,long funcpage,long indexin);
 
   const char *Name() ;
@@ -62,7 +62,7 @@ G__MethodInfo {
   int Hash() ;
   struct G__ifunc_table* ifunc();
 #endif
-  long Handle() { return(handle); }
+  cintword_t Handle() { return(handle); }
   int Index() { return ((int)index); }
   const char *Title() ;
   G__TypeInfo* Type() { return(&type); }
@@ -105,10 +105,10 @@ G__MethodInfo {
 
   void  SetUserParam(void*);
   void *GetUserParam();
-  long  GetThisPointerOffset();
+  cintword_t  GetThisPointerOffset();
 
  protected:
-  long handle;
+	 cintword_t handle;
   long index;
 #ifndef G__OLDIMPLEMENTATION2194
   long usingIndex;
