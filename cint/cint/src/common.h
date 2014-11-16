@@ -885,7 +885,7 @@ struct G__bytecodefunc {
   int varsize;
   G__value *pstack; /* upper part of stack to store numerical constants */
   int stacksize;
-  long *pinst;      /* instruction buffer */
+  size_t *pinst;      /* instruction buffer */
   int instsize;
   char *asm_name;   /* name of used ANSI library function */
 };

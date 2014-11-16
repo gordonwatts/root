@@ -116,7 +116,7 @@ void G__nosupport(const char* name);
 void G__malloc_error(const char* varname);
 void G__arrayindexerror(int varid, struct G__var_array* var, const char* name, size_t index);
 #ifdef G__ASM
-int G__asm_execerr(const char* message, int num);
+int G__asm_execerr(const char* message, size_t num);
 #endif // G__ASM
 int G__assign_using_null_pointer_error(const char* item);
 int G__assign_error(const char* item, G__value* pbuf);
@@ -294,8 +294,8 @@ int G__TEST_fclose(FILE *p);
 G__value G__new_operator(const char *expression);
 int G__getarrayindex(const char *indexlist);
 void G__delete_operator(char *expression,int isarray);
-int G__alloc_newarraylist(long point,int pinc);
-int G__free_newarraylist(long point);
+int G__alloc_newarraylist(size_t point,int pinc);
+int G__free_newarraylist(size_t point);
 int G__call_cppfunc(G__value *result7,struct G__param *libp,struct G__ifunc_table_internal *ifunc,int ifn);
 void G__gen_cppheader(char *headerfile);
 void G__gen_clink(void);
@@ -652,12 +652,12 @@ void G__push_autoobjectstack(void *p,int tagnum,size_t num
 			           ,int scopelevel,int isheap);
 void G__delete_autoobjectstack(int scopelevel);
 
-int G__LD_IFUNC_optimize(struct G__ifunc_table_internal* ifunc,int ifn ,long *inst,int pc);
+int G__LD_IFUNC_optimize(struct G__ifunc_table_internal* ifunc,int ifn ,size_t *inst,int pc);
 
 int G__bc_compile_function(struct G__ifunc_table_internal *ifunc,int iexist);
 int G__bc_objassignment(G__value *plresult ,G__value *prresult);
 
-int G__bc_exec_virtual_bytecode(G__value *result7
+size_t G__bc_exec_virtual_bytecode(G__value *result7
                         ,char *funcname        /* vtagnum */
                         ,struct G__param *libp
                         ,int hash              /* vtblindex */

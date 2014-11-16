@@ -84,7 +84,7 @@ class G__bc_store_bytecode_env {
   }
  private:
   // from legacy Cint
-  long *m_asm_inst;
+  size_t *m_asm_inst;
   G__value *m_asm_stack;
   char *m_asm_name;
   size_t m_asm_name_p;
@@ -101,12 +101,12 @@ class G__bc_store_bytecode_env {
 };
 
 //////////////////////////////////////////////////////////////////////
-extern "C" int G__bc_exec_virtualbase_bytecode(G__value *result7
+extern "C" size_t G__bc_exec_virtualbase_bytecode(G__value *result7
 			,char *funcname        // objtagnum
 			,struct G__param *libp
 			,int hash              // vtblindex,basetagnum
 			) ;
-extern "C" int G__bc_exec_virtual_bytecode(G__value *result7
+extern "C" size_t G__bc_exec_virtual_bytecode(G__value *result7
 			,char *funcname        // vtagnum
 			,struct G__param *libp
 			,int hash              // vtblindex,basetagnum

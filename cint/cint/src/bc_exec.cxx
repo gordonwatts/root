@@ -22,7 +22,7 @@
 * G__bc_exec_virtualbase_bytecode()
 *  This function is set as LD_FUNC 4th oprand (*func)()
 ***********************************************************************/
-extern "C" int G__bc_exec_virtualbase_bytecode(G__value *result7
+extern "C" size_t G__bc_exec_virtualbase_bytecode(G__value *result7
 			,char *funcname        // objtagnum
 			,struct G__param *libp
 			,int hash              // vtblindex,basetagnum
@@ -33,7 +33,7 @@ extern "C" int G__bc_exec_virtualbase_bytecode(G__value *result7
   long vtagnum = (long)funcname; // tagnum of given pointer
   int vtblindex = hash&0xffff; // virtual function table index
   int vbasetagnum = hash/0x10000; // vbasetagnum
-  int voffset=G__struct.virtual_offset[vtagnum]; // offset for true tagnum info
+  size_t voffset = G__struct.virtual_offset[vtagnum]; // offset for true tagnum info
   int tagnum = *(long*)(G__store_struct_offset+voffset); // tagnum of object
           //            A
           //  *           B       << origin of virtual function
@@ -57,7 +57,7 @@ extern "C" int G__bc_exec_virtualbase_bytecode(G__value *result7
   }
 
   G__store_struct_offset -= (offset - offsetptr); // TODO, need review 
-  int result=G__exec_bytecode(result7,(char*)ifunc->pentry[ifn]->bytecode,libp,hash);
+  size_t result=G__exec_bytecode(result7,(char*)ifunc->pentry[ifn]->bytecode,libp,hash);
   G__store_struct_offset += (offset - offsetptr); // TODO, need review
 
   result = -(offset-offsetptr);
@@ -89,7 +89,7 @@ extern "C" int G__bc_exec_virtualbase_bytecode(G__value *result7
 *      f5 vtblindex = 1 for B, 4 for C
 *
 ***********************************************************************/
-extern "C" int G__bc_exec_virtual_bytecode(G__value *result7
+extern "C" size_t G__bc_exec_virtual_bytecode(G__value *result7
 			,char *funcname        // vtagnum
 			,struct G__param *libp
 			,int hash              // vtblindex,basetagnum
@@ -98,7 +98,7 @@ extern "C" int G__bc_exec_virtual_bytecode(G__value *result7
   long vtagnum = (long)funcname; // tagnum of given pointer
   int vtblindex = hash&0xffff; // virtual function table index
   int vbasetagnum = hash/0x10000; // vbasetagnum
-  int voffset=G__struct.virtual_offset[vtagnum]; // offset for true tagnum info
+  size_t voffset=G__struct.virtual_offset[vtagnum]; // offset for true tagnum info
   int tagnum = *(long*)(G__store_struct_offset+voffset); // tagnum of object
           //            A
           //  *           B       << origin of virtual function
@@ -122,7 +122,7 @@ extern "C" int G__bc_exec_virtual_bytecode(G__value *result7
   }
 
   G__store_struct_offset -= (offset - offsetptr); // TODO, need review 
-  int result=G__exec_bytecode(result7,(char*)ifunc->pentry[ifn]->bytecode,libp,hash);
+  size_t result=G__exec_bytecode(result7,(char*)ifunc->pentry[ifn]->bytecode,libp,hash);
   G__store_struct_offset += (offset - offsetptr); // TODO, need review
 
   result = -(offset-offsetptr);
@@ -193,14 +193,14 @@ extern "C" int G__bc_exec_ctorary_bytecode(G__value *result7
   int size = G__struct.size[tagnum];
   int result = 0;
   // todo, This solution relies on global variable G__cpp_aryconstruct
-  int n = G__cpp_aryconstruct?G__cpp_aryconstruct:1;
+  size_t n = G__cpp_aryconstruct?G__cpp_aryconstruct:1;
   G__cpp_aryconstruct=0;
 
   if(G__BYTECODE_NOTYET==ifunc->pentry[ifn]->bytecodestatus) {
     if(G__BYTECODE_FAILURE==G__bc_compile_function(ifunc,ifn)) return(0);
   }
 
-  long store_struct_offset=G__store_struct_offset;
+  size_t store_struct_offset=G__store_struct_offset;
   for(int i=0;i<n;i++) {
     result
       =G__exec_bytecode(result7,(char*)ifunc->pentry[ifn]->bytecode,libp,hash);
@@ -238,14 +238,14 @@ extern "C" int G__bc_exec_dtorary_bytecode(G__value *result7
   int size = G__struct.size[tagnum];
   int result = 0;
   // todo, This solution relies on global variable G__cpp_aryconstruct
-  int n = G__cpp_aryconstruct?G__cpp_aryconstruct:1;
+  size_t n = G__cpp_aryconstruct?G__cpp_aryconstruct:1;
   G__cpp_aryconstruct=0;
 
   if(G__BYTECODE_NOTYET==ifunc->pentry[ifn]->bytecodestatus) {
     if(G__BYTECODE_FAILURE==G__bc_compile_function(ifunc,ifn)) return(0);
   }
 
-  long store_struct_offset=G__store_struct_offset;
+  size_t store_struct_offset=G__store_struct_offset;
   G__store_struct_offset += (n-1)*size;
   for(int i=0;i<n;i++) {
     result =
@@ -369,7 +369,7 @@ extern "C" int G__exec_bytecode(G__value *result7,G__CONST char *funcname,struct
   int i;
   struct G__bytecodefunc *bytecode;
   G__value asm_stack_g[G__MAXSTACK]; /* data stack */
-  long *store_asm_inst;
+  size_t *store_asm_inst;
   G__value *store_asm_stack;
   char *store_asm_name;
   size_t store_asm_name_p;

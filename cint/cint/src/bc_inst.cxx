@@ -25,7 +25,7 @@ int G__bc_compile_function(struct G__ifunc_table *ifunc,int iexist);
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 extern "C" int G__LD_IFUNC_optimize(struct G__ifunc_table_internal* ifunc,
-                                    int ifn, long* /*inst*/, int pc)
+                                    int ifn, size_t* /*inst*/, int pc)
 {
    G__MethodInfo m;
    m.Init((long) G__get_ifunc_ref(ifunc), ifn, 0);

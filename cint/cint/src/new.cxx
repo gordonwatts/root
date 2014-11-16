@@ -1040,7 +1040,7 @@ void G__delete_operator(char* expression, int isarray)
 }
 
 //______________________________________________________________________________
-int G__alloc_newarraylist(long point, int pinc)
+int G__alloc_newarraylist(size_t point, int pinc)
 {
    // FIXME: Describe this function!
    struct G__newarylist *newary;
@@ -1071,7 +1071,7 @@ int G__alloc_newarraylist(long point, int pinc)
 }
 
 //______________________________________________________________________________
-int G__free_newarraylist(long point)
+int G__free_newarraylist(size_t point)
 {
    // FIXME: Describe this function!
    struct G__newarylist *newary, *prev;

@@ -37,7 +37,7 @@ using namespace std;
  * C wrapper to optimize G__LD_IFUNC
  ***********************************************************************/
 extern "C" int G__LD_IFUNC_optimize(struct G__ifunc_table_internal* ifunc,int ifn
-				   ,long *inst,int pc);
+				   ,size_t *inst,int pc);
 
 /***********************************************************************
  * G__bc_inst
@@ -83,10 +83,10 @@ public:
   int GetDT() const { return(G__asm_dt); }
 
   // direct asccess
-  long GetInstRel(int rpc) { return(G__asm_inst[G__asm_cp+rpc]); }
-  long GetInst(int pc) { return(G__asm_inst[pc]); }
+  size_t GetInstRel(int rpc) { return(G__asm_inst[G__asm_cp+rpc]); }
+  size_t GetInst(int pc) { return(G__asm_inst[pc]); }
   void Assign(int pc,long val) { G__asm_inst[pc] = val; }
-  long& operator[](int pc) { return(G__asm_inst[pc]); }
+  size_t& operator[](int pc) { return(G__asm_inst[pc]); }
 
   // optimizer
   void optimizeloop(int start,int end); 

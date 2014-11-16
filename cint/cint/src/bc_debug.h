@@ -52,7 +52,7 @@ class G__bc_funccall {
      , m_libp(0) { } 
 
   G__bc_funccall(struct G__bytecodefunc* bc
-                 ,long localmem,long struct_offset,int line_number
+                 ,long localmem,size_t struct_offset,int line_number
 		 ,struct G__param *libp) 
     : m_bytecode(bc), m_localmem(localmem), m_struct_offset(struct_offset),
     m_line_number(line_number), m_libp(libp) { } 
@@ -74,7 +74,7 @@ class G__bc_funccall {
  private:
   struct G__bytecodefunc *m_bytecode; // 0 if not in function
   long m_localmem;                    // 0 if not in function
-  long m_struct_offset;               // 0 if static function
+  size_t m_struct_offset;               // 0 if static function
   int m_line_number;                  
   struct G__param *m_libp;
 };
@@ -90,7 +90,7 @@ class G__bc_funccallstack {
 
   // push , pop,  used in G__exec_bytecode
   void push(struct G__bytecodefunc* bc
-            ,long localmem,long struct_offset,int line_number
+            ,long localmem,size_t struct_offset,int line_number
 	    ,struct G__param* libp) {
     m_funccallstack.push_front(G__bc_funccall(bc,localmem,struct_offset
 					     ,line_number,libp));

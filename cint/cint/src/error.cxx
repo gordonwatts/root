@@ -35,7 +35,7 @@ void G__nosupport(const char* name);
 void G__malloc_error(const char* varname);
 void G__arrayindexerror(int varid, struct G__var_array* var, const char* name, size_t index);
 #ifdef G__ASM
-int G__asm_execerr(const char* message, int num);
+int G__asm_execerr(const char* message, size_t num);
 #endif // G__ASM
 int G__assign_using_null_pointer_error(const char* item);
 int G__assign_error(const char* item, G__value* pbuf);
@@ -210,7 +210,7 @@ void G__arrayindexerror(int varid, struct G__var_array* var, const char* name, s
 
 #ifdef G__ASM
 //______________________________________________________________________________
-int G__asm_execerr(const char* message, int num)
+int G__asm_execerr(const char* message, size_t num)
 {
    G__fprinterr(G__serr, "Loop Compile Internal Error: %s %d ", message, num);
    G__genericerror(0);

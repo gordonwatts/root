@@ -13,8 +13,8 @@ int G__exec_asm(int start, int stack, G__value* presult, long localmem)
 {
    // -- Execute the bytecode which was compiled on-the-fly by the interpreter.
    static G__FastAllocString clnull("");
-   int pc; /* instruction program counter */
-   int sp; /* data stack pointer */
+   size_t pc; /* instruction program counter */
+   size_t sp; /* data stack pointer */
    int strosp = 0; /* struct offset stack pointer */
    long struct_offset_stack[G__MAXSTRSTACK]; /*struct offset stack, was int */
    int gvpp = 0; /* struct offset stack pointer */
@@ -45,7 +45,7 @@ int G__exec_asm(int start, int stack, G__value* presult, long localmem)
    int pinc;
    int size;
    struct G__var_array* var = 0;
-   void(*p2fldst)(G__value*, int*, long, struct G__var_array*, long);
+   void(*p2fldst)(G__value*, size_t*, size_t, struct G__var_array*, size_t);
    void(*p2fop2)(G__value*, G__value*);
    void(*p2fop1)(G__value*);
 #ifdef G__ASM_WHOLEFUNC
@@ -107,7 +107,7 @@ int G__exec_asm(int start, int stack, G__value* presult, long localmem)
                G__fprinterr(G__serr, "%3x,%d: LDST_VAR_P index=%d ldst=%d %s", pc, sp, G__asm_inst[pc+1], G__asm_inst[pc+3], var->varnamebuf[G__asm_inst[pc+1]]);
             }
 #endif
-            p2fldst = (void(*)G__P((G__value*, int*, long, struct G__var_array*, long))) G__asm_inst[pc+2];
+            p2fldst = (void(*)G__P((G__value*, size_t*, size_t, struct G__var_array*, size_t))) G__asm_inst[pc+2];
             (*p2fldst)(G__asm_stack, &sp, 0, (struct G__var_array*) G__asm_inst[pc+4], G__asm_inst[pc+1]);
             pc += 5;
 #ifdef G__ASM_DBG
@@ -140,7 +140,7 @@ int G__exec_asm(int start, int stack, G__value* presult, long localmem)
                G__fprinterr(G__serr, "%3x,%3x: LDST_LVAR_P index: %d ldst: %d '%s' ", pc, sp, G__asm_inst[pc+1], G__asm_inst[pc+3], var->varnamebuf[G__asm_inst[pc+1]]);
             }
 #endif // G__ASM_DBG
-            p2fldst = (void(*)G__P((G__value*, int*, long, struct G__var_array*, long))) G__asm_inst[pc+2];
+            p2fldst = (void(*)G__P((G__value*, size_t*, size_t, struct G__var_array*, size_t))) G__asm_inst[pc+2];
             (*p2fldst)(G__asm_stack, &sp, localmem, (struct G__var_array*) G__asm_inst[pc+4], G__asm_inst[pc+1]);
             pc += 5;
 #ifdef G__ASM_DBG
@@ -171,7 +171,7 @@ int G__exec_asm(int start, int stack, G__value* presult, long localmem)
                G__fprinterr(G__serr, "%3x,%d: LDST_MSTR_P index=%d ldst=%d %s stos=%lx\n", pc, sp, G__asm_inst[pc+1], G__asm_inst[pc+3], var->varnamebuf[G__asm_inst[pc+1]], G__store_struct_offset);
             }
 #endif
-            p2fldst = (void(*)G__P((G__value*, int*, long, struct G__var_array*, long))) G__asm_inst[pc+2];
+            p2fldst = (void(*)G__P((G__value*, size_t*, size_t, struct G__var_array*, size_t))) G__asm_inst[pc+2];
             (*p2fldst)(G__asm_stack, &sp, G__store_struct_offset, (struct G__var_array*) G__asm_inst[pc+4], G__asm_inst[pc+1]);
             pc += 5;
 #ifdef G__ASM_DBG
@@ -204,7 +204,7 @@ int G__exec_asm(int start, int stack, G__value* presult, long localmem)
 #endif
             G__asm_stack[sp].obj.i = (G__asm_inst[pc+5] & 1) ?  *(int*)(G__asm_inst[pc+1] + localmem) : *(int*)G__asm_inst[pc+1];
             G__asm_stack[sp++].type = 'i';
-            p2fldst = (void(*)G__P((G__value*, int*, long, struct G__var_array*, long))) G__asm_inst[pc+2];
+            p2fldst = (void(*)G__P((G__value*, size_t*, size_t, struct G__var_array*, size_t))) G__asm_inst[pc+2];
             (*p2fldst)(G__asm_stack, &sp, (G__asm_inst[pc+5] & 2) ? localmem : 0, (struct G__var_array*) G__asm_inst[pc+6], G__asm_inst[pc+3]);
             pc += G__asm_inst[pc+4];
 #ifdef G__ASM_DBG
@@ -257,7 +257,8 @@ int G__exec_asm(int start, int stack, G__value* presult, long localmem)
                   break;
             }
             G__asm_stack[sp++].type = 'i';
-            p2fldst = (void(*)G__P((G__value*, int*, long, struct G__var_array*, long))) G__asm_inst[pc+4];
+			// TODO: where are these prototypes coming from - how do we make sure they are size_t in the last arg (they used to be long).
+            p2fldst = (void(*)G__P((G__value*, size_t*, size_t, struct G__var_array*, size_t))) G__asm_inst[pc+4];
             (*p2fldst)(G__asm_stack, &sp, (G__asm_inst[pc+7] & 4) ? localmem : 0, (struct G__var_array*) G__asm_inst[pc+8], G__asm_inst[pc+5]);
             pc += G__asm_inst[pc+6];
 #ifdef G__ASM_DBG
@@ -3092,7 +3093,7 @@ int G__exec_asm(int start, int stack, G__value* presult, long localmem)
                                             , G__asm_inst[pc+1], G__asm_inst[pc+2]);
 #endif
             {
-               int n = G__asm_inst[pc+2];
+               size_t n = G__asm_inst[pc+2];
                long plong;
                switch (G__asm_inst[pc+1]) {
                   case 0:
@@ -3161,10 +3162,10 @@ int G__exec_asm(int start, int stack, G__value* presult, long localmem)
                                             , pc, sp, G__asm_inst[pc+1], G__asm_inst[pc+3]);
 #endif
             {
-               int tagnum = G__asm_inst[pc+1];
+               size_t tagnum = G__asm_inst[pc+1];
                struct G__inheritance *baseclass
                         = (struct G__inheritance*)G__asm_inst[pc+2];
-               int basen = G__asm_inst[pc+3];
+               size_t basen = G__asm_inst[pc+3];
                G__store_struct_offset += G__getvirtualbaseoffset(G__store_struct_offset
                                          , tagnum, baseclass, basen);
             }
