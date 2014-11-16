@@ -67,7 +67,11 @@
 #define WINVER 0x0400
 #define CRTAPI1 _cdecl 
 #define CRTAPI2 _cdecl
+
+#ifdef _M_IX86
 #define _X86_ 1 
+#endif
+
 // #define _DLL  - used to be explicitly defined, 
 // but it's implicitely defined via /MD(d)
 #define G__REDIRECTIO 1
