@@ -44,7 +44,6 @@ int getopt();
 #include <unistd.h>
 #endif
 
-
 #if defined(G__ANSI) || defined(G__ANSIHEADER)
 /* int memcmp(const void *region1,const void *region2,size_t count);
    void* memcpy(void *region1,const void *region2,size_t n); */
@@ -133,7 +132,7 @@ G__COMPLETIONLIST G__completionlist[] = {
 #if defined(ceil) || !defined(G__FUNCPOINTER)
 	{"ceil",NULL},
 #else
-	{"ceil",(void (*)())ceil},
+	{"ceil",NULL},
 #endif
 #if defined(clearerr) || !defined(G__FUNCPOINTER)
 	{"clearerr",NULL},
