@@ -497,7 +497,7 @@ void G__functionscope::InitVirtualoffset(G__ClassInfo& cls
 
     // Initialize G__virtualinfo, if the first virtual function appears in
     // this class.
-    long dmy;
+	cintword_t dmy;
     G__DataMemberInfo dat = cls.GetDataMember("G__virtualinfo",&dmy);
     if(dat.IsValid()) {
       // This should be fine for constructor. In constructor, everything 

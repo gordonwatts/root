@@ -71,7 +71,7 @@ void Cint::G__DataMemberInfo::Init(class G__ClassInfo &a)
   }
 }
 ///////////////////////////////////////////////////////////////////////////
-void Cint::G__DataMemberInfo::Init(long handlein,long indexin
+void Cint::G__DataMemberInfo::Init(cintword_t handlein,long indexin
 	,G__ClassInfo *belongingclassin)
 {
   if(handlein) {
@@ -190,7 +190,7 @@ long Cint::G__DataMemberInfo::Property()
   }
 }
 ///////////////////////////////////////////////////////////////////////////
-long Cint::G__DataMemberInfo::Offset()
+cintword_t Cint::G__DataMemberInfo::Offset()
 {
   if(IsValid()) {
     struct G__var_array *var;

@@ -541,12 +541,12 @@ G__value G__letvariable(G__FastAllocString &item, G__value expression, G__var_ar
    size_t ig2 = 0;
    int flag = 0;
    int store_var_type = 0;
-   long G__struct_offset = 0L;
+   cintword_t G__struct_offset = 0L;
    char* tagname = 0;
    int membername = -1;
    int varhash = 0;
    long address = 0L;
-   long store_struct_offset = 0L;
+   cintword_t store_struct_offset = 0L;
    int store_tagnum = 0;
    int store_exec_memberfunc = 0;
    int store_def_struct_member = 0;
@@ -5242,13 +5242,13 @@ G__value G__getvariable(char* item, int* known, G__var_array* varglobal, G__var_
    int ig25 = 0;
    size_t lenitem = 0;
    int done = 0;
-   long G__struct_offset = 0L;
+   cintword_t G__struct_offset = 0L;
    char store_var_type = '\0';
    int varhash = 0;
    //--
    struct G__input_file store_ifile;
    int store_vartype = 0;
-   long store_struct_offset = 0;
+   cintword_t store_struct_offset = 0;
    int store_tagnum = 0;
    int posbracket = 0;
    int posparenthesis = 0;
@@ -7487,7 +7487,7 @@ int G__IsInMacro()
 }
 
 //______________________________________________________________________________
-struct G__var_array* G__searchvariable(char* varname, int varhash, G__var_array* varlocal, G__var_array* varglobal, long* pG__struct_offset, long* pstore_struct_offset, int* pig15, int isdecl)
+struct G__var_array* G__searchvariable(char* varname, int varhash, G__var_array* varlocal, G__var_array* varglobal, cintword_t* pG__struct_offset, cintword_t* pstore_struct_offset, int* pig15, int isdecl)
 {
    // -- FIXME: Describe me!
    struct G__var_array* var = 0;
@@ -7855,8 +7855,8 @@ extern "C" {
 int G__deletevariable(const char* varname)
 {
    // -- Delete variable from global variable table.  Return 1 if successful.
-   long struct_offset = 0;
-   long store_struct_offset = 0;
+	cintword_t struct_offset = 0;
+	cintword_t store_struct_offset = 0;
    int ig15 = 0;
    int varhash = 0;
    int isdecl = 0;

@@ -79,7 +79,7 @@ G__MethodInfo Cint::G__TokenInfo::MakeLocalTable(G__ClassInfo& tag_scope
                                            ,const char* fname
 					   ,const char* paramtype) 
 {
-  long dmy;
+	cintword_t dmy;
 
   Init();
 

@@ -69,7 +69,7 @@ void Cint::G__MethodInfo::Init(G__ClassInfo &a)
   }
 }
 ///////////////////////////////////////////////////////////////////////////
-void Cint::G__MethodInfo::Init(long handlein,long indexin
+void Cint::G__MethodInfo::Init(cintword_t handlein, long indexin
 	,G__ClassInfo *belongingclassin)
 {
 #ifndef G__OLDIMPLEMENTATION2194
@@ -671,7 +671,7 @@ int Cint::G__SetGlobalcomp(char *funcname,char *param,int globalcomp)
 {
   G__ClassInfo globalscope;
   G__MethodInfo method;
-  long dummy=0;
+  cintword_t dummy = 0;
   G__FastAllocString classname(funcname);
 
   // Actually find the last :: to get the full classname, including
@@ -732,7 +732,7 @@ int Cint::G__SetForceStub(char *funcname,char *param)
 {
   G__ClassInfo globalscope;
   G__MethodInfo method;
-  long dummy=0;
+  cintword_t dummy = 0;
   G__FastAllocString classname(funcname);
 
   // Actually find the last :: to get the full classname, including
@@ -781,7 +781,7 @@ int Cint::G__ForceBytecodecompilation(char *funcname,char *param)
 {
   G__ClassInfo globalscope;
   G__MethodInfo method;
-  long dummy=0;
+  cintword_t dummy = 0;
   G__FastAllocString classname(funcname);
 
   // Actually find the last :: to get the full classname, including
@@ -897,7 +897,7 @@ void *Cint::G__MethodInfo::GetUserParam()
 // Return: Return the this-pointer offset, to adjust it in case of non left-most
 // multiple inheritance
 ///////////////////////////////////////////////////////////////////////////
-long Cint::G__MethodInfo::GetThisPointerOffset()
+cintword_t Cint::G__MethodInfo::GetThisPointerOffset()
 {
    if (IsValid()) {
       struct G__ifunc_table_internal* ifunc_internal = G__get_ifunc_internal((struct G__ifunc_table*)ifunc());

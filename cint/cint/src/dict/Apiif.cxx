@@ -1290,16 +1290,16 @@ static int G__G__API_43_0_59(G__value* result7, G__CONST char* funcname, struct 
    switch (libp->paran) {
    case 5:
       G__letint(result7, 89, (long) ((Cint::G__ClassInfo*) G__getstructoffset())->GetInterfaceMethod((const char*) G__int(libp->para[0]), (const char*) G__int(libp->para[1])
-, (long*) G__int(libp->para[2]), (Cint::G__ClassInfo::MatchMode) G__int(libp->para[3])
+		  , (cintword_t*)G__int(libp->para[2]), (Cint::G__ClassInfo::MatchMode) G__int(libp->para[3])
 , (Cint::G__ClassInfo::InheritanceMode) G__int(libp->para[4])));
       break;
    case 4:
       G__letint(result7, 89, (long) ((Cint::G__ClassInfo*) G__getstructoffset())->GetInterfaceMethod((const char*) G__int(libp->para[0]), (const char*) G__int(libp->para[1])
-, (long*) G__int(libp->para[2]), (Cint::G__ClassInfo::MatchMode) G__int(libp->para[3])));
+		  , (cintword_t*)G__int(libp->para[2]), (Cint::G__ClassInfo::MatchMode) G__int(libp->para[3])));
       break;
    case 3:
       G__letint(result7, 89, (long) ((Cint::G__ClassInfo*) G__getstructoffset())->GetInterfaceMethod((const char*) G__int(libp->para[0]), (const char*) G__int(libp->para[1])
-, (long*) G__int(libp->para[2])));
+		  , (cintword_t*)G__int(libp->para[2])));
       break;
    }
    return(1 || funcname || hash || result7 || libp) ;
@@ -1312,7 +1312,7 @@ static int G__G__API_43_0_60(G__value* result7, G__CONST char* funcname, struct 
       {
          Cint::G__MethodInfo* pobj;
          Cint::G__MethodInfo xobj = ((Cint::G__ClassInfo*) G__getstructoffset())->GetMethod((const char*) G__int(libp->para[0]), (const char*) G__int(libp->para[1])
-, (long*) G__int(libp->para[2]), (Cint::G__ClassInfo::MatchMode) G__int(libp->para[3])
+			 , (cintword_t*)G__int(libp->para[2]), (Cint::G__ClassInfo::MatchMode) G__int(libp->para[3])
 , (Cint::G__ClassInfo::InheritanceMode) G__int(libp->para[4]));
          pobj = new Cint::G__MethodInfo(xobj);
          result7->obj.i = (long) ((void*) pobj);
@@ -1324,7 +1324,7 @@ static int G__G__API_43_0_60(G__value* result7, G__CONST char* funcname, struct 
       {
          Cint::G__MethodInfo* pobj;
          Cint::G__MethodInfo xobj = ((Cint::G__ClassInfo*) G__getstructoffset())->GetMethod((const char*) G__int(libp->para[0]), (const char*) G__int(libp->para[1])
-, (long*) G__int(libp->para[2]), (Cint::G__ClassInfo::MatchMode) G__int(libp->para[3]));
+			 , (cintword_t*)G__int(libp->para[2]), (Cint::G__ClassInfo::MatchMode) G__int(libp->para[3]));
          pobj = new Cint::G__MethodInfo(xobj);
          result7->obj.i = (long) ((void*) pobj);
          result7->ref = result7->obj.i;
@@ -1335,7 +1335,7 @@ static int G__G__API_43_0_60(G__value* result7, G__CONST char* funcname, struct 
       {
          Cint::G__MethodInfo* pobj;
          Cint::G__MethodInfo xobj = ((Cint::G__ClassInfo*) G__getstructoffset())->GetMethod((const char*) G__int(libp->para[0]), (const char*) G__int(libp->para[1])
-, (long*) G__int(libp->para[2]));
+			 , (cintword_t*)G__int(libp->para[2]));
          pobj = new Cint::G__MethodInfo(xobj);
          result7->obj.i = (long) ((void*) pobj);
          result7->ref = result7->obj.i;
@@ -1353,7 +1353,7 @@ static int G__G__API_43_0_61(G__value* result7, G__CONST char* funcname, struct 
       {
          Cint::G__MethodInfo* pobj;
          Cint::G__MethodInfo xobj = ((Cint::G__ClassInfo*) G__getstructoffset())->GetMethod((const char*) G__int(libp->para[0]), (G__param*) G__int(libp->para[1])
-, (long*) G__int(libp->para[2]), (Cint::G__ClassInfo::MatchMode) G__int(libp->para[3])
+			 , (cintword_t*)G__int(libp->para[2]), (Cint::G__ClassInfo::MatchMode) G__int(libp->para[3])
 , (Cint::G__ClassInfo::InheritanceMode) G__int(libp->para[4]));
          pobj = new Cint::G__MethodInfo(xobj);
          result7->obj.i = (long) ((void*) pobj);
@@ -1365,7 +1365,7 @@ static int G__G__API_43_0_61(G__value* result7, G__CONST char* funcname, struct 
       {
          Cint::G__MethodInfo* pobj;
          Cint::G__MethodInfo xobj = ((Cint::G__ClassInfo*) G__getstructoffset())->GetMethod((const char*) G__int(libp->para[0]), (G__param*) G__int(libp->para[1])
-, (long*) G__int(libp->para[2]), (Cint::G__ClassInfo::MatchMode) G__int(libp->para[3]));
+			 , (cintword_t*)G__int(libp->para[2]), (Cint::G__ClassInfo::MatchMode) G__int(libp->para[3]));
          pobj = new Cint::G__MethodInfo(xobj);
          result7->obj.i = (long) ((void*) pobj);
          result7->ref = result7->obj.i;
@@ -1376,7 +1376,7 @@ static int G__G__API_43_0_61(G__value* result7, G__CONST char* funcname, struct 
       {
          Cint::G__MethodInfo* pobj;
          Cint::G__MethodInfo xobj = ((Cint::G__ClassInfo*) G__getstructoffset())->GetMethod((const char*) G__int(libp->para[0]), (G__param*) G__int(libp->para[1])
-, (long*) G__int(libp->para[2]));
+			 , (cintword_t*)G__int(libp->para[2]));
          pobj = new Cint::G__MethodInfo(xobj);
          result7->obj.i = (long) ((void*) pobj);
          result7->ref = result7->obj.i;
@@ -1496,7 +1496,7 @@ static int G__G__API_43_0_67(G__value* result7, G__CONST char* funcname, struct 
 {
       {
          Cint::G__DataMemberInfo* pobj;
-         Cint::G__DataMemberInfo xobj = ((Cint::G__ClassInfo*) G__getstructoffset())->GetDataMember((const char*) G__int(libp->para[0]), (long*) G__int(libp->para[1]));
+		 Cint::G__DataMemberInfo xobj = ((Cint::G__ClassInfo*) G__getstructoffset())->GetDataMember((const char*)G__int(libp->para[0]), (cintword_t*)G__int(libp->para[1]));
          pobj = new Cint::G__DataMemberInfo(xobj);
          result7->obj.i = (long) ((void*) pobj);
          result7->ref = result7->obj.i;
@@ -2152,13 +2152,13 @@ static int G__G__API_52_0_5(G__value* result7, G__CONST char* funcname, struct G
    switch (libp->paran) {
    case 5:
       ((Cint::G__CallFunc*) G__getstructoffset())->SetFunc((Cint::G__ClassInfo*) G__int(libp->para[0]), (const char*) G__int(libp->para[1])
-, (const char*) G__int(libp->para[2]), (long*) G__int(libp->para[3])
+		  , (const char*)G__int(libp->para[2]), (cintword_t*)G__int(libp->para[3])
 , (Cint::G__CallFunc::MatchMode) G__int(libp->para[4]));
       G__setnull(result7);
       break;
    case 4:
       ((Cint::G__CallFunc*) G__getstructoffset())->SetFunc((Cint::G__ClassInfo*) G__int(libp->para[0]), (const char*) G__int(libp->para[1])
-, (const char*) G__int(libp->para[2]), (long*) G__int(libp->para[3]));
+		  , (const char*)G__int(libp->para[2]), (cintword_t*)G__int(libp->para[3]));
       G__setnull(result7);
       break;
    }
@@ -2168,7 +2168,7 @@ static int G__G__API_52_0_5(G__value* result7, G__CONST char* funcname, struct G
 static int G__G__API_52_0_6(G__value* result7, G__CONST char* funcname, struct G__param* libp, int hash)
 {
       ((Cint::G__CallFunc*) G__getstructoffset())->SetFuncProto((Cint::G__ClassInfo*) G__int(libp->para[0]), (const char*) G__int(libp->para[1])
-, (const char*) G__int(libp->para[2]), (long*) G__int(libp->para[3]));
+		  , (const char*)G__int(libp->para[2]), (cintword_t*)G__int(libp->para[3]));
       G__setnull(result7);
    return(1 || funcname || hash || result7 || libp) ;
 }
@@ -2204,11 +2204,11 @@ static int G__G__API_52_0_11(G__value* result7, G__CONST char* funcname, struct 
 {
    switch (libp->paran) {
    case 2:
-      ((Cint::G__CallFunc*) G__getstructoffset())->SetArgArray((long*) G__int(libp->para[0]), (int) G__int(libp->para[1]));
+	   ((Cint::G__CallFunc*) G__getstructoffset())->SetArgArray((cintword_t*)G__int(libp->para[0]), (int)G__int(libp->para[1]));
       G__setnull(result7);
       break;
    case 1:
-      ((Cint::G__CallFunc*) G__getstructoffset())->SetArgArray((long*) G__int(libp->para[0]));
+	   ((Cint::G__CallFunc*) G__getstructoffset())->SetArgArray((cintword_t*)G__int(libp->para[0]));
       G__setnull(result7);
       break;
    }

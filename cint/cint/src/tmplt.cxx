@@ -971,7 +971,7 @@ int G__getobjecttagnum(char *name)
     struct G__var_array *var;
     int ig15;
     int itmpx,varhash;
-    long store_struct_offset1=0,store_struct_offset2=0;
+	cintword_t store_struct_offset1 = 0, store_struct_offset2 = 0;
     G__hash(name,varhash,itmpx);
     var = G__searchvariable(name,varhash,G__p_local,&G__global
                             ,&store_struct_offset1,&store_struct_offset2

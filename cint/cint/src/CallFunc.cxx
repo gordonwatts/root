@@ -110,7 +110,7 @@ void Cint::G__CallFunc::SetBytecode(struct G__bytecodefunc* bc)
 }
 #endif
 ///////////////////////////////////////////////////////////////////////////
-void Cint::G__CallFunc::SetArgArray(long *p,int narg)
+void Cint::G__CallFunc::SetArgArray(cintword_t *p, int narg)
 {
   int i,n;
   if(method.IsValid()) {
@@ -342,7 +342,7 @@ void G__CallFunc::SetArgs(const G__param &p)
 ///////////////////////////////////////////////////////////////////////////
 void Cint::G__CallFunc::SetFuncProto(G__ClassInfo* cls
 			       ,const char* fname  ,const char* argtype
-			       ,long* poffset)
+				   , cintword_t* poffset)
 {
   G__LockCriticalSection();
 
@@ -355,7 +355,7 @@ void Cint::G__CallFunc::SetFuncProto(G__ClassInfo* cls
 ///////////////////////////////////////////////////////////////////////////
 void Cint::G__CallFunc::SetFunc(G__ClassInfo* cls
 			  ,const char* fname  ,const char* args
-			  ,long* poffset
+			  , cintword_t* poffset
 			  ,MatchMode mode
 			  )
 {

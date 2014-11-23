@@ -29,7 +29,7 @@ G__value G__castvalue_bc(char* casttype, G__value result3, int bc);
 G__value G__castvalue(char* casttype, G__value result3);
 
 // Functions in the C interface.
-long G__int_cast(G__value buf);
+cintword_t G__int_cast(G__value buf);
 
 //______________________________________________________________________________
 //
@@ -736,10 +736,10 @@ G__value G__castvalue(char* casttype, G__value result3)
 //
 
 //______________________________________________________________________________
-long G__int_cast(G__value buf)
+cintword_t G__int_cast(G__value buf)
 {
    // -- FIXME: Describe this function!
-   return G__convertT<long>(&buf);
+	return G__convertT<cintword_t>(&buf);
 }
 
 } // extern "C"

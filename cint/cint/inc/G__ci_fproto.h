@@ -41,7 +41,7 @@ G__DECL_API(11, int, G__del_refcount, (void* allocedmem,void** storedmem))
 G__DECL_API(12, int, G__disp_garbagecollection, (FILE* fout))
 G__DECL_API(13, struct G__ifunc_table*, G__get_methodhandle, (const char *funcname,const char *argtype
                                            ,struct G__ifunc_table *p_ifunc
-                                           ,long *pifn,cintword_t *poffset
+                                           ,long *pifn, cintword_t *poffset
                                            ,int withConversion
                                            ,int withInheritance))
 G__DECL_API(14, struct G__ifunc_table*, G__get_methodhandle2, (char *funcname

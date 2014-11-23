@@ -59,7 +59,7 @@ extern "C" G__value G__APIGetSpecialValue_layer1(char *item,void **pptr
 	,void **ppdict)
 {
   G__value result = G__null;
-  long l;
+  cintword_t l;
   double d;
   G__TypeInfo typeinfo;
   (*G__UserSpecificGetSpecialValue)(item,&typeinfo,&l,&d,pptr,ppdict);

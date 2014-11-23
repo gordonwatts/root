@@ -1651,7 +1651,7 @@ int G__blockscope::call_ctor(G__TypeReader& type,struct G__param *libp
   // GetMethod finds a function with type conversion, however,
   // bytecode for type conversion is not generated. There must be similar
   // situation in other place in this source file.
-  long dmy;
+	cintword_t dmy;
   G__MethodInfo m = type.GetMethod(type.TrueName(),libp,&dmy
 				   ,G__ClassInfo::ConversionMatchBytecode
 				   );
@@ -1707,7 +1707,7 @@ G__value G__blockscope::call_func(G__ClassInfo& cls
   // GetMethod finds a function with type conversion, however,
   // bytecode for type conversion is not generated. There must be similar
   // situation in other place in this source file.
-  long dmy;
+	cintword_t dmy;
   G__MethodInfo m = cls.GetMethod(fname.c_str(),libp,&dmy
 				  ,mode // ConversionMatch ???
 				  );
@@ -2692,7 +2692,7 @@ int G__blockscope::conversionopr(G__value& result,struct G__var_array* var
     fname.append(target_type.Name());
     G__TypeReader ty(result);
     // This GetMethod() is fine for type convversion because there is no args
-    long dmy;
+	cintword_t dmy;
     G__MethodInfo m = ty.GetMethod(fname.c_str(),"",&dmy);
     if(m.IsValid()) {
       if(paran) G__bc_REWINDSTACK(paran);
@@ -2800,7 +2800,7 @@ G__value G__blockscope::compile_newopr(const string& expression) {
 
   m_bc_inst.SETMEMFUNCENV();
   G__param* para = new G__param();
-  long dmy=0;
+  cintword_t dmy = 0;
   int isarena = arena.size();
   int isaryindex = aryindex.size();
   int isargs = args.size();
@@ -3014,7 +3014,7 @@ void G__blockscope::compile_deleteopr(string& expression,int isarray) {
   G__param* para = new G__param();
   para->paran=0;
   para->para[0]=G__null;
-  long dmy=0;
+  cintword_t dmy = 0;
 
   m_bc_inst.PUSHCPY();
   int skip = m_bc_inst.CNDJMP();
@@ -3218,7 +3218,7 @@ extern "C" void G__bc_Baseclassctor_vbase(int tagnum) {
 extern "C" int G__Isconversionctor(G__TypeReader& ltype
 				   ,G__TypeReader& rtype) {
   if(ltype.Property()&(G__BIT_ISSTRUCT|G__BIT_ISCLASS)) {
-    long dmy;
+	  cintword_t dmy;
     string lname = ltype.Name();
     // todo, it is questionable whether I should use 
     // G__ClassInfo::ExactMatch flag to turn off further type conversion.
@@ -3237,7 +3237,7 @@ extern "C" int G__Isconversionctor(G__TypeReader& ltype
 extern "C" int G__Isassignmentopr(G__TypeReader& ltype
 				  ,G__TypeReader& rtype) {
   if(ltype.Property()&(G__BIT_ISSTRUCT|G__BIT_ISCLASS)) {
-    long dmy;
+	  cintword_t dmy;
     // todo, it is questionable whether I should use 
     // G__ClassInfo::ExactMatch flag to turn off further type conversion.
     G__MethodInfo m = ltype.GetMethod("operator=",rtype.Name(),&dmy
@@ -3257,7 +3257,7 @@ extern "C" int G__Isconversionopr(G__TypeReader& ltype
   if(rtype.Property()&(G__BIT_ISSTRUCT|G__BIT_ISCLASS)) {
     string fname = "operator ";
     fname.append(ltype.Name());
-    long dmy;
+	cintword_t dmy;
     // todo, it is questionable whether I should use 
     // G__ClassInfo::ExactMatch flag to turn off further type conversion.
     G__MethodInfo m = rtype.GetMethod(fname.c_str(),"",&dmy

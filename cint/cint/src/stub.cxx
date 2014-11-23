@@ -78,7 +78,7 @@ void G__setdouble(G__value *pbuf
 * G__setint()
 *
 **************************************************************************/
-void G__setint(G__value *pbuf,long l,void *pl
+void G__setint(G__value *pbuf, cintword_t l, void *pl
                ,int type,int tagnum,int typenum,int reftype)
 {
   pbuf->type = type;

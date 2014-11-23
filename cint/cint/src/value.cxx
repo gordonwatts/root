@@ -57,7 +57,7 @@ void G__letbool(G__value *buf,int type,long value)
 * G__letint(G__value buf,char type,int value)
 *   macro in G__ci.h
 ****************************************************************/
-void G__letint(G__value *buf,int type,long value)
+void G__letint(G__value *buf, int type, cintword_t value)
 {
       buf->type=type;
 
@@ -185,9 +185,9 @@ long G__bool(G__value buf)
 * long G__int(G__value buf)
 * 
 ****************************************************************/
-long G__int(G__value buf)
+cintword_t G__int(G__value buf)
 {
-   return G__convertT<long>(&buf);
+	return G__convertT<cintword_t>(&buf);
 }
 
 /****************************************************************

@@ -47,7 +47,7 @@ int G__bc_stvar(G__TypeReader& /*ltype*/,G__TypeReader& /*rtype*/
 
 ////////////////////////////////////////////////////////////////
 void G__bc_indexoperator(G__TypeReader& ltype,G__value *ppara,int paran) {
-  long dmy;
+	cintword_t dmy;
   struct G__param* para = new G__param();
   para->paran = paran;
   for(int i=0;i<paran;i++) para->para[i] = ppara[i];
@@ -102,7 +102,7 @@ int G__bc_assignmentopr(G__TypeReader& ltype,G__TypeReader& /*rtype*/
   struct G__param* para = new G__param();
   para->paran=1;
   para->para[0] = *prresult;
-  long dmy=0;
+  cintword_t dmy = 0;
   G__MethodInfo m = ltype.GetMethod("operator=",para,&dmy
 				    ,G__ClassInfo::ExactMatch);
 
@@ -163,7 +163,7 @@ int G__bc_conversionctor(G__TypeReader& ltype,G__TypeReader& rtype
   struct G__param* para = new G__param();
   para->paran=1;
   para->para[0] = *prresult;
-  long dmy=0;
+  cintword_t dmy = 0;
   G__MethodInfo m = ltype.GetMethod(ltype.TrueName(),para,&dmy
 				    ,G__ClassInfo::ExactMatch);
 
@@ -243,7 +243,7 @@ int G__bc_conversionopr(G__TypeReader& ltype,G__TypeReader& rtype
   // look for rtype::operator ltype()
   struct G__param* para = new G__param();
   para->paran=0;
-  long dmy=0;
+  cintword_t dmy = 0;
   string fname ="operator ";
   fname.append(ltype.TrueName());
   G__MethodInfo m = rtype.GetMethod(fname.c_str(),para,&dmy

@@ -80,7 +80,7 @@ G__CallFunc {
   int IsValid() { /* return(pfunc?1:0l; */ return(method.IsValid());}
   void SetArgArray(cintword_t *p, int narg = -1);
   void ResetArg() { para.paran=0; }
-  void SetArg(cintword_t l);
+  void SetArg(long l);
   void SetArg(unsigned long ul) ;
   void SetArg(double d) ;
   void SetArgRef(long& l) ;

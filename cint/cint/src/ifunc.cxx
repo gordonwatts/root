@@ -7688,7 +7688,7 @@ struct G__ifunc_table_internal* G__get_ifunchandle(const char* funcname, G__para
 }
 
 //______________________________________________________________________________
-struct G__ifunc_table_internal* G__get_ifunchandle_base(const char* funcname, G__param* libp, int hash, G__ifunc_table_internal* p_ifunc, long* pifn, long* poffset, int access, int funcmatch, int withInheritance, int isconst)
+struct G__ifunc_table_internal* G__get_ifunchandle_base(const char* funcname, G__param* libp, int hash, G__ifunc_table_internal* p_ifunc, long* pifn, cintword_t* poffset, int access, int funcmatch, int withInheritance, int isconst)
 {
    // -- FIXME: Describe this function!
    int tagnum;
@@ -7787,7 +7787,7 @@ void G__argtype2param(const char* argtype, G__param* libp, int noerror, int* err
 // 1 (look for a non-const function)
 // 2 (look for a const function)
 // Note: This should be put into something like an enum
-struct G__ifunc_table* G__get_methodhandle_noerror(const char* funcname, const char* argtype, G__ifunc_table* p_iref, long* pifn, long* poffset, int withConversion, int withInheritance, int noerror, int isconst)
+struct G__ifunc_table* G__get_methodhandle_noerror(const char* funcname, const char* argtype, G__ifunc_table* p_iref, long* pifn, cintword_t* poffset, int withConversion, int withInheritance, int noerror, int isconst)
 {
    // -- FIXME: Describe this function!
    struct G__ifunc_table_internal *ifunc;
@@ -7886,14 +7886,14 @@ struct G__ifunc_table* G__get_methodhandle_noerror(const char* funcname, const c
 //
 // This will behave as the old function but is based in a new implementation
 // where "noerror" and "isconst" must be given
-struct G__ifunc_table* G__get_methodhandle(const char* funcname, const char* argtype, G__ifunc_table* p_iref, long* pifn, long* poffset, int withConversion, int withInheritance)
+struct G__ifunc_table* G__get_methodhandle(const char* funcname, const char* argtype, G__ifunc_table* p_iref, long* pifn, cintword_t* poffset, int withConversion, int withInheritance)
 {
   return G__get_methodhandle_noerror(funcname, argtype, p_iref, pifn, poffset, withConversion, withInheritance, 0, 0);
 }
 
 
 //______________________________________________________________________________
-struct G__ifunc_table* G__get_methodhandle2(char* funcname, G__param* libp, G__ifunc_table* p_iref, long* pifn, long* poffset, int withConversion, int withInheritance)
+struct G__ifunc_table* G__get_methodhandle2(char* funcname, G__param* libp, G__ifunc_table* p_iref, long* pifn, cintword_t* poffset, int withConversion, int withInheritance)
 {
    // -- FIXME: Describe this function!
    struct G__ifunc_table_internal* ifunc;
@@ -7988,7 +7988,7 @@ struct G__ifunc_table* G__get_methodhandle2(char* funcname, G__param* libp, G__i
 struct G__ifunc_table_internal* G__get_methodhandle4(char* funcname
       , struct G__param* libp
       , G__ifunc_table_internal* p_ifunc
-      , long* pifn, long* poffset
+	  , long* pifn, cintword_t* poffset
       , int withConversion
       , int withInheritance
       , int isconst)

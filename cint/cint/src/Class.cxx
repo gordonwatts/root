@@ -594,7 +594,7 @@ int Cint::G__ClassInfo::RootFlag()
 ///////////////////////////////////////////////////////////////////////////
 G__InterfaceMethod Cint::G__ClassInfo::GetInterfaceMethod(const char* fname
 						    ,const char* arg
-						    ,long* poffset
+							, cintword_t* poffset
 						    ,MatchMode mode
                                                     ,InheritanceMode imode
 						)
@@ -625,7 +625,7 @@ G__InterfaceMethod Cint::G__ClassInfo::GetInterfaceMethod(const char* fname
 }
 ///////////////////////////////////////////////////////////////////////////
 G__MethodInfo Cint::G__ClassInfo::GetMethod(const char* fname,const char* arg
-				      ,long* poffset
+	, cintword_t* poffset
 				      ,MatchMode mode
 				      ,InheritanceMode imode
 				      )
@@ -659,7 +659,7 @@ G__MethodInfo Cint::G__ClassInfo::GetMethod(const char* fname,const char* arg
 }
 ///////////////////////////////////////////////////////////////////////////
 G__MethodInfo Cint::G__ClassInfo::GetMethod(const char* fname,struct G__param* libp
-				      ,long* poffset
+	, cintword_t* poffset
 				      ,MatchMode mode
 				      ,InheritanceMode imode
                                       )
@@ -685,7 +685,7 @@ G__MethodInfo Cint::G__ClassInfo::GetMethod(const char* fname,struct G__param* l
 ///////////////////////////////////////////////////////////////////////////
 G__MethodInfo Cint::G__ClassInfo::GetDefaultConstructor() {
   // TODO, reserve location for default ctor for tune up
-  long dmy;
+	cintword_t dmy;
   G__MethodInfo method;
   G__FastAllocString fname(Name());
   method = GetMethod(fname,"",&dmy,ExactMatch,InThisScope);
@@ -694,7 +694,7 @@ G__MethodInfo Cint::G__ClassInfo::GetDefaultConstructor() {
 ///////////////////////////////////////////////////////////////////////////
 G__MethodInfo Cint::G__ClassInfo::GetCopyConstructor() {
   // TODO, reserve location for copy ctor for tune up
-  long dmy;
+	cintword_t dmy;
   G__MethodInfo method;
   G__FastAllocString fname(Name());
   G__FastAllocString arg(strlen(Name())+10);
@@ -705,7 +705,7 @@ G__MethodInfo Cint::G__ClassInfo::GetCopyConstructor() {
 ///////////////////////////////////////////////////////////////////////////
 G__MethodInfo Cint::G__ClassInfo::GetDestructor() {
   // TODO, dtor location is already reserved, ready for tune up
-  long dmy;
+	cintword_t dmy;
   G__MethodInfo method;
   G__FastAllocString fname(strlen(Name())+2);
   fname.Format("~%s",Name());
@@ -715,7 +715,7 @@ G__MethodInfo Cint::G__ClassInfo::GetDestructor() {
 ///////////////////////////////////////////////////////////////////////////
 G__MethodInfo Cint::G__ClassInfo::GetAssignOperator() {
   // TODO, reserve operator= location for tune up
-  long dmy;
+	cintword_t dmy;
   G__MethodInfo method;
   G__FastAllocString arg(strlen(Name()) + 10);
   arg.Format("const %s&", Name());
@@ -723,12 +723,12 @@ G__MethodInfo Cint::G__ClassInfo::GetAssignOperator() {
   return(method);
 }
 ///////////////////////////////////////////////////////////////////////////
-G__DataMemberInfo Cint::G__ClassInfo::GetDataMember(const char* name,long* poffset)
+G__DataMemberInfo Cint::G__ClassInfo::GetDataMember(const char* name, cintword_t* poffset)
 {
   char *varname;
   int hash;
   int temp;
-  long original=0;
+  cintword_t original = 0;
   int ig15 = 0;
   struct G__var_array *var;
   int store_tagnum;
@@ -1186,7 +1186,7 @@ void Cint::G__ClassInfo::DeleteArray(void* ary, int dtorOnly)
 ///////////////////////////////////////////////////////////////////////////
 void Cint::G__ClassInfo::CheckValidRootInfo()
 {
-  long offset;
+	cintword_t offset;
   if(G__struct.rootspecial[tagnum]) return;
   
   G__struct.rootspecial[tagnum]
@@ -1200,7 +1200,7 @@ void Cint::G__ClassInfo::CheckValidRootInfo()
   G__struct.rootspecial[tagnum]->heapinstancecount=0;
   G__struct.rootspecial[tagnum]->defaultconstructor
     = (void*)GetInterfaceMethod(G__struct.name[tagnum],"",&offset);
-  long dmy;
+  cintword_t dmy;
   G__MethodInfo method = GetMethod(G__struct.name[tagnum],"",&dmy,ExactMatch,InThisScope);
 
   G__ifunc_table* constructorIfunc = method.ifunc();

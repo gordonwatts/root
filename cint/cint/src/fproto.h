@@ -337,7 +337,7 @@ int   G__defined_typename_noerror(const char *type_name, int noerror);
 G__value G__string2type_noerror(const char *typenamin, int noerror);
 struct G__ifunc_table *G__get_methodhandle_noerror(const char *funcname,const char *argtype
                                            ,struct G__ifunc_table *p_ifunc
-                                           ,long *pifn,long *poffset
+										   , long *pifn, cintword_t *poffset
                                            ,int withConversion
                                            ,int withInheritance
                                            ,int noerror,int isconst);

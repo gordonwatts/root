@@ -883,7 +883,7 @@ long G__ispublicbase(int basetagnum,int derivedtagnum
 **************************************************************************/
 long G__isanybase(int basetagnum,int derivedtagnum
 #ifdef G__VIRTUALBASE
-                    ,long pobject
+	, cintword_t pobject
 #endif
                  )
 {

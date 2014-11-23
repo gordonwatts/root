@@ -302,8 +302,8 @@ int G__using_namespace()
       int hash = 0;
       int ig15 = 0;
       G__hash(buf, hash, ig15);
-      long struct_offset = 0;
-      long store_struct_offset = 0;
+	  cintword_t struct_offset = 0;
+	  cintword_t store_struct_offset = 0;
       struct G__var_array* var = G__searchvariable(buf, hash, G__p_local, &G__global, &struct_offset, &store_struct_offset, &ig15, 1);
       if (var) {
          G__FastAllocString varname(buf);

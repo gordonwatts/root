@@ -949,7 +949,7 @@ typedef struct {
 #endif
   union {
     double d;
-	cintword_t    i; /* used to be int - but needs to hold adress width (??) */
+	long    i; /* used to be int - but needs to hold adress width (??) */
 #if defined(G__PRIVATE_GVALUE) && !defined(_WIN32)
 #if defined(private) && defined(ROOT_RVersion)
 #define G__alt_private private
@@ -1060,6 +1060,7 @@ extern G__value G__null;
 #define G__P2MFALLOC   G__sizep2memfunc
 #define G__LONGLONGALLOC sizeof(G__int64)
 #define G__LONGDOUBLEALLOC sizeof(long double)
+#define G__CINTWORDALLOC sizeof(cintword_t)
 #endif /* __CINT__ */
 
 #ifdef G__TESTMAIN
